@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+</head>
+<body>
+    <h1>working on arrow functions</h1>
+<script>
+    // arrow function mai ham ek line ka code esay likh sktay hain;
+
+// normal ;
+
+let hello = function(name){
+    return `hello Friend ${name}`
+}
+console.log(hello("Azan"))
+
+// braces ham remove krdengay agar 1 line code ho tw or ismai return ki bhi need nhi hai
+let welcome = () => {
+    return "Khan"
+}
+console.log(welcome())
+
+// agar hamne return krna hai tw 1 line mai code kr ke return hata dain ayr agar 1 parameter hai tw roound braces bhi hata dain 
+
+let hii = name => `hello ${name}`
+console.log(hii("khanAzan"))
+
+
+let hi = (name,age) => `hello ${name} ${age}`
+console.log(hi("khanAzan", 17))
+
+// aur agar 1 hee parameter hai jis mai hama define krna hai value ko tw esay krengay
+
+salam = (val) => "hello bhie" + val;
+// salam = val => "hello bhie" + val;
+console.log(salam()) 
+</script>
+</body>
+</html>

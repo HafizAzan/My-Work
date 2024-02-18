@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shourtcut icon" type="java icon" href="./kaam.jpg"/>
+    <title>First Javascript Class</title>
+</head>
+<body>
+    <h1 style="color: blue;">Heading One</h1>
+
+<button id="btnchanger">Change This Heading </button>
+
+<script>
+let selectBtnHeading = document.querySelector("#btnchanger"); 
+ selectBtnHeading.addEventListener ("click", function (event) {
+event.preventDefault();
+const HeadingOne = document.querySelector("h1");
+if ( HeadingOne .innerText === "Heading One") {
+ HeadingOne.innerText = "Hi,This is the JavaScript we are reading";
+}
+else {
+ HeadingOne.innerText = "Heading One";
+}
+});
+</script>
+
+<h1 style="color: red;">azan khan</h1>
+
+<script src="./app.js"></script>
+</body>
+</html>
