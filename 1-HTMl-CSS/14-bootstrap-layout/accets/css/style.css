@@ -1,0 +1,122 @@
+#sidebar{
+    background-color: #bd5d38;
+    height: 100%;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+#sidebar ul li{
+    list-style-type: none;
+    color: #e1b6a5;
+    cursor: pointer;
+}
+
+#sidebar ul li:hover{
+    color: white;
+}
+
+#sidebar ul li:active{
+    scroll-padding-top:calc("10px");
+}
+
+#profile-image{
+    border: 5px solid #ca7d60;
+    width: 60% !important;
+}
+
+main{
+    margin-left: 250px;
+    padding-top: 165px;
+}
+
+.custom-h1{
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.custom-h3{
+    color: #ca7d60;
+}
+
+.custom-h2{
+    color: #bd5d38;    
+}
+
+.custom-p{
+    padding-top: 40px;
+    color: #6c757d;
+}
+
+.social-icon i{
+    background-color:#495057 ;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 50%;
+    font-size: 25px;
+    margin-right: 10px;
+    margin-top: 3rem;
+}
+
+.social-icon .fa-facebook{
+    padding: 20px 25px;
+}
+
+.social-icon i:hover{
+  background-color: #bd5d38;
+  cursor: pointer;
+}
+
+.size{
+    width: 60%;
+}
+
+#border{
+    border-bottom: 2px solid #cbc8c8;
+}
+
+.space{
+    margin-bottom: 12%;
+}
+
+#new{
+    padding-top: 60px;
+}
+
+#new h1{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+#new h3{
+    color: #6c757d;
+    font-weight: 700;
+    margin-top: -50px;
+}
+
+#new h2 p{
+    font-size: 15px;
+    color: #6c757d;
+}
+
+#new p{
+    padding-bottom: 60px;
+}
+
+#borders{
+    border-bottom: 2px solid #cbc8c8;
+    padding-bottom: 8%;
+}
+
+#news img{
+    margin: 0px 0px 50px 0px;
+    width: 60%;
+}
+
+.two{
+    padding-bottom: 30px;
+}
+
+.customh{
+    color: #6c757d;
+}

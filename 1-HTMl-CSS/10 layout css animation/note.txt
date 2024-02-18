@@ -1,0 +1,8 @@
+(x)
+left-side se space legi-/
+
+(y)
+top-side se space lega-
+
+ye dono alag work nhi krengay
+ek sath krengay{transform({10px,10px})

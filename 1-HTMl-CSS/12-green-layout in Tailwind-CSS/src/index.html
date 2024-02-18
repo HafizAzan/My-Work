@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>green layout with Tailwind</title>
+    <link rel="stylesheet" href="../dist/output.css"/>
+</head>
+<body>
+    <div>
+        <div class="bg-primarybackground text-white">
+            <div class="container flex justify-between items-center flex-col md:flex-row">
+                <div>
+                <img src="../dist/newimages/logo.png" alt="logo" class="w-full"/>
+            </div>
+            <div>
+            <nav>
+                <ul class="flex gap-4 flex-col md:flex-row">
+                     <li class="mb-4 md:mb-0 hover:text-blue-500 cursor-pointer">Home</li>
+                     <li class="text-green-700 hidden md:inline-block">/</li>
+                     <li class="mb-4 md:mb-0 hover:text-blue-500 cursor-pointer">About</li>
+                     <li class="text-green-700 hidden md:inline-block">/</li>
+                     <li class="mb-4 md:mb-0 hover:text-blue-500 cursor-pointer">Portfolio</li>
+                     <li class="text-green-700 hidden md:inline-block">/</li>
+                     <li class="mb-4 md:mb-0 hover:text-blue-500 cursor-pointer">Clients</li>
+                     <li class="text-green-700 hidden md:inline-block">/</li>
+                     <li class="mb-4 md:mb-0 hover:text-blue-500 cursor-pointer">Contacts</li>
+                     <li class="text-green-700 hidden md:inline-block">/</li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+    </div>
+
+    <section class="bg-[url('newimages/banner.jpg')] bg-no-repeat bg-cover h-[350px] md:h-[400px] pt-16">
+        <div class="container">
+            <h2 class="text-white md:text-7xl mb-4 text-4xl">WE KNOW WEB DESIGN</h2>
+            <p class="text-white text-[16px] md:text-[22px] mb-4">With over 15 years experience you can be sure your <br/>
+                website is in safe hands
+            </p>
+            <button class="bg-secondary px-5 py-2 rounded-md text-[16px] text-white hover:text-blue-300 cursor-pointer">View Our Work</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="flex justify-between text-center mt-10 flex-col md:flex-row">
+                <div class="basis-[30%] mb-8 md:mb-0">
+                <img src="../dist/newimages/cs-1.png" alt="cs-1" class="mx-auto md:mx-0"/>
+                <h2 class="text-headingcolor text-2xl mb-2" >Web Design</h2>
+                <p class="text-headingcolor">quatis alique mos et aut occae cum, <br/>
+                    velliquasti quo quam,si idem <br/>
+                    reprorisquil doluptatur accum si sunt ut <br/>
+                    offciisto enecab id et aut es et <br/>
+                    laboribusam endi rerum as minullorent <br/>
+                    officiatum non cuscium quuntemm</p>
+                </div>
+                <div class="basis-[30%]  mb-8 md:mb-0">
+                <img src="../dist/newimages/cs-2.png" alt="cs-2" class="mx-auto md:mx-0"/>
+                <h2 class="text-headingcolor text-2xl mb-2">E-Commerce</h2>
+                <p class="text-headingcolor">quatis alique mos et aut occae cum, <br/>
+                    velliquasti quo quam,si idem <br/>
+                    reprorisquil doluptatur accum si sunt ut <br/>
+                    offciisto enecab id et aut es et <br/>
+                    laboribusam endi rerum as minullorent <br/>
+                    officiatum non cuscium quuntemm</p>
+                </div>
+                <div class="basis-[30%]  mb-8 md:mb-0"> 
+                <img src="../dist/newimages/cs-3.png" alt="cs-3"  class="mx-auto md:mx-0"/>
+                <h2 class="text-headingcolor text-2xl mb-2">SEO</h2>
+                <p class="text-headingcolor">quatis alique mos et aut occae cum, <br/>
+                    velliquasti quo quam,si idem <br/>
+                    reprorisquil doluptatur accum si sunt ut <br/>
+                    offciisto enecab id et aut es et <br/>
+                    laboribusam endi rerum as minullorent <br/>
+                    officiatum non cuscium quuntemm</p>
+                </div>
+            </div>
+
+            <section class="mt-16 relative">
+                <hr />
+                <h2 class="absolute left-[25%] md:left-[40%] top-[-20px] px-10 py-1 bg-primary text-white text-[17px] hover:text-blue-300 cursor-pointer">
+                    What Our Clients Say</h2>
+                </div>
+                </section>
+
+                <div class="container flex flex-col md:flex-row mt-16 ">
+                    <div class="basis-[30%] text-center">
+                        <img src="../dist/newimages/head.png" alt="head" class="mx-auto mb-4 md:mx-0 mb-0"/>
+                    </div>
+                    <div class="basis-[70%] text-center mx-[-5%]">
+                        <img src="../dist/newimages/quote.png" alt="quote" class="px-[9%] my-2"/>
+                        <p class="text-headingcolor">quatis alique mos et aut occae cum,velliquasti quo quam,si idem
+                        reprorisquil doluptatur <br/> accum si sunt ut offciisto enecab id et
+                        </p>
+                    </div>
+                </div>
+
+                <section class=" container mt-16 relative">
+                    <hr />
+                    <h2 class=" hover:text-blue-300 cursor-pointer absolute left-[25%] md:left-[41%] top-[-20px] px-14 py-1 bg-primary text-white text-[17px]">
+                        Drop Us A Line</h2>
+                    </div>
+                    </section>
+
+                    <footer  class="container mt-10 flex justify-between mb-[10%] flex-col-reverse flex-col md:flex-row">
+                        <div>
+                            <div class="flex gap-1 mt-5">
+                                <div>
+                                    <img src="../dist/newimages/call.png" alt="class"/>
+                                </div>
+                                <div>
+                                  <p class="text-headingcolor">555 5555 555</p>
+                                </div>
+                            </div>
+
+                                <div  class="flex gap-1 mt-5">
+                                <div>
+                                    <img src="../dist/newimages/email.png" alt="class"/>
+                                </div>
+                                <div>
+                                  <p class="text-headingcolor">hello@whatever.com</p>
+                                </div>
+                            </div>
+
+                            <div  class="flex gap-1 mt-5">
+                                <div>
+                                    <img src="../dist/newimages/map-icon.png" alt="class"/>
+                                </div>
+                                <div>
+                                  <p class="text-headingcolor">Leaf Studios Times Square NY</p>
+                                </div>
+                            </div>
+                           
+                            <div>
+                            <div class="flex gap-2 mt-7 md:mt-[27%]">
+                                <img src="../dist/newimages/facebook.png"/>
+                                <img src="../dist/newimages/tweet.png"/>
+                                <img src="../dist/newimages/printrest.png"/>
+                                <img src="../dist/newimages/linkedin.png"/>
+                              </div>
+                            </div>
+                            </div>
+                            <div>
+                                <img src="../dist/newimages/map.png" alt="map" class="mx-auto mb-8 md:mx-0"/>
+                            </div>
+                    </footer>
+                </section>
+</body>
+</html>

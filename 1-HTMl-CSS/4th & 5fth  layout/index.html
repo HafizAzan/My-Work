@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>5th Layout</title>
+
+<style>
+*{
+margin:0px;
+}
+#header{
+ height:65px;
+ background-color:gray;
+ font-size:30px;
+ padding-top:20px;
+ padding-left:20px;
+}
+
+#menu{
+ background-color:gray;
+ height:65px;
+ font-size:30px;
+ margin-top:15px;
+ padding-top:20px;
+ padding-left:20px;
+}
+
+#left-side{
+ background-color:gray;
+ font-size:30px;
+ width:20%;
+ float:left;
+ height:200px;
+ padding-left:20px;
+ padding-top:20px;
+ box-sizing:border-box;
+}
+
+#main-content{
+ background-color:gray;
+ font-size:30px;
+ width:56%;
+ float:left;
+ margin-left:2%;
+ margin-right:2%;
+ height:200px;
+ padding-left:20px;
+ padding-top:20px;
+ box-sizing:border-box;
+}
+
+#right-side{
+ background-color:gray;
+ font-size:30px;
+ width:20%;
+ float:left;
+ height:200px;
+ padding-left:20px;
+ padding-top:20px;
+ box-sizing:border-box;
+}
+
+#container{
+ margin-top:10px;
+}
+
+#footer{
+ background-color:gray;
+ height:65px;
+ font-size:30px;
+ margin-top:10px;
+ padding-top:20px;
+ padding-left:20px;
+}
+
+
+.clearfix::after{
+content:"";
+display:table;
+clear:both;
+}
+</style>
+</head>
+
+<body>
+ <div id="header">
+  This is a Header
+ </div>
+ 
+ <div id="menu">
+  This is a Menu
+ </div>
+
+  <div class="clearfix" id="container">
+	<div id="left-side">This is Left Side</div>
+        <div id="main-content">This is Main Content</div>
+        <div id="right-side">This is Right Side</div>
+  </div>
+
+<div id="footer">
+This is a Footer</div>
+     
+</body>
+</html>

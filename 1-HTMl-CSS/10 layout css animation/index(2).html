@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 2 animation</title>
+<style>
+    *{margin: 0px;}
+    .parent{
+        height: 600px;
+        width: 600px;
+        background-color: blue;
+    }
+
+    .child{
+        height: 50%;
+        width: 50%;
+        background-color: red;
+
+        /* animation name 
+        animation timing function
+        animation fill mode
+        animation count
+        animation delay */
+        animation: move-to-left linear forwards infinite 5s;
+        animation-play-state: paused;
+        }
+        .parent:hover .child{
+            animation-play-state: running;
+        }
+
+
+    @keyframes move-to-left{
+        0% {
+            transform:translateX(0%);
+            background-color:red;
+        }
+
+        40% {
+            transform:translateY(40%);
+            background-color:pink;
+        }
+        
+        80% {
+            transform:translateX(80%);
+            background-color:yellow;
+        }
+
+        100% {
+            transform:translateY(100%);
+            background-color:black;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div class="parent">
+    <div class="child"></div>
+    </div>
+    
+</body>
+</html>
