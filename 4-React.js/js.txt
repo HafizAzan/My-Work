@@ -1,0 +1,163 @@
+React js facebook ne banaye hai 
+aur isse ban ne wali aap hain facebook Instagram netflix
+
+What Is React JS ?
+
+This is Library or frame-work in javaScript
+
+library or frame-work 
+ye dono he use hone waali chiz hai
+lkn dono ke function or uses change hain
+== example library ==
+
+1) jab ham code likray hotay hain
+tw ham usmai library ka code use kr letay hain
+
+2) ham apni marzi se task/folders bana
+sktay hain 
+ 
+3) is tarah library hamay specific function 
+deti hai jisa ham use kr sktay hain
+
+== example frame-work ==
+
+1) hamay structer milta hai ke aapne ye ismai 
+krna hai aur ye usmai ya frame mai phele rules 
+bata dyai jaatay hain
+
+2) frame work ke mutabiq hamay code likhna 
+hota hai
+
+3) framework mai hamay structure milta hai
+jisay hamne zarur follow krna hota hai
+
+==============================================
+
+features JS
+
+1) lightweight : ismai file size chota hai or fast load hoti
+is liai ye ideal hai web page ke liai .
+
+2) ismai oop hai jismai objects hain class hain
+inheritance hain prototype bana sktay hain is waja se bhi
+
+3) isme interactivity bhi hai.
+
+4) isme ham events handle kr sktay hain
+
+5) aur javascript cross-platform hai .
+
+
+we have chosen react js why? 
+when we have angular vue is available?
+
+we have top libraries like:
+1-React js
+2-Vue js 
+3-Angular js
+4-Svelte js
+
+1) isko yaad krne mai asaani hai aur samajne mai aur use 
+krne mai hoti hai
+
+2) ismai virtual dom hota hai web apps ko faster banata hai.
+
+3) component-based pr ham web-site banatay hain isse
+developer ko help milti hai
+
+4) aur isai bari web aaps mai use krtay hain is liai bhi
+
+5) ham ismai mble app bna sktay hain after learn the React-Js
+
+6) ye popular bhi hai aur ideal bhi
+
+These reasons make it the best
+
+what is SPA?
+
+Single Page Application
+
+* ismai bina reload kiai url change hojatay hain
+ksi ko click krne se 
+
+* ye help krta hai ke jo data hai wo 
+zahir se load na ho .
+================================
+
+react-js use krti hai jsx
+(JavaScript XML) ko  
+q ke iske zareeai ham html jesa code likh sktay hain
+
+== example ======
+const app = () =>{
+ <h1>hi!</h1>
+}
+app()
+=================
+
+jsx code ko translate krke normal js mai convert kia jata hai
+
+==================
+
+react js use krti hai babel ko jo ke compiler hai
+javascript ka
+
+==================
+
+What is WebPack ?]
+
+webPack is bundler which used for JS
+aur jese JS ki zaruri files ko  ek hee file mai 
+daal kr brower ko detay hain 
+
+like this css , jpg , png
+
+================
+
+npm = node js, pacakge, manager
+
+============================
+React files ka kia mtlb hai
+
+react files ka mtlb hai ke ismai kuch files include hoti hai 
+jese .
+
+* package.json: ismai packages jama hotay hain
+* node_modules: yahan is packages ki files hoti hain
+* public: yahan hamari files store hoti hain jis mai hamay kaam krna hota hai
+* src/index.js: ye main entery point hai jahan se application start hoti hai ye file initialize aur bootstrap use krne ke liai hoti hai
+* src/App.js:  yahan ham component banatay hain jese header footer aur bhi bht kuch.
+* src/App.spec.js:  ye conponent ko test krne ke liai hoti hai.
+* src/*.css: Styles for the app. 
+
+==============================
+
+re-render: ye react component ko refresh krta hai automatically.
+
+hook: iske use se website powerfull aur easy ho jati hai aur components mai features bhi aajatay hain hooki ki waja se
+
+1- useState 2- useEffect 3- useContext 4- useMemo
+========
+useState: iske set karane par component refresh hora ha hai
+
+memo : jab hamay kisi specific ko change krna ho cher na ho tw export mai memo lagaingay q ke jab ham ek parents ke 
+child mai change kr ray hain tw pura parent with child re-rendre hora hai agar ye 10.hazar component ho tw ye slow hojaye ga
+iska solution hai ye memo ke changing usi specific mai tw render hoga
+
+by default Displaycount;
+lkn jab js ki ho tw ham m lagaingay filne name .mjs
+import ab hoga aur jab with out default {} kurlee bracess lagaingay .
+aur import ui, {a,c,b} from ./uihaha; esay krengay import phir . jab default na ho
+
+file name mai hamesha capital name likhengay phelai Display-Count.jsx
+
+
+jo cheez ham app.js mai ksi element mai pass kra ray hongay aur wo recive kisi dusray component function hoga tw uske param mai props dedangay
+tw ye hee props hain
+
+useMemo :ismai ham return kara sktay hain & varibale bana sktay hain 
+
+jab parent mai hill ra ho child ko change krne pr tw useMemo 
+agar parent ki waja se child hil ra ho tw memo.
+
+

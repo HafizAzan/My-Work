@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>complete layout</title>
+<style>
+*{margin:0px;
+ font-family:'Trebuchet MS';
+}
+
+body{
+background:#f7f7f7;
+}
+
+
+#header{
+background-color:#e7e7e7;
+height:45px;
+padding-left:10%;
+padding-right:5%;
+padding-top:28px;
+}
+
+#logo{
+width:25%;
+float:left;
+
+}
+
+#logo img{
+width:100px;
+}
+
+#navigation{
+float:right;
+width:40%;
+}
+
+#navigation ul li{
+float:left;
+list-style-type:none;
+margin-right:13px;
+font-size:16px;
+}
+
+#navigation ul li:hover{
+cursor:pointer;
+color:blue;
+}
+
+#main-image img{
+width:100%;
+}
+
+#main-section{
+width:80%;
+margin:0 auto;
+}
+
+.sub-items{
+float:left;
+width:22%;
+text-align:center;
+margin-right:3%;	
+}
+
+.sub-items h5{
+color:#4e4e4e;
+margin-top:10px;
+margin-bottom:10px;
+font-size:13px;
+}
+
+.sub-items p{
+color:#7b7b7b;
+padding-bottom:50px;
+}
+
+#container{
+margin-top:25px;
+margin-bottom:25px;
+border-bottom:2px solid #eaeaea;
+}
+
+.main-heading{
+margin-bottom:15px;
+color:#4e4e4e;
+}
+
+.latest img{
+width:110%;
+}
+
+.latest{
+float:left;
+width:29%;
+margin-right:6%;
+}
+
+.latest:last-child{
+margin-right:0px;
+}
+
+.latest h4{
+margin-top:15px;
+margin-bottom:10px;
+color:#4e4e4e;
+}
+
+.latest h5{
+color:#dad8d4;
+margin-bottom:10px;
+}
+
+.latest p{
+color:#9d7270;
+}
+ 
+#testimonials{
+background-color:#efefef;
+text-align:center;
+margin-top:55px;
+padding:55px 0px;
+color:#b6b9bd; 
+}
+
+#footer{
+background-color:#1f1f1f;
+color:#cacaca;
+padding--top:30px;
+padding-bottom:70px;
+}
+
+.footer-items{
+ float:left;
+ width:23.5%;
+ margin-right:2%;
+}
+.footer-items:last-child{
+ margin-right:0px;
+}
+#sub-items{
+ /*margin-left:40px;
+ margin-right:40px;*/
+ margin:0px 10%;
+
+}
+#footer-items-container{
+ padding-bottom:50px;
+ margin-bottom:20px;
+ border-bottom:1px solid #353535;
+}
+#footer p{
+ margin-bottom:20px;
+}
+#footer h3{
+ color:#6c6c6c;
+ margin-bottom:20px;
+ font-size:23px;
+ padding-top:20px;
+}
+
+#twitter-p{
+ position:relative;
+}
+
+#twitter-p img{
+ position:absolute;
+ left: -16pX;
+ top: 70px;
+ width: 12px;
+}
+
+
+.clearfix::after{
+ display:table;
+ content:"";
+ clear:both;
+}
+
+
+@media(max-width: 1200px){
+ 
+ #navigation ul li{
+ float:none;
+ margin-bottom:20px;
+ 
+   }
+
+ #header{
+ height:auto;
+ }
+
+ #logo{
+ width:100%;
+ float:none;
+ text-align:center;
+ }
+ 
+ #navigation{
+ width:100%;
+ float:none;	
+ text-align:center;
+ }
+
+ #navigation ul{
+ padding:0px;
+ margin-top:20px;    
+ }
+}
+
+ @media(max-width: 900px){
+ 
+ .sub-items{
+ width:100%;
+ float:none;
+ margin-bottom:20px;
+}
+
+ .latest{
+ float:none;
+ width:100%;
+ margin-bottom:20px;	 
+} 
+
+ #testimonials{
+ padding-left:15px;
+ padding-right:15px;
+ }
+ 
+.footer-items{
+ float:none;
+ width:100%;
+ text-align:center;
+ margin-bottom:40px; 
+ }
+ 
+ #footer p{
+  text-align:center;
+  }
+
+}
+
+</style>
+</head>
+<body>
+ <div id="header" class="clearfix">
+ <div id="logo">
+ <img src="./images/logo.png" alt="logo-image"/>
+</div>
+
+ <div id="navigation">
+ <ul class="clearfix">
+     <li>Home</li>
+     <li>About</li>
+     <li>Journal</li>
+     <li>Services</li>
+     <li>Features</li>
+     <li>Contact Us</li>
+</ul>
+</div>
+</div>
+
+ <div id="main-image">
+ <img src="./images/background-image.png" alt="image logo"/>
+ </div>
+
+ <div id="main-section">
+ <div id="container" class="clearfix">
+ <div class="sub-items">
+ <img src="./images/icon-1.png" alt="logo image"/>
+ <h5>Pellentesque</h5>
+ <p>Nulla vitae libero, a pharetra augue. 
+ Integer posuere erat a ante venenatis condimentum velit dapibus.</p>
+ </div>
+
+ <div class="sub-items">
+ <img src="./images/icon-2.png" alt="logo image"/>
+ <h5>Consectetur</h5>
+ <p>Vestibulum id ligula porta euismod semper. Aenean lacinia bibe</p>
+ </div>
+
+ <div class="sub-items">
+ <img src="./images/icon-3.png" alt="logo image"/>
+ <h5>Tristiquet</h5>
+ <p>Fusce dapibus, cursus commodo, tortor mauris condimentum nibh.</p>
+ </div>
+
+ <div class="sub-items">
+ <img src="./images/icon-4.png" alt="logo image"/>
+ <h5>Fermentum</h5>
+ <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venena.</p>
+ </div>
+ </div>
+
+ <h2 class="main-heading">Our Latest Work</h2>
+ 
+ <div class="clearfix">
+ <div class="latest">
+ <img src="./images/snap-1.png" alt="logo image"/>
+ <h4> Nobis Business Card </h4>
+ <h5> Business Card,Graphic </h5>
+ <p>Sed posuere consectetur est at lobortis. Porta sagittis lacus v</p>
+ </div>
+ 
+ <div class="latest">
+ <img src="./images/snap-2.png" alt="logo image"/>
+ <h4>New Fun Project</h4>
+ <h5>Web Design,Application</h5>
+ <p>Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.</p>
+ </div>
+
+ <div class="latest">
+ <img src="./images/snap-3.png" alt="logo image"/>
+ <h4>Passionaries Branding Cover</h4>
+ <h5> Branding Graphic Design</h5>
+ <p>Curabitur blandit tempus porttitor. Donec id elit non mi porta</p>
+ </div>
+ </div>
+</div>
+
+ <div id="testimonials">
+ <img src="./images/quote.png"/>
+
+ <p>Cras mattis consectetur purus sit amet fermentum. 
+  Donec id elit non mi porta gravida at <br />
+  eget metus. Duis mollis, est non commodo luctus erat porttitor.</p>
+ </div>
+ 
+  <div id="footer">
+ <div id="sub-items">
+ <div id="footer-items-container" class="clearfix">
+ <div class="footer-items"> 
+ <h3>Get In Touch</h3>
+ <p>Fusce dapibus, tellus commodo,
+ tortor mauris condimentum utellus fermentum, porta sem malesuada magna.</p> 
+ <p>Moonshine Street No: 14/05 <br />
+  Light City, Jupiter <br />
+  0247 541 65 87 <br />
+  support@longwave.com</p>
+ </div> 
+ 
+ <div class="footer-items" id="twitter-p"> 
+ <h3>Twitter</h3> 
+ <p>
+ <img src="./images/tweet.png"alt="image"/>
+ Aenean lacinia bibendum nulla sed leo posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+ <p>
+ <img src="./images/tweet.png"alt="image"/>
+ Donec ullamcorper metus auctor fringilla. Nullam quis risus eget.</p>
+ <p>
+ <img src="./images/tweet.png"alt="image"/>
+ Vestibulum id ligula porta euismod semper. Maecenas faucibus mollis.</p>
+</div>
+
+ <div class="footer-items"> 
+ <h3>Popular Post</h3>
+  <p>Vivamus sagittis lacus vel augue laoreet rutrum dolor auctor. 14 Nov, 2012</p>
+
+  <p>Scelerisque nisl consectetur et. 22 May, 2012</p>
+
+  <p>Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce 15 July, 2012</p>
+</div>
+
+ 
+ <div class="footer-items"> 
+ <h3>About Us</h3>
+  <p>Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, 
+  nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+  <p>Cum sociis natoque penatibus et magnis dis parturient montes,
+  nascetur ridiculus mus curabitur blandit tempus.</p>
+ </div>
+ </div>
+
+
+<p>&copy;2022 Marble. All Right reserved. Theme by elemis.</p>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

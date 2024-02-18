@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+<style>
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+#box{
+    width: 20%;
+    height: 60vh;
+    border: 3px solid black;
+    background: darkseagreen;
+    position: absolute;
+    animation: anime linear 3s 2s;
+}
+@keyframes anime {
+    0%{
+        left: 0%;
+        top: 0px;
+        background: palevioletred;
+        /* rotate: 360deg; */
+        }
+    50%{
+        left:80%;
+        top: 0px;
+        background-color: blue;
+        /* rotate: 360deg; */
+    }
+     100%{
+        left: 80%;
+        top: 80%;
+        background: green;
+        /* rotate: 30deg;  */   
+     } 
+ } 
+
+#box1{ 
+    width: 20%;
+    height: 60vh;
+    border: 3px solid black;
+    background: darkseagreen;
+    position: absolute;
+    animation: anime linear 10s 2s; 
+}
+
+
+
+</style>
+</head>
+<body>
+    <div id="box">Hi ! I Am Here</div>
+
+    <div id="box1">Hi ! I Am Here</div>
+</body>
+</html>

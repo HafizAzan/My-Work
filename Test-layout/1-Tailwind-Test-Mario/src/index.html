@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mario layout with tailwind</title>
+    <link href="../dist/output.css" rel="stylesheet"/>
+    <link rel="shourtcut icon" type="mario-icon" href="../images.png"/>
+</head>
+<body> 
+    <header class="bg-red-600 text-white text-center py-2">
+   <h1 class="w-full md:border-4 rounded-[25px] px-2 font-bold md:w-[20%] md:mx-[40%]  text-3xl ">MarioClub</h1>
+    </header>
+
+    <section class="bg-[url('img/banner.png')] h-[600px] bg-cover bg-right-top md:pt-[10%] box-border ">
+        <div class="md:bg-yellow-500 md:w-[40%] md:h-[60%] md:pt-5">
+            <h1 class="pl-2 w-full text-center md:text-start text-4xl font-bold pt-3 text-white md:text-7xl md:pl-4">Welcome To <span>MarioClub</span><h1>
+        </div>
+    </section>
+
+    <nav class="bg-red-50 ">
+        <ul class="flex flex-col text-center md:flex-row md:justify-evenly py-2">
+            <li class="mb-3 h-auto md:mb-0 text-red-600 hover:bg-pink-300 hover:text-blue-900 px-1 cursor-pointer">Join The Club</li>
+            <li class="mb-3 md:mb-0 text-navcolor hover:bg-pink-300 hover: text-blue-900 px-1 cursor-pointer ">Latest News</li>
+            <li class="mb-3 md:mb-0 text-navcolor hover:bg-pink-300 hover: text-blue-900 px-1 cursor-pointer ">New Games</li>
+            <li class="mb-3 md:mb-0 text-navcolor hover:bg-pink-300 hover: text-blue-900 px-1 cursor-pointer ">Contact</li>
+        </ul>
+    </nav>
+
+    <main class="my-[10%]">
+        <div class="w-[80%] mx-[10%]">
+            <h1 class="text-center md:text-start text-red-600 text-5xl mb-5">It's a me, Mario</h1>
+            <h3 class="text-uff mb-3 text-[20px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae possimus sapiente,
+            ducimus <br/></h3> 
+          <p class="leading-8 text-ufff ">asperiores error eum ipsam quasi repellendus iste earum laboriosam nesciunt officiis atque
+                    rerum quos incidunt aspernatur velit voluptates. <br/> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Praesentium labore perferendis minus incidunt doloribus, eligendi repudiandae <br/>
+                     earum dignissimos est neque deserunt consequatur. Repudiandae autem maxime magnam eveniet! Atque,
+                    suscipit amet. Lorem ipsum, <br/> dolor sit amet consectetur adipisicing elit.
+                     Praesentium labore perferendis minus incidunt doloribus, 
+                     eligendi repudiandae earum dignissimos <br/> est neque deserunt consequatur.
+                    Repudiandae autem maxime magnam eveniet! Atque, suscipit amet.</p>
+        </div>
+    </main>
+
+        <div class="w-full items-center flex flex-col justify-center md:items-stretch md:flex-row md:flex md:justify-around">
+            <img src="../dist/img/thumb-1.png" alt="thumb" class="w-[70%] mb-5 md:mb-0 md:w-[30%] "/>
+            <img src="../dist/img/thumb-2.png" alt="thumb2" class="w-[70%] md:w-[30%] "/>
+        </div>
+
+          <div class="py-10 text-center bg-backgroundcolor text-write mt-6">  
+            <div class=" w-[80%] mx-[10%]">
+            <h1 class="text-3xl ">Join Today!</h1>
+            <p class="text-pback py-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis dignissimos minus voluptatem.</p>
+            <input type="text" placeholder="Type Email & Hit Enter.." class="outline-none rounded-[50px] px-5 text-[18px] py-4"/>
+        </div>
+    </div>
+         
+    <footer class="bg-background text-center text-white py-5 ">
+        <p>&copy; 2019 Marioclub</p>
+    </footer>
+</body>
+</html>

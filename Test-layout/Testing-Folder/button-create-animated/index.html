@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bootstrap Site</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<nav>
+    <ul id="collection">
+        <li id="li"><a href="#">Home</a></li>
+        <li id="li"><a href="#">Contact</a></li>
+        <li id="li"><a href="#">About</a></li>
+        <li id="li"><a href="#">Menu</a></li>
+    </ul>
+</nav>
+
+<section>
+    <div id="dropdown">
+        <button id="work">contact Us</button>
+        <ul id="ul">
+        <li id="List" type="onclick"><a href="#">08972733345</a></li>
+        <li id="List" type="onclick"><a href="#">03161122692</a></li>
+        <li id="List" type="onclick"><a href="#">03152532403</a></li>
+        <li id="List" type="onclick"><a href="#">03112639229</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- <script>
+    const btn = document.querySelector("#work");
+    const ul = document.querySelector("#ul")
+    btn.addEventListener("click",(hover) =>{
+        hover.preventDefault();
+        let already = true;
+        if(already){
+            ul.style.display = "block"
+            already = false
+        }else{
+            ul.style.display = "none"
+            already = true
+            
+        }
+        
+
+    }) 
+</script>-->
+<div id="imageHai">
+    <img src="./Screenshot 2024-01-19 231902.png" alt="pic"/>
+</div>
+<style>
+    #imageHai{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #imageHai img{
+        border: 2px solid blueviolet;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        filter: blur(-10px);
+    }
+</style>
+</body>
+</html>

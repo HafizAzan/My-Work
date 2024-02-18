@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>design layout</title>
+<style>
+#heading-one-1{
+background-color:pink;
+color:blue;
+font-size:40px;
+}
+
+#heading-two-2{
+background-color:blue;
+color:pink;
+font-size:35px;
+}
+
+h2{
+background-color:yellow;
+color:orange;
+font-size:30px;
+}
+
+#header{
+background:gray;
+height:40px;
+color:pink;
+text-align:center;
+padding-top:14px;
+box-sizing:border-box;
+}
+
+#menu{
+height:40px;
+background:gray;
+text-align:center;
+color:pink;
+padding-top:14px;
+margin-top:5px;
+box-sizing:border-box;
+}
+
+#container{
+margin-top:5px;
+
+}
+#lefty{
+width:33%;
+height:100px;
+background-color:gray;
+margin-top:5px;
+box-sizing:border-box;
+padding-top:20px;
+text-align:center;
+color:pink;
+float:left;
+margin-right:6px;
+}
+
+#main{
+width:33%;
+height:100px;
+background-color:gray;
+margin-top:5px;
+box-sizing:border-box;
+padding-top:20px;
+text-align:center;
+color:pink;
+float:left;
+}
+
+#righty{
+width:33%;
+height:100px;
+background-color:gray;
+margin-top:5px;
+box-sizing:border-box;
+padding-top:20px;
+text-align:center;
+color:pink;
+float:right;
+}
+
+#footer{
+background:gray;
+height:40px;
+color:pink;
+text-align:center;
+padding-top:14px;
+float:left;
+margin-top:5px;
+width:100%;
+}
+
+.clearfix::after{
+ display:table;
+ content:"";
+ clear:both;
+}
+
+</style>
+</head>
+<body>
+ <h1 id="heading-one-1">This is a heading one</h1>
+ <h1 id="heading-two-2">This is a heading one</h1>
+ <h2>This is a heading two</h2>
+ <h3>This is a heading three</h3>
+ <h4>This is a heading four</h4> 
+ <h5>This is a heading five</h5>
+ <h6>This is a heading six</h6>
+ <p>This is a pragraph</p> 
+
+ <a href="https://google.com">Redirect to google</a>
+ <br/>
+
+ <img src="./image/plant.jpg"
+  width="300"
+  height="300" /> 
+
+ 
+
+ <div id="header">Header</div>
+ <div id="menu">Menu</div>
+ <div class="clearfix" id="container">
+ <div id="lefty">Left-Side</div>
+ <div id="main">Main-content</div>
+ <div id="righty">Right-side</div>
+ <div id="footer">Footer</div>
+
+ </body>
+ </html>

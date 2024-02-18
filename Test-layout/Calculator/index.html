@@ -1,0 +1,45 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="in-form">
+        <form action="#">
+          <div id="screen-calculator">
+            <input type="text" class="screen" />
+          </div>
+          <div style="margin: 0px 0px 0px 5px">
+            <button type="button" class="btn button" style="float: left" id="Delete">D</button>
+            <button type="button" class="btn button" style="float: left" id="on">On</button>
+            <button type="button" class="btn button" style="float: right" id="off">Off</button>
+          </div>
+          <div id="buttons">
+            <button type="button" class="data-btn button match" data-num="/">/</button>
+            <button type="button" class="btn button match" data-num="9">9</button>
+            <button type="button" class="btn button match" data-num="8">8</button>
+            <button type="button" class="data-btn button match" data-num="+">+</button>
+            <button type="button" class="btn button match" data-num="7">7</button>
+            <button type="button" class="btn button match" data-num="6">6</button>
+            <button type="button" class="data-btn button match" data-num="-">-</button>
+            <button type="button" class="btn button match" data-num="5">5</button>
+            <button type="button" class="btn button match" data-num="4">4</button>
+            <button type="button" class="data-btn match" id="equal-btn">=</button>
+            <button type="button" class="btn button match" data-num="3">3</button>
+            <button type="button" class="btn button match" data-num="2">2</button>
+            <button type="button" class="data-btn button match" data-num="*">*</button>
+            <button type="button" class="data-btn button match" data-num=".">.</button>
+            <button type="button" class="btn button match" data-num="1">1</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

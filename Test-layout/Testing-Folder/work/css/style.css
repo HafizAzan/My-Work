@@ -1,0 +1,144 @@
+*{margin: 0px;
+    font-family: math; }
+
+body{
+    background-color: #C9D1C2;
+}
+
+header{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    padding: 0px 20px 0px 20px;
+    padding-top :10px ;
+}
+
+#nav ul {
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    column-gap: 70px;
+    list-style: none;
+}
+#nav ul li:hover{
+    cursor: pointer;
+    color:yellow
+}
+#input-amount{
+    border-radius: 20px;
+    border: red;
+    width: 98%;
+    height: 27px;
+    padding-left: 10px;
+    outline: none;
+}
+
+.container{
+    width: 70%;
+    margin: 0px auto;
+    background-color:white ;
+    border: 2px solid lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+#images{
+    width: 180px;
+    height: 180px;
+    object-position: center;
+    clear: both;
+}
+span{
+    position: absolute;
+    left: 73px;
+    top: 85%;
+    font-size: 22px;
+}
+.work{
+    display: flex;
+    column-gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+#images-hain{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 230px;
+    box-sizing: border-box;
+    position: relative;
+    margin:10px 0px 10px 50px;
+    padding-left: 25px;
+    padding-top: 10px;
+    background-color: lightblue;
+    border-radius: 20px;
+}
+
+@media(max-width : 1114px){
+    header{
+        height: auto;
+        display: flex;
+        flex-direction: column; 
+    }
+
+    #img{
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav ul{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        margin-top: 20px;
+        padding-left: 0%;
+    }
+
+    #nav{
+        width: 100%;
+    }
+
+    .work{
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container{
+        width: 58%;
+    }
+
+    #images-hain{
+    width: 66px;
+     margin-left: 47px;   
+    }
+     
+    #input{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    #input-amount{
+        width: 80%;
+    }
+
+}
+
+@media(max-width: 900px) {
+    #images-hain{
+        width: 100%;
+        margin-left: 47px;   
+        }
+     .container{
+        background-color: none;
+     }   
+}
