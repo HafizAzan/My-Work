@@ -1,0 +1,239 @@
+======GITHUB DEFINITION======
+
+github is free open source tool for saving your code
+
+---benifits
+
+1-maintain history files
+2-branch (exact code copy)
+
+abdul rehman (header) -> branch-name -> header-working
+muzammil sahab (sidebar) -> branch-name -> sidebar-working
+musaddiq sahab (main content) -> branch-name -> main-content-working
+
+release-dev -> release/live wali branch
+
+
+header-working is branch ko merge kardo release/dev mein
+sidebar-working is branch ko merge kardo release/dev mein
+main-content-working is branch ko merge kardo release/dev mein
+
+release/dev -> end me sab se updated branch hai 
+
+
+
+
+==========DOWNLOAD GIT=======
+https://git-scm.com/downloads
+
+===Create Your Account on Github=====
+https://github.com/
+
+
+
+/*===============================================
+=            CONFIGURATION OF GITHUB            =
+===============================================*/
+run these commands step by step
+
+git config --global user.name "yourname"
+git config --global user.email "yourgmail@gmail.com"
+
+ssh-keygen -t rsa -b 4096 -C "yourgmail@gmail.com"
+
+press enter two times
+
+https://www.w3schools.com/git/git_security_ssh.asp?remote=github
+
+
+go to this directory 
+
+/c/Users/your-computer-user-name/.ssh/id_rsa.pub
+
+open this file and copy the key
+
+
+https://www.w3schools.com/git/git_remote_add_ssh.asp?remote=github
+
+
+dono keys ko match karayega github jab bi ap koi command run karoge
+
+is liye local wali key ko apko github par add karna hoga 
+
+
+=================================================================
+ HOW TO CREATE REPOSITORY (PROJECT)
+=================================================================
+go to repository tab then click on New button
+
+echo "# Batch 7 Testing"
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/MuzammilRafay/Batch-7-Testing.git
+git push -u origin main
+
+
+=========CHECK FILE CHANGES COMMAND====
+git status
+
+
+====Add All Files in to Github Commit=======
+git add filename
+or
+git add . (sari add kardo)
+
+
+=======Add Commit==============
+git commit -m "this is my second commit"
+
+
+=====Add All Commits To Live Repository====
+git push
+
+
+=========CHECK ALL LOCAL BRANCH=====
+git branch
+
+
+=======Get All Branch From Live=====
+git fetch
+
+
+
+========Switch/Change In to Live Branch===========
+git fetch && git checkout muzammil-work
+
+
+========Switch/Change In to local Branch===========
+git checkout muzammil-work
+or
+git switch muzammil-work
+
+
+=====Create Branch From Command local=====
+git branch new-branch-name
+
+git push --set-upstream origin new-branch-name (ta ke ye wali branch live pr update hojae)
+
+
+
+jis branch me apko merge karwana hai sab se phle us branch me jana hai
+
+git checkout main
+
+git merge branch-name (branch-name wali branch ko merge kardo main wali branch mein)
+
+
+
+
+
+/*=================================
+=            Git Clone            =
+=================================*/
+
+copy https link from repository
+
+git clone https://github.com/MuzammilRafay/Batch-7.git
+
+
+
+/*=====  End of Git Clone  ======*/
+
+
+
+/*========================================
+=            GET UPDATED CODE FROM LIVE           =
+========================================*/
+
+git pull
+or
+git fetch && git pull
+
+/*=====  End of GET UPDATED CODE  ======*/
+
+
+
+
+================Add File In Stash=======
+files & files changes ko hidden kardena github mein
+
+git add .
+git stash
+
+=====Git Stash Listing====
+git stash list
+
+
+
+==========Apply Hidden Changes====
+git stash apply
+
+
+
+
+if you have terminal while inserting the command so enter this values ":wq"
+
+agar apk pas terminal mein kuch commanda ajae to ye enter karien ":wq"
+
+
+<<<<<<head means (current branch change )
+
+<<<<<<< HEAD
+	<h1>Correct Layout Name 11</h1>
+
+=======
+	<h1>Correct Layout Name 2</h1>
+	<h1>Correct Layout Name 2</h1>
+>>>>>>> third-branch
+
+
+<<<<<<incoming branch change
+
+
+
+
+
+=======How to live in github ====
+
+
+go to your repository
+setting -> pages -> select branch
+
+
+wait for a whiile then refresh your page
+
+
+
+
+===============Apply Specific Stash Files =========
+git stash apply stash@{0}
+
+
+
+=========Add Stash Name ==== 
+
+git stash push -m "message"
+
+
+
+
+https://www.w3schools.com/git/git_remote_fork.asp?remote=github
+
+
+
+// pick another commit from another branch (so it will give you all work for this commit in to your current branch)
+
+
+
+git cherry-pickup 778343b4599d923e625dd1b7dbc43f5070d1a915
+
+
+/*=====================================================
+=            YOU CAN TRY ANOTHER PLATFORMS            =
+=====================================================*/
+GITLAB
+BITBUCKET
+/*=====  End of YOU CAN TRY ANOTHER PLATFORMS  ======*/
+
