@@ -22,7 +22,9 @@ function App() {
 
   useEffect(() => {
     const GetKrnaHaiArrayMai = GetLocalStorage();
-    setTaskList(GetKrnaHaiArrayMai);
+    if (GetKrnaHaiArrayMai) {
+      setTaskList(GetKrnaHaiArrayMai);
+    }
   }, []);
 
   const deleteBtnHandler = (event) => {
@@ -47,8 +49,8 @@ function App() {
     setFilterValueInput(event.target.value);
   };
 
-  const TempFilterList = TaskList.filter((singleValue) => singleValue.toLowerCase().includes(FilterValueInput.toLowerCase()));
-
+  const TempFilterList = TaskList;
+  TempFilterList.filter((singleValue) => singleValue.toLowerCase().includes(FilterValueInput.toLowerCase()));
   return (
     <div className="container">
       <div className="row">
@@ -65,7 +67,7 @@ function App() {
                 <label>Filter Task</label>
               </div>
               <TaskListLi TaskList={TempFilterList} removeBtnHandler={removeBtnHandler} />
-              <a className="clear-tasks btn black" onClick={deleteBtnHandler}>
+              <a href="#" className="clear-tasks btn black" onClick={deleteBtnHandler}>
                 Clear Tasks
               </a>
             </div>
