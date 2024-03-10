@@ -105,7 +105,7 @@ function EditPost() {
             ]}>
             <Input placeholder="post_author" />
           </Form.Item>
-          <Spin spinning={loaderCategory || updatedLoader || editPostLoader} style={{ textAlign: "center", width: "100%" }} />
+
           <Form.Item
             name="post_status"
             rules={[
@@ -119,6 +119,7 @@ function EditPost() {
               <Select.Option value="publish">Publish</Select.Option>
             </Select>
           </Form.Item>
+          <Spin spinning={loaderCategory || updatedLoader || editPostLoader} style={{ textAlign: "center", width: "100%" }} />
           <Form.Item
             name="post_category_id"
             rules={[

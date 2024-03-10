@@ -1,12 +1,13 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Button, DatePicker, Form, Input, Select, Typography, notification } from "antd";
 import { useMutation, useQuery } from "react-query";
 import { ApiBaseUrl } from "../Constant";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
+import ImageUploader from "../component/ImageUploader";
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -29,28 +30,35 @@ function CreatePost() {
   const [api, contentHolder] = notification.useNotification();
   const Navigate = useNavigate();
   const [form] = Form.useForm();
+  const [file, setFile] = useState(null);
 
   const { data: Category, isLoading: loaderCategory } = useQuery("categories", () => {
     return fetch(`${ApiBaseUrl}/categories`).then((data) => data.json());
   });
   const CategoryData = Category?.results;
 
-  const { mutateAsync: storeDataRequest, isLoading: loaderRequest } = useMutation("createposts", (payload) => {
-    return fetch(`${ApiBaseUrl}/posts`, {
+  const { mutateAsync: storeDataRequest, isLoading: loaderRequest } = useMutation("createposts", (payload) =>
+    fetch(`${ApiBaseUrl}/posts`, {
       method: "POST",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((dataStore) => {
-      return dataStore.json();
-    });
-  });
+      body: payload,
+    }).then((dataStore) => dataStore.json())
+  );
 
   const onFinish = (values) => {
     const payload = { ...values };
     payload.post_date = moment(payload.post_date);
-    storeDataRequest(payload, {
+
+    const formData = new FormData();
+
+    Object.entries(payload).forEach((singleArray) => {
+      const [key, value] = singleArray;
+      formData.append(key, value);
+    });
+
+    if (file) {
+      formData.append("image", file);
+    }
+    storeDataRequest(formData, {
       onSuccess: () => {
         form.resetFields();
         api.open({
@@ -66,6 +74,9 @@ function CreatePost() {
   };
 
   const filterOption = (input, option) => (option?.children ?? "").toLowerCase().includes(input.toLowerCase());
+  const imageUploader = (fileParam) => {
+    setFile(fileParam);
+  };
   return (
     <>
       <Typography.Title id="heading">Create Post</Typography.Title>
@@ -164,7 +175,9 @@ function CreatePost() {
             ]}>
             <Input placeholder="Post Tags" />
           </Form.Item>
-
+          <Form.Item>
+            <ImageUploader customFunction={imageUploader} />
+          </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={loaderCategory || loaderRequest}>
               Submit
