@@ -56,7 +56,7 @@ function PostApi() {
         if (!single.image) {
           return "NOT FOUND!";
         }
-        return <img src={single.image} alt="images" />;
+        return <img src={single.image} alt={single.image} width={200} />;
       },
     },
     {

@@ -37,10 +37,10 @@ function CreatePost() {
   });
   const CategoryData = Category?.results;
 
-  const { mutateAsync: storeDataRequest, isLoading: loaderRequest } = useMutation("createposts", (payload) =>
+  const { mutateAsync: storeDataRequest, isLoading: loaderRequest } = useMutation("createposts", (formData) =>
     fetch(`${ApiBaseUrl}/posts`, {
       method: "POST",
-      body: payload,
+      body: formData,
     }).then((dataStore) => dataStore.json())
   );
 
@@ -49,6 +49,7 @@ function CreatePost() {
     payload.post_date = moment(payload.post_date);
 
     const formData = new FormData();
+    // formData,append(payload?.post_title) esay lambi hori hai
 
     Object.entries(payload).forEach((singleArray) => {
       const [key, value] = singleArray;

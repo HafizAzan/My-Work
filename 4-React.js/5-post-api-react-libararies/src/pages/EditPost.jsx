@@ -1,17 +1,19 @@
 /** @format */
 
 import { Button, Input, Typography, Form, DatePicker, Select, notification, Spin } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { ApiBaseUrl } from "../Constant";
 import moment from "moment";
+import ImageUploader from "../component/ImageUploader";
 
 function EditPost() {
   const { postId } = useParams();
   const [api, contextHolder] = notification.useNotification();
   const navigator = useNavigate();
   const [form] = Form.useForm();
+  const [file, setFile] = useState();
 
   const { data: categoryId, isLoading: loaderCategory } = useQuery("categories", () => {
     return fetch(`${ApiBaseUrl}/categories`).then((data) => data.json());
@@ -47,17 +49,25 @@ function EditPost() {
   const { mutateAsync: UpdatePutFunc, isLoading: updatedLoader } = useMutation(["updatePost", postId], (payload) =>
     fetch(`${ApiBaseUrl}/posts/${postId}`, {
       method: "PUT",
-      body: JSON.stringify(payload),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      body: payload,
     }).then((data) => data.json())
   );
 
   const onFinish = (values) => {
     const payload = { ...values };
     payload.post_date = moment(payload.post_date);
-    UpdatePutFunc(payload, {
+
+    const formData = new FormData();
+    Object.entries(payload).forEach((singleArray) => {
+      const [key, value] = singleArray;
+      formData.append(key, value);
+    });
+
+    if (file) {
+      formData.append("image", file);
+    }
+
+    UpdatePutFunc(formData, {
       onSuccess: () => {
         form.resetFields();
         api.open({
@@ -72,7 +82,9 @@ function EditPost() {
     });
   };
   const filterOption = (input, option) => (option?.children ?? "").toLowerCase().includes(input.toLowerCase());
-
+  const imageUploader = (fileParam) => {
+    setFile(fileParam);
+  };
   return (
     <>
       <Typography.Title id="heading">Edit Post</Typography.Title>
@@ -166,6 +178,12 @@ function EditPost() {
             ]}>
             <Input placeholder="post_tags" />
           </Form.Item>
+
+          <Form.Item>
+            <ImageUploader customFunction={imageUploader} />
+          </Form.Item>
+
+          {editPostData?.image && <img src={editPostData?.image} width={200} />}
 
           <Form.Item
             wrapperCol={{
