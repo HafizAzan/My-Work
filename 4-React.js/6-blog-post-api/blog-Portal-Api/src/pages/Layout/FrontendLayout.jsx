@@ -11,7 +11,12 @@ function FrontendLayout() {
   const { data: CategoryData } = useQuery("categories", () => CategoryService.getCategory());
 
   const FiveArray = useMemo(() => CategoryData?.data?.results?.splice(0, 5), [CategoryData]);
-  console.log(CategoryData?.data?.results, FiveArray);
+
+  const Ten_Array = useMemo(() => CategoryData?.data?.results?.splice(0, 10), [CategoryData?.data?.results]);
+
+  const Twenty_Array = useMemo(() => CategoryData?.data?.results?.splice(10, 10), [CategoryData?.data?.results]);
+
+  let today = new Date().getFullYear();
 
   return (
     <>
@@ -68,34 +73,26 @@ function FrontendLayout() {
               <div className="row">
                 <div className="col-lg-6">
                   <ul className="list-unstyled">
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
+                    {Ten_Array?.length > 0 &&
+                      Ten_Array?.map((singleCategory) => {
+                        return (
+                          <li key={singleCategory?.cat_id}>
+                            <Link to="/">{singleCategory?.cat_title}</Link>
+                          </li>
+                        );
+                      })}
                   </ul>
                 </div>
                 <div className="col-lg-6">
                   <ul className="list-unstyled">
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
-                    <li>
-                      <a href="#">Category Name</a>
-                    </li>
+                    {Twenty_Array?.length > 0 &&
+                      Twenty_Array?.map((singleCategory) => {
+                        return (
+                          <li key={singleCategory?.cat_id}>
+                            <Link to="/">{singleCategory?.cat_title}</Link>
+                          </li>
+                        );
+                      })}
                   </ul>
                 </div>
               </div>
@@ -113,7 +110,7 @@ function FrontendLayout() {
         <footer>
           <div className="row">
             <div className="col-lg-12">
-              <p>Copyright &copy; Your Website 2014</p>
+              <p>Copyright &copy; Your Website {today} </p>
             </div>
           </div>
         </footer>
