@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import { URL_Path } from "./utils/constant";
 import PostDetails from "./pages/PostDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
+import CategoryDetails from "./pages/CategoryDetails";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ function App() {
           <Route element={<FrontendLayout />}>
             <Route path={URL_Path.Home} element={<Home />} />
             <Route path={URL_Path.post_details} element={<PostDetails />} />
+            <Route path={URL_Path.Category_details} element={<CategoryDetails />} />
           </Route>
         </Routes>
       </BrowserRouter>

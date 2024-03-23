@@ -6,6 +6,7 @@ import "../../frontend-assets/css/blog-home.css";
 import { Link, Outlet } from "react-router-dom";
 import { useQuery } from "react-query";
 import { CategoryService } from "../../services/categories.service";
+import { URL_Path } from "../../utils/constant";
 
 function FrontendLayout() {
   const { data: CategoryData } = useQuery("categories", () => CategoryService.getCategory());
@@ -40,7 +41,7 @@ function FrontendLayout() {
                 FiveArray?.map((singleArray) => {
                   return (
                     <li key={singleArray?.cat_id}>
-                      <a href="#">{singleArray?.cat_title}</a>
+                      <Link to={URL_Path.Category_details.replace(":catID", singleArray?.cat_id)}>{singleArray?.cat_title}</Link>
                     </li>
                   );
                 })}
@@ -77,7 +78,7 @@ function FrontendLayout() {
                       Ten_Array?.map((singleCategory) => {
                         return (
                           <li key={singleCategory?.cat_id}>
-                            <Link to="/">{singleCategory?.cat_title}</Link>
+                            <Link to={URL_Path.Category_details.replace(":catID", singleCategory?.cat_id)}>{singleCategory?.cat_title}</Link>
                           </li>
                         );
                       })}
@@ -89,7 +90,7 @@ function FrontendLayout() {
                       Twenty_Array?.map((singleCategory) => {
                         return (
                           <li key={singleCategory?.cat_id}>
-                            <Link to="/">{singleCategory?.cat_title}</Link>
+                            <Link to={URL_Path.Category_details.replace(":catID", singleCategory?.cat_id)}>{singleCategory?.cat_title}</Link>
                           </li>
                         );
                       })}
