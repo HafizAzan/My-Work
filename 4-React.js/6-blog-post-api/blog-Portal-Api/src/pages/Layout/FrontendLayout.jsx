@@ -7,9 +7,10 @@ import { Link, Outlet } from "react-router-dom";
 import { useQuery } from "react-query";
 import { CategoryService } from "../../services/categories.service";
 import { URL_Path } from "../../utils/constant";
+import { Spin } from "antd";
 
 function FrontendLayout() {
-  const { data: CategoryData } = useQuery("categories", () => CategoryService.getCategory());
+  const { data: CategoryData, isLoading: loaderCat } = useQuery("categories", () => CategoryService.getCategory());
 
   const FiveArray = useMemo(() => CategoryData?.data?.results?.splice(0, 5), [CategoryData]);
 
@@ -20,7 +21,7 @@ function FrontendLayout() {
   let today = new Date().getFullYear();
 
   return (
-    <>
+    <Spin spinning={loaderCat}>
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
           <div className="navbar-header">
@@ -120,7 +121,7 @@ function FrontendLayout() {
 
       {/* <!-- Bootstrap Core JavaScript --> */}
       <script src="js/bootstrap.min.js"></script>
-    </>
+    </Spin>
   );
 }
 

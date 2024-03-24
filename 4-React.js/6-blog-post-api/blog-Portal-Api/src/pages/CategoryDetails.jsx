@@ -21,13 +21,11 @@ function CategoryDetails() {
   return (
     <Spin spinning={loaderCategory}>
       <h1>Category Posts</h1>
-      {CategoryData?.posts?.length > 0 ? (
-        CategoryData?.posts?.map((singlePost) => {
-          return <SinglePost singlePost={singlePost} />;
-        })
-      ) : (
-        <h2>No Post found</h2>
-      )}
+      {CategoryData?.posts?.length > 0
+        ? CategoryData?.posts?.map((singlePost) => {
+            return <SinglePost singlePost={singlePost} />;
+          })
+        : !loaderCategory && <h2>No Post found</h2>}
     </Spin>
   );
 }

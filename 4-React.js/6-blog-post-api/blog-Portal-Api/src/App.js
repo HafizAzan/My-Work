@@ -8,6 +8,7 @@ import { URL_Path } from "./utils/constant";
 import PostDetails from "./pages/PostDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import CategoryDetails from "./pages/CategoryDetails";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

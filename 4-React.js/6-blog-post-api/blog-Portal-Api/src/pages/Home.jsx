@@ -15,13 +15,11 @@ function Home() {
   return (
     <div>
       <h1 className="page-header">Blog Posts</h1>
-      {dataPost?.length > 0 ? (
-        dataPost?.map((singlePost) => {
-          return <SinglePost singlePost={singlePost} key={singlePost?.post_id} />;
-        })
-      ) : (
-        <h2>No Post Found</h2>
-      )}
+      {dataPost?.length > 0
+        ? dataPost?.map((singlePost) => {
+            return <SinglePost singlePost={singlePost} key={singlePost?.post_id} />;
+          })
+        : !loader && <h2>No Post Found</h2>}
     </div>
   );
 }
