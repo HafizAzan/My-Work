@@ -9,6 +9,7 @@ import PostDetails from "./pages/PostDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import CategoryDetails from "./pages/CategoryDetails";
 import { ReactQueryDevtools } from "react-query/devtools";
+import SearchService from "./pages/SearchDetails";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function App() {
             <Route path={URL_Path.Home} element={<Home />} />
             <Route path={URL_Path.post_details} element={<PostDetails />} />
             <Route path={URL_Path.Category_details} element={<CategoryDetails />} />
+            <Route path={URL_Path.Search_Details} element={<SearchService />} />
           </Route>
         </Routes>
       </BrowserRouter>

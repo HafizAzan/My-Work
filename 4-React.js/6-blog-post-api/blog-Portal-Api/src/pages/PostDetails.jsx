@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { postService } from "../services/posts.service";
 import { helperService } from "../utils/helper";
 import { URL_Path } from "../utils/constant";
-import { Spin, message } from "antd";
+import { Button, Spin, message } from "antd";
 import { StoreComment } from "../services/comment.service";
 
 function PostDetails() {
@@ -68,15 +68,13 @@ function PostDetails() {
           <div class="form-group">
             <textarea class="form-control" rows="3" onChange={ContentButnHandler} value={commentValue}></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" disabled={!Boolean(commentValue) && !LoaderComment}>
+          <Button type="primary" htmlType="submit" class="btn btn-primary" disabled={!Boolean(commentValue) || LoaderComment} loading={LoaderComment}>
             Submit
-          </button>
+          </Button>
         </form>
       </div>
 
       <hr />
-
-      {/* <!-- Posted Comments --> */}
 
       {/* <!-- Comment --> */}
 

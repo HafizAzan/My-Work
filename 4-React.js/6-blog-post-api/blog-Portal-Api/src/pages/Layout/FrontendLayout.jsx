@@ -1,9 +1,9 @@
 /** @format */
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import "../../frontend-assets/css/bootstrap.min.css";
 import "../../frontend-assets/css/blog-home.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useQuery } from "react-query";
 import { CategoryService } from "../../services/categories.service";
 import { URL_Path } from "../../utils/constant";
@@ -19,6 +19,20 @@ function FrontendLayout() {
   const Twenty_Array = useMemo(() => CategoryData?.data?.results?.splice(10, 10), [CategoryData?.data?.results]);
 
   let today = new Date().getFullYear();
+
+  const navigator = useNavigate();
+
+  const [ValueSearch, setValueSearch] = useState("");
+
+  const SearchingBtnHandler = (event) => {
+    event.preventDefault();
+    navigator(URL_Path.Search_Details.replace(":query", ValueSearch));
+  };
+
+  const SearchingValueHandler = (event) => {
+    event.preventDefault();
+    setValueSearch(event.target.value);
+  };
 
   return (
     <Spin spinning={loaderCat}>
@@ -60,14 +74,16 @@ function FrontendLayout() {
           <div className="col-md-4">
             <div className="well">
               <h4>Blog Search</h4>
-              <div className="input-group">
-                <input type="text" className="form-control" />
-                <span className="input-group-btn">
-                  <button className="btn btn-default" type="button">
-                    <span className="glyphicon glyphicon-search"></span>
-                  </button>
-                </span>
-              </div>
+              <form onSubmit={SearchingBtnHandler}>
+                <div className="input-group">
+                  <input type="text" className="form-control" onChange={SearchingValueHandler} value={ValueSearch} />
+                  <span className="input-group-btn">
+                    <button className="btn btn-default" type="submit">
+                      <span className="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                </div>
+              </form>
             </div>
 
             <div className="well">
