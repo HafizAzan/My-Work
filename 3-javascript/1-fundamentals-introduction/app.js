@@ -1,3 +1,5 @@
+/** @format */
+
 // // alert("working");
 
 // let store =["aaa",1111, "bbb", "ccc", "ddd",]; //Array
@@ -34,7 +36,7 @@
 // // console.log (HafizAzan_marks, "HafizAzan_marks");
 // // console.log (AzanAhmed_marks, "AzanAhmed_marks");
 
-// // Refrence Type Example // 
+// // Refrence Type Example //
 
 // // ====Easy Example of object =========
 
@@ -67,10 +69,10 @@
 
 // arraytwo.push(4);
 
-// console.log(arrayone); 
+// console.log(arrayone);
 // console.log(arraytwo);
 
-// //====3 Types Variable=== 
+// //====3 Types Variable===
 // // 1-let
 // // 2-const
 // // 3-var
@@ -89,11 +91,11 @@
 // }
 
 // // ===constant=====
-// // ye work krta hai scope mai and ye change nhi ho skta. 
+// // ye work krta hai scope mai and ye change nhi ho skta.
 
 // {
 // const coachingname = "squad Coder Dev";
-// console.log(coachingname); 
+// console.log(coachingname);
 // }
 // coachingname = "dev ,dev";
 
@@ -123,8 +125,7 @@
 // (1)       (2)            (3)         (4)
 // letter , underscore , camelCase , PascalCase
 
-
-// const company = "aaa"; 
+// const company = "aaa";
 // 1
 // const company1234 = "aaa";
 // 2
@@ -180,12 +181,11 @@ console.log(typeof parseInt(mouseprice, "mouseprice"));
 // console.log(new String(true));
 // console.log(typeof new String(true));
 
-
 // 2nd methods
 
 // let someVariable = 1;
 
-// testing_variable = someVariable.toString(); 
+// testing_variable = someVariable.toString();
 // testing_variable = (1).toString();
 // console.log(testing_variable,"(1).toString")
 // console.log(testing_variable,"someVariable.toString")
@@ -201,14 +201,13 @@ console.log(typeof parseInt(mouseprice, "mouseprice"));
 // testing_variable = new Boolean(0);
 // TestingVariable = new Boolean(null);
 
-
 // console.log(TestingVariable,"TestingVariable");
 // console.log(typeof TestingVariable,"TestingVariable");
 
 TESTINGVARIABLE = {
-    name : "AzanKhan",
-    designation : "developer",
-    coachingname : "squad coder dev",
+  name: "AzanKhan",
+  designation: "developer",
+  coachingname: "squad coder dev",
 };
 
 // console.log(TESTINGVARIABLE);
@@ -232,7 +231,7 @@ TESTINGVARIABLE = {
 
 // let testing_variable = Math.PI;  // (3.14159)
 // testing_variable = Math.E; (2.71828)
-// let roundVaribale = Math.round(99.49); 
+// let roundVaribale = Math.round(99.49);
 // roundVaribale = Math.round(99.50)
 // console.table(roundVaribale);
 // console.table(typeof roundVaribale);
@@ -245,9 +244,9 @@ TESTINGVARIABLE = {
 // for positive numbers
 val = Math.floor(2.9);
 val = Math.floor(2.4);
-val = Math.floor(2.50);
-val = Math.floor(3.80);
-val = Math.floor(100.50);
+val = Math.floor(2.5);
+val = Math.floor(3.8);
+val = Math.floor(100.5);
 
 console.table(val);
 console.table(typeof val);
@@ -255,9 +254,9 @@ console.table(typeof val);
 // for nagitive numbers
 
 val = Math.floor(-2.5);
-val = Math.floor(-2.80);
-val = Math.floor(-4.80);
-val = Math.floor(-5.100);
+val = Math.floor(-2.8);
+val = Math.floor(-4.8);
+val = Math.floor(-5.1);
 
 console.info(val);
 console.info(typeof val);
@@ -274,23 +273,21 @@ console.info(typeof val);
 
 //String Concatination (text ko jorne ki bat hori hai)
 
-const firstName = "Hafiz" ;
-const secondName = "Azan" ;
-const fullName = firstName +" "+ secondName ;
+const firstName = "Hafiz";
+const secondName = "Azan";
+const fullName = firstName + " " + secondName;
 console.log(fullName);
 
 //======================
 
-let testing_Variable = "hello! This is Javascript and \"I will teach you.\"my Self Azan";
+let testing_Variable = 'hello! This is Javascript and "I will teach you."my Self Azan';
 
 console.log(testing_Variable);
 
-testing_Variable = 
-"hello! This is Javascript and \n \n 'I will teach you.'my Self Azan";
+testing_Variable = "hello! This is Javascript and \n \n 'I will teach you.'my Self Azan";
 console.log(testing_Variable);
 
-testing_Variable = 
-"hello! My name is \n \n'"+ fullName +" and my age is' 16 years old";
+testing_Variable = "hello! My name is \n \n'" + fullName + " and my age is 16' years old";
 
 console.log(testing_Variable);
 
@@ -299,17 +296,12 @@ console.log(testing_Variable);
 // `` = back tag
 // // ${} = interpolation
 
-testing_Variable = 
-`hello! "My name is'${fullName}'
+testing_Variable = `hello! "My name is'${fullName}'
 
 and my age is" 16 years old `;
 console.log(testing_Variable);
 
-testing_Variable = testing_Variable.concat(
-    " new things",
-    " new things 1",
-    " new things 2",
-);
+testing_Variable = testing_Variable.concat(" new things", " new things 1", " new things 2");
 
 // testing_Variable = testing_Variable.replace("16","10");
 // testing_Variable = testing_Variable.includes("Azan");
@@ -319,59 +311,54 @@ testing_Variable = testing_Variable.concat(
 // COMPARISON
 // equaltoo (==) ise data type se faraq nhi parhta;
 
-const productName ="rowparrot";
+const productName = "rowparrot";
 let customerlocation = "5";
-let dummyLocation = 5 ;   //yahan change krne se console change hoga .  
+let dummyLocation = 5; //yahan change krne se console change hoga .
 let deliveryCharges = 0;
 
-if(customerlocation == "surjanitown"){
-    deliveryCharges = 1000;
+if (customerlocation == "surjanitown") {
+  deliveryCharges = 1000;
+} else if (customerlocation == "shadman") {
+  deliveryCharges = 500;
+} else {
+  deliveryCharges = 0;
 }
-else if(customerlocation == "shadman"){
-    deliveryCharges = 500;
-}
-else{
-    deliveryCharges =  0;
-}
-console.table(customerlocation,"customerlocation");
-console.table(deliveryCharges,"deliveryCharges");
+console.table(customerlocation, "customerlocation");
+console.table(deliveryCharges, "deliveryCharges");
 
 // tripleequalto (===) ise data type se faraq parhta
 
 // console.table(typeof customerlocation);
 // console.table(typeof dummyLocation);
 
-if(customerlocation === dummyLocation) {
-    deliveryCharges = 10;
+if (customerlocation === dummyLocation) {
+  deliveryCharges = 10;
 }
 
 console.log(deliveryCharges, "delivery Charges");
 console.log(testing_Variable, "testing_Variable");
 
-let samaannNaam ="tigerkids";
+let samaannNaam = "tigerkids";
 let orignalLocation = "5";
-let Location = 5;  
+let Location = 5;
 let deliveryPrices = "Rs:0";
 
-if(orignalLocation === "5"){
-     deliveryPrices = "RS:1000"
-}
-else if(Location === 5 ){
-     deliveryPrices = "RS:500"
-}
-else{
-    deliveryPrices = "RS: 0"
+if (orignalLocation === "5") {
+  deliveryPrices = "RS:1000";
+} else if (Location === 5) {
+  deliveryPrices = "RS:500";
+} else {
+  deliveryPrices = "RS: 0";
 }
 
-if(orignalLocation === Location) {
-    deliveryPrices = 1000;
+if (orignalLocation === Location) {
+  deliveryPrices = 1000;
 }
 
-console.info(deliveryCharges,"deliveryCharges");
+console.info(deliveryCharges, "deliveryCharges");
 console.info(samaannNaam, "samaannNaam");
 
 //not equal to = !=
-
 
 const mobile = "iphone";
 // const mobile = "china";
@@ -387,18 +374,17 @@ if (mobile != "china") {
 let cell = "samsung";
 // let cell = "china";
 
-if (cell != "samsung"){
-    console.log("so your mobile is not from china");
-}
-else{
-    console.log("othervise your  mobile is from china")
+if (cell != "samsung") {
+  console.log("so your mobile is from china");
+} else {
+  console.log("othervise your  mobile is not from china");
 }
 
 //not equal !== / so it will check the both type
 
- let mobile2 = 1;
-if(mobile2 !== "1"){
-    console.log("your mobile 2 is dashing");
+let mobile2 = 1;
+if (mobile2 !== "1") {
+  console.log("your mobile 2 is dashing");
 }
 
 // GREATER OR LESS THAN
@@ -411,18 +397,16 @@ if(mobile2 !== "1"){
 
 let id = 100;
 
-if(id < 40){
-    console.log("incorrect")
-}
-else {
-    console.log("correct")
+if (id < 40) {
+  console.log("incorrect");
+} else {
+  console.log("correct");
 }
 
-if(id > 40){
-    console.log("correct")
-}
-else {
-    console.log("incorrect")
+if (id > 40) {
+  console.log("correct");
+} else {
+  console.log("incorrect");
 }
 
 // LOGICAL OPERATORS
@@ -430,16 +414,14 @@ else {
 //&& AND = both condition should be true
 //|| OR = one condition should be true
 
-
 //dono condition true honi chahiye
 let box = "laptop";
 let ram = "4gb";
 
-if(box === "laptop" && ram === "6gb"){
-    console.log("i will be happy")
-}
-else{
-    console.log("i will be not happy")
+if (box === "laptop" && ram === "6gb") {
+  console.log("i will be happy");
+} else {
+  console.log("i will be not happy");
 }
 
 //dono mai se koi ek true honi chahiye
@@ -447,99 +429,84 @@ else{
 let laptop = "hp";
 ram = "4gb";
 
-
-if(laptop === "hp" || laptop === "apple"){
-    console.log("i will be happy")
-}
-else{
-    console.log("i will be not happy")
+if (laptop === "hp" || laptop === "apple") {
+  console.log("i will be happy");
+} else {
+  console.log("i will be not happy");
 }
 
 //Ternary Operator
 // single line if else condition
 
-if(id === 100){
-    // console.log("id is hundred")
-}
-else{
-    // console.log("id is not hundred")
+if (id === 100) {
+  // console.log("id is hundred")
+} else {
+  // console.log("id is not hundred")
 }
 
 //ternary operator example
-const condition = 
-id === 100 ? console.log("id is hundred") : console.log("id is not hundred")
+const condition = id === 100 ? console.log("id is hundred") : console.log("id is not hundred");
 
 let idNAme = 250;
 
-const condition2 =
-idNAme === 250 ? console.log("idName is 250") : console.log("idName is not 250")
+const condition2 = idNAme === 250 ? console.log("idName is 250") : console.log("idName is not 250");
 
 //multiple if else conditions
 
 let profile = "azan";
 
-if(profile === "azan"){
-    console.log("true variable");
-}
-else if( profile === "ahmed"){
-    console.log("This is true ahmed")
-}
-else if( profile === "khan"){
-    console.log("This is true khan")
-}
-else if( profile === "aliaan"){
-    console.log("This is true aliaan")
-}
-else if( profile === "kashan"){
-    console.log("This is true kashan")
-}
-else if( profile === "salman"){
-    console.log("This is true salman")
-}else if( profile === "usman"){
-    console.log("This is true usman")
-}
-else if( profile === "danish"){
-    console.log("This is true danish")
-}
-else{
-    console.log("etc")
+if (profile === "azan") {
+  console.log("true variable");
+} else if (profile === "ahmed") {
+  console.log("This is true ahmed");
+} else if (profile === "khan") {
+  console.log("This is true khan");
+} else if (profile === "aliaan") {
+  console.log("This is true aliaan");
+} else if (profile === "kashan") {
+  console.log("This is true kashan");
+} else if (profile === "salman") {
+  console.log("This is true salman");
+} else if (profile === "usman") {
+  console.log("This is true usman");
+} else if (profile === "danish") {
+  console.log("This is true danish");
+} else {
+  console.log("etc");
 }
 // you can define conditions without braces
 // if(profile ===  "khan") console.log("khan is true")
 // if(profile !==  "khan") console.log("khan is not true")
 
-
 let portfolio = "khan";
 // if(portfolio === "azan") console.log("azan is ture")
-if(portfolio !== "azan") console.log("khan is ture")
+if (portfolio !== "azan") console.log("khan is ture");
 
 // EXAMPLE
 
 // var COLOR = "red";
 var COLOR = "green";
 
-if(COLOR === "red"){
-    console.info("yeah! color is red")
-}
-else if(COLOR === "blue"){
-    console.info("yeah! color is blue")
-}
-else{
-    console.error("color is not blue or red")
+if (COLOR === "red") {
+  console.info("yeah! color is red");
+} else if (COLOR === "blue") {
+  console.info("yeah! color is blue");
+} else {
+  console.error("color is not blue or red");
 }
 
 //switch statement
- 
-switch ("blue"){
-    case "red":
-    console.warn("red is right")
+
+switch ("blue") {
+  case "red":
+    console.warn("red is right");
     break;
-    case "blue":
-    console.warn("blue is less right")    
-    break; 
-    default:
-    console.table("color not red & blue")
-    break;  
+  case "blue":
+    console.warn("blue is less right");
+    break;
+  default:
+    console.table("color not red & blue");
+    break;
 }
 
 //Date Object
@@ -571,65 +538,62 @@ switch ("blue"){
 // today. setMinutes(10);
 // today. setSeconds(30);
 
-// console.log( 
-//     `${today.getDate()} - ${today.getMonth()+1} - ${today.getFullYear()} ` 
+// console.log(
+//     `${today.getDate()} - ${today.getMonth()+1} - ${today.getFullYear()} `
 // );
 
 let timeGet;
-const today  = new Date()
-timeGet = today.getTime()
-timeGet = today.getHours()
-timeGet = today.getDate()
-timeGet = today.getDay()
-timeGet = today.getMinutes()
-timeGet = today.getSeconds()
-timeGet = today.getMilliseconds()
-timeGet = today.getFullYear()
+const today = new Date();
+timeGet = today.getTime();
+timeGet = today.getHours();
+timeGet = today.getDate();
+timeGet = today.getDay();
+timeGet = today.getMinutes();
+timeGet = today.getSeconds();
+timeGet = today.getMilliseconds();
+timeGet = today.getFullYear();
 timeGet = today.getMonth() + 1;
-
 
 today.setMonth(0) + 1;
 today.setDate(26);
 today.setFullYear(2007);
 // timeGet = today.setDay();
-document.write(`${today.getMonth(0) + 1}-${today.getDate(26)}-${today.getFullYear(2007)}`)
-
-
+document.write(`${today.getMonth(0) + 1}-${today.getDate(26)}-${today.getFullYear(2007)}`);
 
 let day;
-switch(new Date().getDay()){
-    case 0:
+switch (new Date().getDay()) {
+  case 0:
     day = "sunday";
-    break;   
-    case 1:
+    break;
+  case 1:
     day = "monday";
-    break;   
-    case 2:
+    break;
+  case 2:
     day = "tuesday";
-    break;   
-    case 3:
+    break;
+  case 3:
     day = "wednesday";
-    break;       
-    case 4:
+    break;
+  case 4:
     day = "thursday";
-    break;   
-    case 5:
+    break;
+  case 5:
     day = "friday";
-    break;   
-    case 6:
+    break;
+  case 6:
     day = "saturday";
-    break;           
+    break;
 }
 console.log(today.getDay());
 console.log(day);
 
-function normalFunction(){
-    console.log(`normal function`);
+function normalFunction() {
+  console.log(`normal function`);
 }
 
 //with parameter
-function printMyName(name){
-    console.log(`my name is ${name}`);
+function printMyName(name) {
+  console.log(`my name is ${name}`);
 }
 
 printMyName("Azan ahmed");
@@ -638,29 +602,29 @@ printMyName("Azan ahmed Khan");
 printMyName("Azan attrai");
 
 //with multiple parameter
-function printMyFullName(firstName ="", lastname="") {
-    console.log(`MY NAME IS ${firstName} ${lastname}`);
+function printMyFullName(firstName = "", lastname = "") {
+  console.log(`MY NAME IS ${firstName} ${lastname}`);
 }
 printMyFullName("AZAN", "NOMAN");
 
 //we can return things from functions
 
-function checkcondition(fname){
-    return fname;
+function checkcondition(fname) {
+  return fname;
 }
 
 const checkconditionVariable = checkcondition("hafiz");
-console.log(checkconditionVariable,"checkconditionVariable is true");
+console.log(checkconditionVariable, "checkconditionVariable is true");
 
 const fname = "azan";
 const lname = "khan";
 
-let fuName = `${fname} ${lname}`
-console.log(fuName,"fuName")
+let fuName = `${fname} ${lname}`;
+console.log(fuName, "fuName");
 
 let vari = fuName.includes(lname);
-console.log(vari,"vari")
+console.log(vari, "vari");
 
-let desig = `my name is ${fname}`
-let replaceName = desig.replace(`${fname}`,"hafiz Azan" )
-console.log(replaceName)
+let desig = `my name is ${fname}`;
+let replaceName = desig.replace(`${fname}`, "hafiz Azan");
+console.log(replaceName);
