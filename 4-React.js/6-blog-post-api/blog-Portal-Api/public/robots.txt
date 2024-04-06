@@ -1,3 +1,26 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+const token = 'your_received_token';
+
+fetch('https://example.com/api/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify(data)
+})
+.then(response => {
+  if (response.ok) {
+    // Handle successful response
+    console.log('Login successful');
+  } else {
+    // Handle error response
+    console.error('Login failed');
+  }
+})
+.catch(error => {
+  console.error('Error:', error);
+});

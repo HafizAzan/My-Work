@@ -60,6 +60,12 @@ function FrontendLayout() {
                     </li>
                   );
                 })}
+              <li>
+                <Link to={URL_Path.Register}>Register</Link>
+              </li>
+              <li>
+                <Link to={URL_Path.Login}>Login</Link>
+              </li>
             </ul>
           </div>
         </div>
