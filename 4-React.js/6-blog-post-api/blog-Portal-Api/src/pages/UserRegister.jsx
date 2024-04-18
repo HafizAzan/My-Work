@@ -4,6 +4,7 @@ import React from "react";
 import { Button, Form, Input, Typography, message } from "antd";
 import { RegisterUser } from "../services/users.register";
 import { useMutation } from "react-query";
+import { Regex_Message, Regex_Pattern } from "../utils/constant";
 const { Title } = Typography;
 
 function UserRegister() {
@@ -80,9 +81,8 @@ function UserRegister() {
               message: "Please input your password!",
             },
             {
-              pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-              message: `Password should be contains at least one alphabet and
-                  contains at least one digit and is at least 8 characters long.`,
+              pattern: Regex_Pattern,
+              message: Regex_Message,
             },
           ]}>
           <Input.Password placeholder="Enter Your password" />
@@ -96,7 +96,8 @@ function UserRegister() {
               message: "Please input your confirm password!",
             },
             {
-              pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+              pattern: Regex_Pattern,
+              message: Regex_Message,
             },
             ({ getFieldValue }) => ({
               validator(_, value) {

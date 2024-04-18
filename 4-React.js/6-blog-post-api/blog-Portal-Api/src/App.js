@@ -1,10 +1,10 @@
 /** @format */
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import FrontendLayout from "./pages/Layout/FrontendLayout";
 import Home from "./pages/Home";
-import { URL_Path } from "./utils/constant";
+import { Authenticated_Path_Url, URL_Path } from "./utils/constant";
 import PostDetails from "./pages/PostDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import CategoryDetails from "./pages/CategoryDetails";
@@ -12,10 +12,14 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import SearchService from "./pages/SearchDetails";
 import UserRegister from "./pages/UserRegister";
 import LoginForm from "./pages/LoginForm";
+import AdminLayout from "./pages/AdminLayout/AdminLayout";
+import Dashboard from "./pages/AdminLayout/Dashboard";
+import { ServiceToken } from "./utils/auth";
 
 const queryClient = new QueryClient();
 
 function App() {
+  const isUserIsLoggedIn = ServiceToken.isUserIsLogged();
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -28,6 +32,11 @@ function App() {
             <Route path={URL_Path.Register} element={<UserRegister />} />
             <Route path={URL_Path.Login} element={<LoginForm />} />
           </Route>
+
+        {isUserIsLoggedIn && <Route element={<AdminLayout/>}>
+          <Route path={Authenticated_Path_Url.DashBoard} element={<Dashboard />}  />
+          </Route>}
+          <Route path="*" element={<Navigate to="/"/>}/>
         </Routes>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />

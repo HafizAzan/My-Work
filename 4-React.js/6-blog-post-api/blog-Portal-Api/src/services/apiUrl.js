@@ -6,4 +6,5 @@ export const API_URLS = {
   Comment_Store: "/comments",
   search_Filter: "/search",
   Register: "/register",
+  Login: "/login",
 };
