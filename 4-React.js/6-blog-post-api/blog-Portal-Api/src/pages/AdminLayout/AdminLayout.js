@@ -1,42 +1,35 @@
 import React from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Layout, Menu, theme } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { UserOutlined,LineChartOutlined,AlignCenterOutlined,BookOutlined,LogoutOutlined } from '@ant-design/icons';
+import { Button, Layout, Menu, theme } from 'antd';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { ServiceToken } from '../../utils/auth';
-import { URL_Path } from '../../utils/constant';
+import { Authenticated_Path_Url, URL_Path } from '../../utils/constant';
 const { Header, Content, Footer, Sider } = Layout;
-// const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-//   (icon, index) => ({
-//     key: String(index + 1),
-//     icon: React.createElement(icon),
-//     label: `nav ${index + 1}`,
-//   }),
-// );
 
 const items = [
   {
     key: 1,
-    icon: <UserOutlined />,
-    label: "Dashboard",
+    icon: <LineChartOutlined />,
+    label: <Link to={Authenticated_Path_Url.DashBoard}>Dashboard</Link>,
   },
     {
     key: 2,
-    icon: <UploadOutlined />,
-    label: "Categories",
+    icon: <AlignCenterOutlined />,
+    label: <Link to={Authenticated_Path_Url.Admin_Category}>Categories</Link>,
   },
     {
     key: 3,
-    icon: <UserOutlined />,
+    icon:<UserOutlined />,
     label: "Users",
   },
     {
     key: 4,
-    icon: <VideoCameraOutlined />,
+    icon: <BookOutlined />,
     label: "Posts",
   },
   {
     key: 5,
-    icon: <UserOutlined />,
+    icon: <LogoutOutlined />,
     label: <div onClick={() => {
      ServiceToken.removeToken();
       window.location.href = URL_Path.Home;
@@ -45,6 +38,7 @@ const items = [
 
 ]
 const AdminLayout = () => {
+  const navigate = useNavigate()
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -60,7 +54,14 @@ const AdminLayout = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical"  style={{ marginTop :30,}}/>
+        <div className="demo-logo-vertical" style={{ marginTop: 30, }} />
+        <div>
+          <Button type='primary' style={{ marginLeft: 30, width: 100, }}
+         onClick={() => navigate(URL_Path.Home)}
+          >Home
+          </Button>
+        </div>
+      
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
       </Sider>
       <Layout>
@@ -78,7 +79,7 @@ const AdminLayout = () => {
           <div
             style={{
               padding: 24,
-              minHeight: 360,
+              minHeight: 485,
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}

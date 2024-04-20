@@ -15,6 +15,7 @@ import LoginForm from "./pages/LoginForm";
 import AdminLayout from "./pages/AdminLayout/AdminLayout";
 import Dashboard from "./pages/AdminLayout/Dashboard";
 import { ServiceToken } from "./utils/auth";
+import AdminCategories from "./pages/AdminLayout/AdminCategories";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,9 @@ function App() {
           </Route>
 
         {isUserIsLoggedIn && <Route element={<AdminLayout/>}>
-          <Route path={Authenticated_Path_Url.DashBoard} element={<Dashboard />}  />
+            <Route path={Authenticated_Path_Url.DashBoard} element={<Dashboard />} />
+            <Route path={Authenticated_Path_Url.Admin_Category} element={<AdminCategories />}  />
+            
           </Route>}
           <Route path="*" element={<Navigate to="/"/>}/>
         </Routes>
