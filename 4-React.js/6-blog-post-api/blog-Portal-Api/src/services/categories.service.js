@@ -1,7 +1,6 @@
 /** @format */
 
 import { apiService } from "../utils/api.service";
-import { URL_Path } from "../utils/constant";
 import { API_URLS } from "./apiUrl";
 
 const getCategory = () => {
@@ -12,7 +11,18 @@ const getCategoryById = (catID) => {
   return apiService.get(`${API_URLS.GET_CATEGORY}/${catID}`);
 };
 
+const AddCategory = (payload) => {
+  return apiService.post(API_URLS.GET_CATEGORY,payload);
+};
+
+const deleteCategoryById = (catId) => {
+  return apiService.delete(`${API_URLS.GET_CATEGORY}/${catId}`);
+};
+
+
 export const CategoryService = {
   getCategory,
   getCategoryById,
+  AddCategory,
+  deleteCategoryById,
 };

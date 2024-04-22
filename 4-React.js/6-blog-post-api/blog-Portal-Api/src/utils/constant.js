@@ -11,7 +11,8 @@ export const URL_Path = {
 
 export const Authenticated_Path_Url = {
   DashBoard: "/admin/dashboard",
-  Admin_Category : "/admin/categories",
+  Admin_Category: "/admin/categories",
+  ADD_CATEGORY:"/admin/add-category"
 };
 
 export const Regex_Pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
