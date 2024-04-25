@@ -19,10 +19,14 @@ const deleteCategoryById = (catId) => {
   return apiService.delete(`${API_URLS.GET_CATEGORY}/${catId}`);
 };
 
+const EditCategoryById = (catID,payload) => {
+  return apiService.put(`${API_URLS.GET_CATEGORY}/${catID}`,payload);
+};
 
 export const CategoryService = {
   getCategory,
   getCategoryById,
   AddCategory,
   deleteCategoryById,
+  EditCategoryById,
 };

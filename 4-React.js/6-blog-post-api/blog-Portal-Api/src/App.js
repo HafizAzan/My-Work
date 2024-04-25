@@ -38,7 +38,9 @@ function App() {
         {isUserIsLoggedIn && <Route element={<AdminLayout/>}>
             <Route path={Authenticated_Path_Url.DashBoard} element={<Dashboard />} />
             <Route path={Authenticated_Path_Url.Admin_Category} element={<AdminCategories />}  />
-            <Route path={Authenticated_Path_Url.ADD_CATEGORY} element={<AdminAddCategories />}/>
+            <Route path={Authenticated_Path_Url.ADD_CATEGORY} element={<AdminAddCategories />} />
+            <Route path={Authenticated_Path_Url.EDIT_CATEGORY} element={<AdminAddCategories />}/>
+            
           </Route>}
           <Route path="*" element={<Navigate to="/"/>}/>
         </Routes>
