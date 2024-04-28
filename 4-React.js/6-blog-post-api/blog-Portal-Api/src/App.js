@@ -17,6 +17,8 @@ import Dashboard from "./pages/AdminLayout/Dashboard";
 import { ServiceToken } from "./utils/auth";
 import AdminCategories from "./pages/AdminLayout/AdminCategories";
 import AdminAddCategories from "./pages/AdminLayout/AdminAddCategories";
+import AdminUser from "./pages/AdminLayout/AdminUser";
+import AdminAddUser from "./pages/AdminLayout/AdminAddUser";
 
 const queryClient = new QueryClient();
 
@@ -40,7 +42,8 @@ function App() {
             <Route path={Authenticated_Path_Url.Admin_Category} element={<AdminCategories />}  />
             <Route path={Authenticated_Path_Url.ADD_CATEGORY} element={<AdminAddCategories />} />
             <Route path={Authenticated_Path_Url.EDIT_CATEGORY} element={<AdminAddCategories />}/>
-            
+            <Route path={Authenticated_Path_Url.USER} element={<AdminUser />}/>
+           <Route path={Authenticated_Path_Url.ADD_USER } element={<AdminAddUser/>}/> 
           </Route>}
           <Route path="*" element={<Navigate to="/"/>}/>
         </Routes>

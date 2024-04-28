@@ -11,7 +11,17 @@ const LoginForm = (data) => {
   return apiService.post(API_URLS.Login, data);
 };
 
+const getUsersPost = () => {
+  return apiService.get(API_URLS.User);
+};
+
+const deleteUsersPostId = (userId) => {
+  return apiService.delete(`${API_URLS.User}/${userId}`);
+};
+
 export const RegisterUser = {
   Register,
   LoginForm,
+  getUsersPost,
+  deleteUsersPostId,
 };

@@ -13,7 +13,9 @@ export const Authenticated_Path_Url = {
   DashBoard: "/admin/dashboard",
   Admin_Category: "/admin/categories",
   ADD_CATEGORY: "/admin/add-category",
-  EDIT_CATEGORY:"/admin/categories/edit/:categoryId"
+  EDIT_CATEGORY: "/admin/categories/edit/:categoryId",
+  ADD_USER: "/admin/add-user",
+  USER: "/admin/user",
   
 };
 

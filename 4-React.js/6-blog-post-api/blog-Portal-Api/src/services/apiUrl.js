@@ -7,4 +7,5 @@ export const API_URLS = {
   search_Filter: "/search",
   Register: "/register",
   Login: "/login",
+  User:"/users"
 };

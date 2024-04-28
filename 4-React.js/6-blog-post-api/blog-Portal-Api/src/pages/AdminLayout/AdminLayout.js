@@ -20,7 +20,7 @@ const items = [
     {
     key: 3,
     icon:<UserOutlined />,
-    label: "Users",
+    label: <Link to={Authenticated_Path_Url.USER}>Users</Link>,
   },
     {
     key: 4,
