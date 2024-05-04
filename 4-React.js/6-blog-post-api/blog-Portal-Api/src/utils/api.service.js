@@ -15,7 +15,7 @@ const HeaderContent = {
 
 const get = (url, params = {}) => apiSauceInstance.get(url, params);
 
-const post = (url, data = {}) => apiSauceInstance.post(url, data, HeaderContent);
+const post = (url, data = {},paramHeader = HeaderContent) => apiSauceInstance.post(url, data, paramHeader);
 
 const put = (url, data = {}) => apiSauceInstance.put(url, data, HeaderContent);
 
