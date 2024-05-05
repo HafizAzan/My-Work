@@ -16,7 +16,7 @@ export const Authenticated_Path_Url = {
   EDIT_CATEGORY: "/admin/categories/edit/:categoryId",
   ADD_USER: "/admin/add-user",
   USER: "/admin/user",
-  
+  EDIT_USER:"/admin/users/:userId"
 };
 
 export const Regex_Pattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;

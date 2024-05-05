@@ -25,6 +25,10 @@ const getUsersPost = () => {
   return apiService.get(API_URLS.User);
 };
 
+const getUserPostById = (userId) => {
+  return apiService.get(`${API_URLS.User}/${userId}`);
+};
+
 const deleteUsersPostId = (userId) => {
   return apiService.delete(`${API_URLS.User}/${userId}`);
 };
@@ -33,6 +37,15 @@ const userName = (payload) => {
  return apiService.post(API_URLS.User,payload) 
 }
 
+const UpdateUserData = (userId  , data) => {
+  return apiService.put(API_URLS.UPDATE_USER.replace(":userId", userId), data, {
+    headers: {
+      "Content-type": "application/json",
+    }
+  }) 
+ }
+ 
+
 export const RegisterUser = {
   Register,
   LoginForm,
@@ -40,4 +53,6 @@ export const RegisterUser = {
   deleteUsersPostId,
   userName,
   addUser,
+  getUserPostById,
+  UpdateUserData
 };

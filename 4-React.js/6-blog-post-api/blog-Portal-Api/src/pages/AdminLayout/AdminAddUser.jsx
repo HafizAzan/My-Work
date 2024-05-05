@@ -1,52 +1,98 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Input, Typography, message } from "antd";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import { RegisterUser } from "../../services/users.register";
 import { Authenticated_Path_Url, Regex_Message, Regex_Pattern } from "../../utils/constant";
 import CustomUploadImg from "../../component/CustomUploadImg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const { Title } = Typography;
 
 function AdminAddUser() {
+  const { userId } = useParams();
+  
   const { mutateAsync: RegisterReqeust, isLoading: loaderRegister } = useMutation("register", (payload) => RegisterUser.addUser(payload));
-    const [form] = Form.useForm();
-    const navigate = useNavigate();
+  
+  const [form] = Form.useForm();
+  
+  const navigate = useNavigate();
+  
   const [messageApi, ContextHolder] = message.useMessage();
-  const onFinish = (values) => {
-      const payload = values;
-      if (fileSave) {
-          payload.user_image = fileSave
-      }
-      const formData = new FormData();
-      Object.keys(payload).map((singleKey) => {
-          formData.append(singleKey,payload[singleKey])
-        })
+  
+  const { mutateAsync: UpdateUserData, isLoading: UpdateUserLoader } = useMutation("UpdateData", (data) => RegisterUser.UpdateUserData(userId, data));
 
-      if (fileSave) {
-        formData.append("user_image",fileSave)
-      }
-      
-    RegisterReqeust(formData, {
-      onSuccess: () => {
-        messageApi.open({
-          type: "success",
-          content: "User is Registered succesfully!",
-        });
-      },
-    });
+
+
+  const onFinish = (values) => {
+    const payload = values;
+    if (fileSave) {
+      payload.user_image = fileSave
+    }
+    const formData = new FormData();
+    Object.keys(payload).map((singleKey) => {
+      formData.append(singleKey, payload[singleKey])
+    })
+
+    if (fileSave) {
+      formData.append("user_image", fileSave)
+    }
+
+    if (userId) {
+      UpdateUserData(payload, {
+        onSuccess: () => {
+          messageApi.open({
+            type: "success",
+            content: "User is Update succesfully!",
+          });
+        },
+      });
       setTimeout(() => {
         navigate(Authenticated_Path_Url.USER)
+      }, 2000);
+    } else {
+      RegisterReqeust(formData, {
+        onSuccess: () => {
+          messageApi.open({
+            type: "success",
+            content: "User is Registered succesfully!",
+          });
+        },
       });
+      setTimeout(() => {
+        navigate(Authenticated_Path_Url.USER)
+      }, 2000);
+    }
   };
 
-    const [fileSave, setFileSave] = useState(null);
-    const customRequestCallBack = (binaryFileObject) => {
-      setFileSave(binaryFileObject)
-  }      
-    
+  const [fileSave, setFileSave] = useState(null);
+  const customRequestCallBack = (binaryFileObject) => {
+    setFileSave(binaryFileObject)
+  }
+
+
+  const { data: EditDataPost , isLoading:EditDataLoader} = useQuery(["Edit", userId], () => RegisterUser.getUserPostById(userId), {
+    enabled: Boolean(userId)
+  })
+
+  const EditData = EditDataPost?.data?.results;
+
+  useEffect(() => {
+    if (EditData) {
+      form.setFieldsValue({
+        username: EditData?.username,
+        user_firstname: EditData?.user_firstname,
+        user_lastname: EditData?.user_lastname,
+        email: EditData?.email,
+        password: EditData?.password,
+        c_password: EditData?.c_password,
+      })
+    }
+  }, [EditData])
+
+
+
   return (
     <div>
-      <Title level={2}>Users</Title>
+      <Title level={2}>Admin {userId ? "Update" : "Create"} Users</Title>
       {ContextHolder}
       <Form name="basic" onFinish={onFinish} autoComplete="off" form={form}>
         <Form.Item
@@ -131,10 +177,16 @@ function AdminAddUser() {
           <Input.Password placeholder="Enter Your confirm password" />
         </Form.Item>
 
-          <CustomUploadImg customRequestCallBack={customRequestCallBack}/>       
+        <CustomUploadImg customRequestCallBack={customRequestCallBack} />
 
-        <Button type="primary" htmlType="submit" loading={loaderRegister}>
-          Add User
+        {EditData?.user_image && (
+          <div style={{marginBottom:30,marginTop:30}}>
+            <img src={EditData?.user_image} alt={EditData?.email} width={150}/>
+          </div>
+        )} 
+
+        <Button type="primary" htmlType="submit" loading={loaderRegister || EditDataLoader || UpdateUserLoader}>
+          {userId ? "Update" : "Add"} User
         </Button>
       </Form>
     </div>
