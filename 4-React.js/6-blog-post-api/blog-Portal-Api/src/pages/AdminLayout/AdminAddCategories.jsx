@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form, Input, Spin, message } from 'antd';
 import { useMutation, useQuery } from 'react-query';
 import { CategoryService } from '../../services/categories.service';
@@ -7,6 +7,7 @@ import { Authenticated_Path_Url } from '../../utils/constant';
 
 const AdminAddCategories = () => {
     const { categoryId } = useParams();
+    const [catgoryTitle , setCategoryTitle] = useState("")
     const [form] = Form.useForm();
     const navigate = useNavigate();
     const [messageApi, contextHolder] = message.useMessage();
@@ -21,6 +22,7 @@ const AdminAddCategories = () => {
             form.setFieldsValue({
                 cat_title: EditDataRequest?.data?.results?.cat_title,
             })
+            setCategoryTitle(EditDataRequest?.data?.results?.cat_title)
         }
     }, [EditDataRequest?.data?.results])
 
@@ -73,10 +75,17 @@ const AdminAddCategories = () => {
                         },
                     ]}
                 >
-                    <Input placeholder='Enter Category Name' />
+                    <Input
+                        placeholder='Enter Category Name'
+                        onChange={(event) => setCategoryTitle(event.target.value)}
+                    />
                 </Form.Item>
 
-                <Button type="primary" htmlType="submit" loading={isLoading || updatePostLoader}>
+                <Button type="primary"
+                    htmlType="submit"
+                    loading={isLoading || updatePostLoader}
+                    disabled={categoryId && EditDataRequest?.data?.results?.cat_title === catgoryTitle }
+                >
                     {categoryId ? "Update" : "Create"} Category
                 </Button>
             </Form>

@@ -42,8 +42,8 @@ function App() {
             <Route path={Authenticated_Path_Url.Admin_Category} element={<AdminCategories />}  />
             <Route path={Authenticated_Path_Url.ADD_CATEGORY} element={<AdminAddCategories />} />
             <Route path={Authenticated_Path_Url.EDIT_CATEGORY} element={<AdminAddCategories />}/>
-            <Route path={Authenticated_Path_Url.USER} element={<AdminUser />}/>
-            <Route path={Authenticated_Path_Url.ADD_USER} element={<AdminAddUser />} /> 
+           <Route path={Authenticated_Path_Url.USER} element={<AdminUser />}/>
+           <Route path={Authenticated_Path_Url.ADD_USER} element={<AdminAddUser />} /> 
            <Route path={Authenticated_Path_Url.EDIT_USER } element={<AdminAddUser/>}/> 
             
           </Route>}
