@@ -6,22 +6,24 @@ import { RegisterUser } from '../../services/users.register';
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from 'react-router-dom';
 import { Authenticated_Path_Url } from '../../utils/constant';
+import { postService } from '../../services/posts.service';
 
-function AdminUser() {
+function AdminPosts() {
     const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
-    const { data, isLoading, isFetching, refetch: UpdatePostUser } = useQuery("users", () => RegisterUser.getUsersPost())
-    const { mutateAsync: DeletePostFunc, isLoading: DeleteLoader } = useMutation("userDelete", (userId) => RegisterUser.deleteUsersPostId(userId))
-    const deleteBtnHandler = (row) => {
+    const { data, isLoading, isFetching, refetch: UpdatePostUser } = useQuery("posts", () => postService.getPosts());
+    const { mutateAsync: DeletePostFunc, isLoading: DeleteLoader } = useMutation("postDelete", (postId) => postService.DeletePostById(postId))
+   
+    const deleteBtnHandler = (post) => {
         Modal.confirm({
-            title: "Do you Want To Delete This Category ?",
+            title: "Do you Want To Delete This Post?",
             icon: <ExclamationCircleOutlined />,
             onOk: () => {
-                DeletePostFunc(row?.user_id, {
+                DeletePostFunc(post?.id, {
                     onSuccess: () => {
                         messageApi.open({
                             type: "success",
-                            content: "user is Delete SuccessFully!"
+                            content: "Post is Delete SuccessFully!"
                         })
                         UpdatePostUser()
                     }
@@ -34,51 +36,53 @@ function AdminUser() {
     const columns = [
         {
             title: 'Id',
-            key: 'user_id',
-            dataIndex: "user_id",
+            key: 'id',
+            dataIndex: "id",
         },
         {
-            title: 'Name',
-            key: 'username',
-            dataIndex: "username",
+            title: 'Title',
+            key: 'post_title',
+            dataIndex: "post_title",
         },
         {
-            title: 'First Name',
-            key: 'user_firstname',
-            dataIndex: "user_firstname",
+            title: 'Tags',
+            key: 'post_tags',
+            dataIndex: "post_tags",
+            render: (indexeData , row) => {
+                return (
+                <Flex gap="4px 0" wrap>
+                <Tag color="success">{indexeData}</Tag>
+              </Flex>)
+            }
         },
         {
-            title: 'Last Name',
-            key: 'user_lastname',
-            dataIndex: "user_lastname",
+            title: 'Status',
+            key: 'post_status',
+            dataIndex: "post_status",
         },
         {
-            title: 'Email',
-            key: 'email',
-            dataIndex: "email",
-        }, {
+            title: 'Author',
+            key: 'post_author',
+            dataIndex: "post_author",
+        },
+        {
+            title: 'Content',
+            key: 'post_content',
+            dataIndex: "post_content",
+        },
+        {
+            title: 'Date',
+            key: 'date',
+            render: (row) => {
+                return helperService.convertDate(row?.post_date)
+            }
+        },
+        {
             title: 'Image',
             key: 'image',
             render: (row) => {
-                if (!row?.user_image) return "Image Not Found"
-                return <img src={row?.user_image} width="80" />
-            }
-        }, {
-            title: 'Role',
-            key: 'role',
-            render: (row) => {
-                return <>
-                    <Flex gap="4px 0" wrap="wrap">
-                        <Tag color="lime">{row?.user_role}</Tag>
-                    </Flex>
-                </>
-            }
-        },
-        {
-            title: 'Create At',
-            key: 'create at',
-            render: (row) => {
-                return helperService.convertDate(row?.created_at);
+                if (!row?.image) return "Image Not Found"
+                return <img src={row?.image} width="80" />
             }
         },
         {
@@ -91,19 +95,19 @@ function AdminUser() {
         {
             title: "Edit",
             render: (row) => {
-                return <Button type="primary" onClick={()=>navigate(Authenticated_Path_Url.EDIT_USER.replace(":userId",row?.user_id))}>Edit</Button>;
+                return <Button type="primary" onClick={()=>navigate(Authenticated_Path_Url.EDIT_POST.replace(":postId",row?.id))}>Edit</Button>;
             },
         },
         {
             title: "Delete",
-            render: (row) => {
+            render: (post) => {
                 return (
                     <Button
                         type="primary"
                         style={{
                             backgroundColor: "red",
                         }}
-                        onClick={() => deleteBtnHandler(row)}
+                        onClick={() => deleteBtnHandler(post)}
                     >
                         Delete
                     </Button>
@@ -115,12 +119,12 @@ function AdminUser() {
         <div>
             {contextHolder}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <h1>Admin User Posts</h1>
-                <Button type='primary' onClick={() => navigate(Authenticated_Path_Url.ADD_USER)}>Add User</Button>
+                <h1>Admin Posts</h1>
+                <Button type='primary' onClick={() => navigate(Authenticated_Path_Url.ADD_POST)}>Add Post</Button>
             </div>
             <Table columns={columns} dataSource={data?.data?.results} loading={isLoading || isFetching || DeleteLoader} style={{ overflowX: "auto" }} />;
         </div>
     )
 }
 
-export default AdminUser;
+export default AdminPosts;

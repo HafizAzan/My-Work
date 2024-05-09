@@ -1,9 +1,9 @@
 import React from 'react';
-import { UserOutlined,LineChartOutlined,AlignCenterOutlined,BookOutlined,LogoutOutlined } from '@ant-design/icons';
+import { UserOutlined, LineChartOutlined, AlignCenterOutlined, BookOutlined, LogoutOutlined , MessageOutlined} from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { ServiceToken } from '../../utils/auth';
-import { Authenticated_Path_Url, URL_Path } from '../../utils/constant';
+import { ServiceToken } from '../../../utils/auth';
+import { Authenticated_Path_Url, URL_Path } from '../../../utils/constant';
 const { Header, Content, Footer, Sider } = Layout;
 
 const items = [
@@ -25,10 +25,15 @@ const items = [
     {
     key: 4,
     icon: <BookOutlined />,
-    label: "Posts",
+    label: <Link to={Authenticated_Path_Url.POST}>Posts</Link>,
   },
   {
     key: 5,
+    icon: <MessageOutlined /> ,
+    label: <Link to={Authenticated_Path_Url.COMMENTS}>Comments</Link>,
+  },
+  {
+    key: 6,
     icon: <LogoutOutlined />,
     label: <div onClick={() => {
      ServiceToken.removeToken();

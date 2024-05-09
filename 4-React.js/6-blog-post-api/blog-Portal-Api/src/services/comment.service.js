@@ -7,6 +7,11 @@ const commentStore = (data = {}) => {
   return apiService.post(API_URLS.Comment_Store, data);
 };
 
+const getComment = () => {
+  return apiService.get(API_URLS.COMMENT)
+}
+
 export const StoreComment = {
   commentStore,
+  getComment,
 };
