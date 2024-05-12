@@ -11,7 +11,22 @@ const getComment = () => {
   return apiService.get(API_URLS.COMMENT)
 }
 
+const approveComment = (commentId) => {
+  return apiService.get(`${API_URLS.COMMENT}/approve/${commentId}`)
+}
+
+const unapproveComment = (commentId) => {
+  return apiService.get(`${API_URLS.COMMENT}/unapprove/${commentId}`)
+}
+
+const DeleteCommentById = (commentId) => {
+  return apiService.delete(`${API_URLS.COMMENT}/${commentId}`)
+}
+
 export const StoreComment = {
   commentStore,
   getComment,
+  DeleteCommentById,
+  approveComment,
+  unapproveComment,
 };
