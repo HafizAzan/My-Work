@@ -11,5 +11,5 @@ export const API_URLS = {
   User: "/users",
   UPDATE_USER: "/users/:userId",
   UPDATE_POST: "/posts/:postId",
-  
+  DASHBOARD:"/dashboard-analytic",  
 };
