@@ -1,0 +1,219 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: #e9dbdbfb;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav img{
+    width: 200px;
+    cursor: pointer;
+}
+
+nav ul{
+list-style-type: none;
+display: flex;
+gap: 30px;
+font-weight: 600;
+}
+
+nav ul li a{
+    position: relative;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    top: 23px;
+    border-bottom: 3px solid white;
+    width: 0px;
+    left: 0px;
+    transition: all ease 0.5s;
+}
+
+nav ul li:nth-child(3) a::after {
+    content: "";
+    position: absolute;
+    top: 23px;
+    border-bottom: 3px solid white;
+    width: 0px;
+    left: 0;
+    transition: all ease 0.5s;
+}
+
+nav ul li:nth-child(4) a::after {
+    content: "";
+    position: absolute;
+    top: 23px;
+    border-bottom: 3px solid white;
+    width: 0px;
+    left: 0;
+    transition: all ease 0.5s;
+}
+
+nav ul li:hover a::after{
+    content: "";
+    position: absolute;
+   width: 37px;
+   transition: all ease 0.5s;
+}
+
+nav ul li:nth-child(3):hover a::after{
+    content: "";
+    position: absolute;
+    width: 56px;
+   transition: all ease 0.5s;
+}
+
+nav ul li:nth-child(4):hover a::after{
+    content: "";
+    position: absolute;
+    width: 25px;
+   transition: all ease 0.5s;
+}
+
+nav ul li:hover a{
+    color: blueviolet;
+}
+
+.btn1{
+    border-radius: 15px;
+    width: 90px;
+    height: 35px;
+}
+
+.img2{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.img2 img{
+    width: 70px;
+    padding-right: 20px;
+}
+
+.img2 .count{
+    position: absolute;
+    width: 20px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: blue;
+    left: 71%;
+    top: 2px;
+    text-align: center;
+    color: white;
+}
+
+.form{
+    width: 100%;
+    height: 529px;
+    /* background: linear-gradient(45deg , pink , rgb(209, 200, 202)); */
+    background-image: url("./accets/background.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.ant-form{
+    border: 1px solid rgb(170, 99, 99);
+    height: 300px;
+    width: 370px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.ant-form1{
+    border: 1px solid rgb(170, 99, 99);
+    height: 500px;
+    width: 370px;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.btn2{
+    width: 100%;
+    margin: 0px auto;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+.input1 ::placeholder{
+    color: black;
+}
+
+#h1{
+    text-align: center;
+    color: white;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+.aHref{
+    text-align: center;
+}
+
+.aHref a{
+   color: white;
+}
+.aHref a:hover {
+    color: blue;
+}
+
+.mainContent{
+    background: #fae9e9;
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btnCollection{
+    background: rgba(224, 12, 12, 0.945);
+    border-radius: 20px;
+    width: 50%;
+    padding-left: 25px;
+}
+
+.div2 img{
+    height: 470px;
+    mix-blend-mode: darken;
+}
+
+.div1 h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    line-height: 50px;
+}
+
+.div1 p{
+    font-weight: 700;
+}
+
+.footer{
+    background-color: black;
+    width: 100%;
+    height: 200px;
+}
