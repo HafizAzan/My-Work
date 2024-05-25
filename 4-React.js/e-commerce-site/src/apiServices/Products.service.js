@@ -5,6 +5,6 @@ const getAllProducts = () => {
     return MainApiUrl.get(SlashApi.PRODUCTS)
 }
 
-export const products = {
+export const AllProducts = {
     getAllProducts
 }

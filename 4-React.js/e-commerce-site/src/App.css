@@ -184,7 +184,7 @@ nav ul li:hover a{
 .mainContent{
     background: #fae9e9;
     width: 100%;
-    height: 30rem;
+    height: 31rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -210,6 +210,92 @@ nav ul li:hover a{
 
 .div1 p{
     font-weight: 700;
+}
+
+.FomusClothes{
+    width: 100%;
+    height: 39rem;
+    background: #e7e3e3;
+}
+
+.FomusClothes h1{
+    text-align: center;
+    padding-top:15px ;
+    font-weight: 700;
+}
+
+.FomusClothes hr{
+    color: orange;
+    height: 4px;
+    width: 123px;
+    text-align: center;
+    background: orange;
+    margin-left: 45%;
+}
+
+.card1 img{
+    mix-blend-mode: darken;
+    height: 265px;
+}
+
+.underCard1 p{
+    font-size: 14px;
+}
+
+.underCard1{
+    padding-left: 25px;
+    width: 75%;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+    transition: all ease 0.5s;
+}
+
+.underCard1 h5{
+  padding-top: 10px;
+  font-size: 18px;  
+}
+
+.card1{
+    width: 16%;
+    transition: all ease 0.5s;
+    cursor: pointer;
+}
+
+
+.card1 img{
+    transition: all ease 0.5s;
+}
+
+
+.card1:hover img{
+    transition: all ease 0.5s;
+    transform: scale(1.2);
+   /* box-shadow: 2px 2px 2px 2px black; */
+   /* backdrop-filter: blur(5px) drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5)); */
+}
+
+.card1:hover .underCard1{
+    transition: all ease 0.5s;
+     opacity: 0;
+}
+
+.flexDiv{
+    display: flex;
+    align-items: center;
+    height: 430px;
+    justify-content: space-around;
+    transition: all ease 0.5s;
+}
+
+.ExulisiveCard{
+    width: 100%;
+    height: 38rem;
+    background-color: rgb(255, 218, 224);
+}
+
+.btn4{
+    width: 9%;
 }
 
 .footer{

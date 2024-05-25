@@ -1,8 +1,8 @@
 import './App.css';
-import NavBar from './components/NavBar';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { UNATHENTICATED_URL } from './Utils/Route.define';
+import NavBar from './components/NavBar';
 import Login from './Pages/Login';
 import Home from './Pages/Home';
 import { AuthApiService } from './Utils/auth';

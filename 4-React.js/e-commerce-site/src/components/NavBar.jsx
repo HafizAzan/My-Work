@@ -3,16 +3,12 @@ import CustomButton from './CustomButton';
 import { ImageUrl } from '../Utils/ImageUrl';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { UNATHENTICATED_URL } from '../Utils/Route.define';
-import { useQuery } from 'react-query';
-import { products } from '../apiServices/Products.service';
 import { AuthApiService } from '../Utils/auth';
 import { message } from 'antd';
 
 function NavBar() {
   const navigate = useNavigate()
   const [messageApi, contextHolder] = message.useMessage()
-  const { data } = useQuery("products", () => products.getAllProducts());
-  console.log(data);
   return (
     <>
       <navbar className="nav">
