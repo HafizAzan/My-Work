@@ -1,27 +1,49 @@
-import React, { useMemo } from 'react'
-import { useQuery } from 'react-query';
-import { AllProducts } from '../apiServices/Products.service';
+import React from 'react'
+import CustomButton from './CustomButton'
+import { Link } from 'react-router-dom'
+import { UNATHENTICATED_URL } from '../Utils/Route.define'
 
-function CustomCard({ image, price }) {
-    const { data: productsData } = useQuery("Products", () => AllProducts.getAllProducts());
+function CustomCard({ src, Title, price, women, singleId }) {
 
-    const lastFourProducts = useMemo(() => {
-        return productsData?.data.slice(16, 21);
-    }, [productsData]);
-
-    console.log(lastFourProducts);
     return (
         <>
-            {lastFourProducts?.length > 0 && lastFourProducts.map((single) => {
-                return (
-                    <div className='card1'>
-                        <img src={single.image} alt="" />
+            {women === false ?
+                (
+                    <div className='card1' style={{
+                        transition: "all ease 0.8s",
+                    }}>
+                        <Link to={UNATHENTICATED_URL.POST_DETAIL.replace(":clothId", singleId)}>
+                            <img src={src} alt="" />
+                        </Link>
                         <div className='underCard1'>
-                            <p>{single.title}</p>
-                            <h5><span>$</span>{single.price}</h5>
+                            <p>{Title}</p>
+                            <h5><span>$</span>{price}</h5>
                         </div>
-                    </div>)
-            })}
+                    </div>
+
+                ) : (
+                    <div className='kidCard' data-aos="fade-up" style={{
+                        transition: "all ease 0.8s",
+                    }}>
+                        <Link to={UNATHENTICATED_URL.POST_DETAIL.replace(":clothId", singleId)}>
+                            <img src={src} alt="" />
+                        </Link>
+                        <div className='underCard1 underCard2'>
+                            <p>{Title}</p>
+                            <h5><span>$</span>{price}</h5>
+
+                            <CustomButton
+                                type="primary"
+                                className="AddBtn"
+                                btnName="Add To Card"
+                                htmlType="submit"
+                            />
+
+                        </div>
+                    </div >
+                )
+            }
+
 
         </>
     )

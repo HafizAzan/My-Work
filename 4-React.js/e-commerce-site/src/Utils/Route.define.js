@@ -1,4 +1,8 @@
 export const UNATHENTICATED_URL = {
     HOME: "/",
-    LOGIN: "/auth/login"
+    MEN: "/mens",
+    WOMEN: "/womens",
+    KID: "/kids",
+    LOGIN: "/auth/login",
+    POST_DETAIL: "/clothe/:clothId"
 }

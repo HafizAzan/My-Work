@@ -23,6 +23,7 @@ import women_7 from "../accets/women_7.webp";
 import women_8 from "../accets/women_8.webp";
 import women_9 from "../accets/women_9.webp";
 import women_10 from "../accets/women_10.webp";
+import women_11 from "../accets/women_11.jpg";
 
 // Kid Clothe
 import kid_1 from "../accets/kid_1.webp";
@@ -38,10 +39,18 @@ import kid_10 from "../accets/kid_10.webp";
 
 // import backgorund from "../accets/backgorund.jpg"
 
+import insta from "../accets/insta.png";
+import whatsapp from "../accets/Whatsapp.png";
+import pinterset from "../accets/pinterset.jpg";
+
+
 export const ImageUrl = {
     // backgorund,
     logo,
     cart,
+    insta,
+    whatsapp,
+    pinterset,
     men_1,
     men_2,
     men_3,
@@ -62,6 +71,7 @@ export const ImageUrl = {
     women_8,
     women_9,
     women_10,
+    women_11,
     kid_1,
     kid_2,
     kid_3,

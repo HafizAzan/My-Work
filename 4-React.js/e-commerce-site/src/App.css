@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+img{
+    mix-blend-mode: darken;
+}
+
 .nav{
     background-color: #e9dbdbfb;
     width: 100%;
@@ -30,9 +34,10 @@ nav ul li a{
     color: rgb(0, 0, 0);
     cursor: pointer;
     transition: all ease 0.4s;
+    text-decoration: none;
 }
 
-nav ul li a::after{
+/* nav ul li a::after{
     content: "";
     position: absolute;
     top: 23px;
@@ -40,9 +45,9 @@ nav ul li a::after{
     width: 0px;
     left: 0px;
     transition: all ease 0.5s;
-}
+} */
 
-nav ul li:nth-child(3) a::after {
+/* nav ul li:nth-child(3) a::after {
     content: "";
     position: absolute;
     top: 23px;
@@ -81,7 +86,7 @@ nav ul li:nth-child(4):hover a::after{
     position: absolute;
     width: 25px;
    transition: all ease 0.5s;
-}
+} */
 
 nav ul li:hover a{
     color: blueviolet;
@@ -290,16 +295,212 @@ nav ul li:hover a{
 
 .ExulisiveCard{
     width: 100%;
-    height: 38rem;
+    height: 35rem;
     background-color: rgb(255, 218, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn4{
-    width: 9%;
+    background: rgba(233, 9, 9, 0.945);
+    border-radius: 20px;
+    width: 30.5%;
+    height: 40px;
+}
+
+.div3 img{
+    width: 200px;
+}
+
+.Shelter{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(pink, white);
+    align-items: center; 
+    transition: all ease 0.8s;
+    /* border: 1px solid black; */
+}
+
+.Shelter:hover{
+    transition: all ease 0.8s;
+    box-shadow: 2px 5px 18px 5px black,-1px 6px 35px -32px black;
+}
+
+.shelterOpt{
+    line-height: 50px;
+}
+
+.shelterOpt h1{
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.shelterOpt p{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.flexDiv1{
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 25px;
+}
+
+.kidCard img{
+    width: 300px;
+}
+
+.kidCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 30%;
+    background-color: white;
+    padding: 22px 0px;
+    transition: all ease 0.8s;
+}
+
+
+.kidCard:hover{
+    transition: all ease 0.8s;
+    box-shadow: 2px 5px 18px 5px black,-1px 6px 35px -32px black;
+}
+
+.underCard2{
+    padding-left: 0px;
+}
+
+.underCard2 p{
+    color: seagreen;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.underCard2 h5{
+    color: blue;
+}
+
+.AddBtn{
+    width: 40%;
+    background-color: rebeccapurple;
+    margin-top:10px ;
+}
+
+.FomusClothes1{
+    height: 130rem;
+}
+
+.ul hr{
+    border: none;
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.div4{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    gap: 60px;
+}
+
+.shelter5{
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 20px;
+    background: linear-gradient(#f5dfe2 , white);
+    height: 40%;
+}
+
+.shelter5:hover{
+    box-shadow: none;
+}
+
+.shelterOpt1 h1{
+    font-size: 38px;
+}
+
+.shelterOpt1{
+    display: flex;
+    flex-direction: column;
+}
+
+.shelterOpt1 p{
+    text-align: center;
+    font-size: 15px;
+}
+
+.btn5{
+    background:black;
+    border-radius: 20px;
+    width: 14.5%;
+    height: 40px;
+}
+
+.div5{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0px;
+}
+
+.div5 Input{
+    width: 58%;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.ExulisiveCard1{
+    background-color: white;
+    height: 25rem;
+}
+
+.footer1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ul{
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
 }
 
 .footer{
-    background-color: black;
+    background-color: #f9eef0;
+    height: 111px;
     width: 100%;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondContent{
+    width: 100%;
+    height: 500px;
+}
+
+button,li{
+    cursor: pointer;
+}
+
+
+&& .ant-drawer-right>.ant-drawer-content-wrapper{
+    width: 55%;
+}
+
+&& .ant-drawer-content-wrapper{
+    width: 0px;
 }

@@ -1,0 +1,213 @@
+{"data" : [
+    {
+        "id": 1,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_1.webp",
+        "price": 50.0
+    }, 
+    {
+        "id": 2,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_2.webp",
+        "price": 40.0
+    }, 
+    {
+        "id": 3,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_3.webp",
+        "price": 30.0
+    }, 
+    {
+        "id": 4,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_4.webp",
+        "price": 55.0
+    }, 
+    {
+        "id": 5,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_5.webp",
+        "price": 25.0
+    }, 
+    {
+        "id": 6,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_6.webp",
+        "price": 19.0
+    }, 
+    {
+        "id": 7,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_7.webp",
+        "price": 40.0
+    }, 
+    {
+        "id": 8,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_8.webp",
+        "price": 58.0
+    }, 
+    {
+        "id": 9,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_9.webp",
+        "price": 59.0
+    }, 
+    {
+        "id": 10,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "men",
+        "image": "./src/accets/men_10.webp",
+        "price": 90.0
+    },
+    {
+        "id": 11,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_1.webp",
+        "price": 50.0
+    }, 
+    {
+        "id": 12,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_2.webp",
+        "price": 40.0
+    }, 
+    {
+        "id": 13,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_3.webp",
+        "price": 30.0
+    }, 
+    {
+        "id": 14,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_4.webp",
+        "price": 55.0
+    }, 
+    {
+        "id": 15,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_5.webp",
+        "price": 25.0
+    }, 
+    {
+        "id": 16,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_6.webp",
+        "price": 19.0
+    }, 
+    {
+        "id": 17,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_7.webp",
+        "price": 40.0
+    }, 
+    {
+        "id": 18,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_8.webp",
+        "price": 58.0
+    }, 
+    {
+        "id": 19,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_9.webp",
+        "price": 59.0
+    }, 
+    {
+        "id": 20,
+        "name": "Lorem ipsum dolor sit amet.",
+        "category": "women",
+        "image": "./src/accets/women_10.webp",
+        "price": 90.0
+    },
+    {
+        "id": 21,
+        "name": "Soft, comfortable, and stylish—your child's first choice for every adventure.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/files/5062_09b633f2-5c55-41ba-9d52-5444cfb70b6e_693x.jpg?v=1714381962%201x",
+        "price": 50.0
+    }, 
+    {
+        "id": 22,
+        "name": "Soft, comfortable, and stylish—your child's first choice for every adventure.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/files/7363_1_396x.jpg?v=1714381763",
+        "price": 40.0
+    }, 
+    {
+        "id": 23,
+        "name": "Soft, comfortable, and stylish—your child's first choice for every adventure.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/files/8251_396x.jpg?v=1714381762",
+        "price": 30.0
+    }, 
+    {
+        "id": 24,
+        "name": "Soft, comfortable, and stylish—your child's first choice for every adventure.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/files/7545_396x.jpg?v=1714381762",
+        "price": 55.0
+    }, 
+    {
+        "id": 25,
+        "name": "Soft, comfortable, and stylish—your child's first choice for every adventure.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/files/8254_396x.jpg?v=1714381762",
+        "price": 25.0
+    }, 
+    {
+        "id": 26,
+        "name": "Crafted with care—discover the perfect outfit for your little ones.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/products/12741_290cf468-f69f-4a64-8aa5-47b0e38bf4bd_396x.jpg?v=1705481037",
+        "price": 19.0
+    }, 
+    {
+        "id": 27,
+        "name": "Crafted with care—discover the perfect outfit for your little ones.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/products/1_91b832a5-e462-46e5-b295-07cbfb0a815f_396x.jpg?v=1702741155",
+        "price": 40.0
+    }, 
+    {
+        "id": 28,
+        "name": "Crafted with care—discover the perfect outfit for your little ones.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/products/12740b_661155fb-f7ec-4c1f-b759-5979d5d169e3_396x.jpg?v=1705480988",
+        "price": 58.0
+    }, 
+    {
+        "id": 29,
+        "name": "Crafted with care—discover the perfect outfit for your little ones.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/products/IMG_20220101_200707_396x.jpg?v=1702739714",
+        "price": 59.0
+    }, 
+    {
+        "id": 30,
+        "name": "Crafted with care—discover the perfect outfit for your little ones.",
+        "category": "kid",
+        "image": "https://www.kiddie.pk/cdn/shop/products/5983b_d48b331c-2435-44be-a2a1-5fa655380f6e_396x.jpg?v=1709175618",
+        "price": 90.0
+    }
+]
+}
