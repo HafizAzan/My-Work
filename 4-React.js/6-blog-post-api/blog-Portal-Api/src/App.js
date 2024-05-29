@@ -42,23 +42,20 @@ function App() {
 
           {isUserIsLoggedIn &&
             <Route element={<AdminLayout />}>
-            <Route path={Authenticated_Path_Url.DashBoard} element={<Dashboard />} />
-            <Route path={Authenticated_Path_Url.Admin_Category} element={<AdminCategories />}  />
-            <Route path={Authenticated_Path_Url.ADD_CATEGORY} element={<AdminAddCategories />} />
-            <Route path={Authenticated_Path_Url.EDIT_CATEGORY} element={<AdminAddCategories />}/>
-            <Route path={Authenticated_Path_Url.USER} element={<AdminUser />}/>
-            <Route path={Authenticated_Path_Url.ADD_USER} element={<AdminAddUser />} /> 
-            <Route path={Authenticated_Path_Url.EDIT_USER} element={<AdminAddUser />} />
-            <Route path={Authenticated_Path_Url.POST} element={<AdminPosts />} />
-            <Route path={Authenticated_Path_Url.ADD_POST} element={<AdminAddPost />} /> 
-            <Route path={Authenticated_Path_Url.EDIT_POST} element={<AdminAddPost />} /> 
-            <Route path={Authenticated_Path_Url.COMMENTS} element={<AdminComments />} /> 
-              
-              
-              
-              
-          </Route>}
-          <Route path="*" element={<Navigate to="/"/>}/>
+              <Route path={Authenticated_Path_Url.DashBoard} element={<Dashboard />} />
+              <Route path={Authenticated_Path_Url.Admin_Category} element={<AdminCategories />} />
+              <Route path={Authenticated_Path_Url.ADD_CATEGORY} element={<AdminAddCategories />} />
+              <Route path={Authenticated_Path_Url.EDIT_CATEGORY} element={<AdminAddCategories />} />
+              <Route path={Authenticated_Path_Url.USER} element={<AdminUser />} />
+              <Route path={Authenticated_Path_Url.ADD_USER} element={<AdminAddUser />} />
+              <Route path={Authenticated_Path_Url.EDIT_USER} element={<AdminAddUser />} />
+              <Route path={Authenticated_Path_Url.POST} element={<AdminPosts />} />
+              <Route path={Authenticated_Path_Url.ADD_POST} element={<AdminAddPost />} />
+              <Route path={Authenticated_Path_Url.EDIT_POST} element={<AdminAddPost />} />
+              <Route path={Authenticated_Path_Url.COMMENTS} element={<AdminComments />} />
+
+            </Route>}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />

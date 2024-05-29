@@ -50,7 +50,9 @@ function NavBar() {
               // setTimeout(() => {
               //   window.location.href = UNATHENTICATED_URL.HOME
               // }, 2000);
-            }}></CustomButton>
+            }}>
+
+            </CustomButton>
           ) : (
             <CustomButton className="btn1" type="primary" btnName="Login" onClick={() => navigate(UNATHENTICATED_URL.LOGIN)}></CustomButton>
           )}

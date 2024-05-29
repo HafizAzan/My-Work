@@ -489,13 +489,58 @@ nav ul li:hover a{
 
 .secondContent{
     width: 100%;
-    height: 500px;
+    height: auto;
+    background-color: gray;
 }
 
 button,li{
     cursor: pointer;
 }
 
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    height: 570px;
+    background-color: cornsilk;
+}
+
+.smallImages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  
+}
+
+.smallImages img {
+    width: 150px;  
+    height: auto;  
+    object-fit: cover;  
+}
+
+.largeImage {
+    width: 30%; 
+    display: flex;
+    align-items: center;  
+}
+
+.largeImage img {
+    width: 100%;  
+    height: auto;  
+    object-fit: cover;  
+}
+
+
+.detailCloth img{
+    width: 150px;
+}
+
+.hOne{
+    text-align: center;
+    background-color: cornsilk;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: 600;
+}
 
 && .ant-drawer-right>.ant-drawer-content-wrapper{
     width: 55%;

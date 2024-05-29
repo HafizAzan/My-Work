@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react'
 import MainContent from '../components/mainContent'
-import { ImageUrl } from '../Utils/ImageUrl'
 import { Typography } from 'antd'
 import CustomCard from '../components/CustomCard'
 import ExclusiveCard from '../components/ExclusiveCard'
 import { useQuery } from 'react-query'
 import { AllProducts } from '../apiServices/Products.service'
 import ProductsData from '../Api.json'
+import { ImageUrl } from '../Utils/ImageUrl'
 function Home() {
   const { data: productsData } = useQuery("Products", () => AllProducts.getAllProducts());
   console.log(productsData, "productsData");
@@ -25,16 +25,22 @@ function Home() {
   return (
     <>
       <MainContent image={ImageUrl.women_7} />
+
       <div className='FomusClothes'>
         <Typography.Title level={1}>Famous in Women</Typography.Title>
         <hr />
         <div className='flexDiv'>
           {lastFourProducts?.length > 0 && lastFourProducts.map((single) => {
-            return <CustomCard src={single.image} Title={single.title} price={single.price} women={false} />
+            return <CustomCard src={single.image} singleId={single?.id} Title={single.title} price={single.price} women={false} />
           })}
         </div>
       </div>
-      <ExclusiveCard show={false} Title={<h1>EXCLUSIVE <br /> OFFERS FOR YOU </h1>} paragraph={<p>ONLY ON BEST SELLERS PRODUCTS</p>}></ExclusiveCard>
+
+      <ExclusiveCard show={false}
+        Title={<h1>EXCLUSIVE <br /> OFFERS FOR YOU </h1>}
+        paragraph={<p>ONLY ON BEST SELLERS PRODUCTS</p>}>
+      </ExclusiveCard>
+
       <div className='FomusClothes FomusClothes1'>
         <Typography.Title level={1}>KIDs COLLECTION</Typography.Title>
         <hr />
@@ -44,6 +50,7 @@ function Home() {
           })}
         </div>
       </div>
+
       <ExclusiveCard Title={<h1>GET EXCLUSIVE OFFERS ON YOUR EMAIL </h1>}
         paragraph={<p>Subscribe to our newsletter and stay updated</p>}></ExclusiveCard>
       <div className='footer1'>
