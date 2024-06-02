@@ -9,14 +9,12 @@ import ProductsData from '../Api.json'
 import { ImageUrl } from '../Utils/ImageUrl'
 function Home() {
   const { data: productsData } = useQuery("Products", () => AllProducts.getAllProducts());
-  console.log(productsData, "productsData");
   const lastFourProducts = useMemo(() => {
     return productsData?.data.slice(-4);
   }, [productsData]);
 
 
   const { data } = ProductsData;
-  console.log(data);
 
   const KidData = useMemo(() => {
     return data.slice(-10)
@@ -31,7 +29,7 @@ function Home() {
         <hr />
         <div className='flexDiv'>
           {lastFourProducts?.length > 0 && lastFourProducts.map((single) => {
-            return <CustomCard src={single.image} singleId={single?.id} Title={single.title} price={single.price} women={false} />
+            return <CustomCard src={single.image} singleId={single?.id} Title={single.title} price={single.price} women={true} />
           })}
         </div>
       </div>

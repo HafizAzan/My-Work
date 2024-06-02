@@ -12,6 +12,7 @@ import Men from './Pages/Men';
 import Women from './Pages/Women';
 import Kid from './Pages/Kid';
 import ClothesDetail from './Pages/ClothesDetail';
+import RealClothesDetail from './Pages/RealApiClotheDetail';
 
 const queryClient = new QueryClient()
 function App() {
@@ -34,6 +35,7 @@ function App() {
                   <Route path={UNATHENTICATED_URL.KID} element={<Kid />} />
                   <Route path={UNATHENTICATED_URL.LOGIN} element={<Login />} />
                   <Route path={UNATHENTICATED_URL.POST_DETAIL} element={<ClothesDetail />} />
+                  <Route path={UNATHENTICATED_URL.WOMEN_DETAIL} element={<RealClothesDetail />} />
                 </>
               }
             </Route>

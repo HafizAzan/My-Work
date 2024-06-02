@@ -5,12 +5,12 @@ const getAllProducts = () => {
     return MainApiUrl.get(SlashApi.PRODUCTS)
 }
 
-const KidsProducts = () => {
-    return ThirdApiUrl.get3()
+const getProductById = (WomenclothId) => {
+    return MainApiUrl.get(`${SlashApi.PRODUCTS}/${WomenclothId}`)
 }
 
 
 export const AllProducts = {
     getAllProducts,
-    KidsProducts
+    getProductById,
 }

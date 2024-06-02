@@ -15,7 +15,7 @@ function ExclusiveCard({ Title, paragraph, show }) {
                             <h1>{Title}</h1>
                             <p>{paragraph}</p>
                             <Link to={UNATHENTICATED_URL.WOMEN}>
-                                <CustomButton type="primary" className="btn4" btnName="Check Now" />
+                                <CustomButton type="primary" className="btn4" btnName={<p> Check Now</p>} />
                             </Link>
                         </div>
                         <div className='div3'>

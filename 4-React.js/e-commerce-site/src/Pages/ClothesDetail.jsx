@@ -14,9 +14,6 @@ function ClothesDetail() {
 
     const product = ProductsData.data.find((item) => item.id.toString() === clothId);
 
-    console.log(clothId, "clothId");
-    console.log(product, "product");
-    console.log(ProductsData.data, "ProductsData");
 
     return (
         <>

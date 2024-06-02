@@ -7,12 +7,12 @@ function CustomCard({ src, Title, price, women, singleId }) {
 
     return (
         <>
-            {women === false ?
+            {women === true ?
                 (
                     <div className='card1' style={{
                         transition: "all ease 0.8s",
                     }}>
-                        <Link to={UNATHENTICATED_URL.POST_DETAIL.replace(":clothId", singleId)}>
+                        <Link to={UNATHENTICATED_URL.WOMEN_DETAIL.replace(":WomenclothId", singleId)}>
                             <img src={src} alt="" />
                         </Link>
                         <div className='underCard1'>
