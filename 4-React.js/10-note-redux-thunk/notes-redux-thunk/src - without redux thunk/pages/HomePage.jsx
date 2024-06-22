@@ -3,11 +3,14 @@ import React, { useState } from 'react'
 import { db } from '../config/fireBase';
 import NotesListing from '../components/NotesListing';
 import CreateNotes from '../components/CreateNotes';
+import CustomSpinner from '../components/customSpinner';
 
 function HomePage() {
     const [notesData, setNotesData] = useState(null);
+    const [loader, setLoader] = useState(false);
     const [EditData, setEditData] = useState(null)
     const getNote = async () => {
+        setLoader(true)
         await getDocs(collection(db, "notes")).then((querySnapshot) => {
             console.log(querySnapshot);
             const notesResponsedata = querySnapshot?.docs?.map((singleDocument) => {
@@ -18,11 +21,14 @@ function HomePage() {
             })
             setNotesData(notesResponsedata)
         })
-    }
+        setLoader(false)
+    };
+
 
     return (
         <div className="container">
             <div className="row center-align">
+                <CustomSpinner loading={loader} />
                 <CreateNotes getNote={getNote} EditData={EditData} setEditData={setEditData} />
                 <NotesListing notesData={notesData} getNote={getNote} setEditData={setEditData} />
             </div>

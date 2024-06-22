@@ -26,11 +26,11 @@ function CreateNotes({ getNote = () => { }, EditData, setEditData }) {
 
     const addNoteHandler = async (event) => {
         event.preventDefault();
-        setLoader(true)
         if (!isvalue.title || !isvalue.content) {
             alert("Plzz Enter Your Input.")
             return
         }
+        setLoader(true)
 
         const payload = {
             ...isvalue,

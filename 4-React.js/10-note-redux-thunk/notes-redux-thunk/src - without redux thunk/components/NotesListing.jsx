@@ -3,12 +3,16 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { db } from '../config/fireBase';
 import CustomSpinner from './customSpinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { getNoteThunkMethod } from '../../src/redux/NoteThunk';
 
-function NotesListing({ notesData, getNote, setEditData }) {
+function NotesListing({ setEditData }) {
+    const { notes: notesdata } = useSelector((state) => state.notes)
+    const dispatch = useDispatch()
     const [dropDownValue, setDropDownValue] = useState(null);
     const [loader, setLoader] = useState(false);
     useEffect(() => {
-        getNote()
+        dispatch(getNoteThunkMethod())
     }, []);
 
     const favoriteBtnChanger = async (singleKey) => {
@@ -19,7 +23,7 @@ function NotesListing({ notesData, getNote, setEditData }) {
             favorite: !singleKey?.favorite
         })
 
-        await getNote();
+        dispatch(getNoteThunkMethod())
         setLoader(false)
     }
 
@@ -29,7 +33,7 @@ function NotesListing({ notesData, getNote, setEditData }) {
         const RefrenceDocument = await doc(db, "notes", singleKey?.id);
         await deleteDoc(RefrenceDocument)
 
-        await getNote();
+        dispatch(getNoteThunkMethod())
         setLoader(false)
     }
 
