@@ -1,7 +1,10 @@
 import React from 'react'
 import CustomButton from './CustomButton'
+import { useNavigate } from 'react-router-dom';
+import { UNATHENTICATED_URL } from '../Utils/Route.define';
 
 function MainContent({ image }) {
+    const navigate = useNavigate()
     return (
         <>
             <div className='mainContent'>
@@ -9,7 +12,7 @@ function MainContent({ image }) {
                     <p>NEW ARRIVALS ONLY</p>
                     <h1>new &#128075;<br /> collections <br /> for everyone.</h1>
                     <div>
-                        <CustomButton btnName="latest Collection" type="primary" className="btnCollection" show={false} />
+                        <CustomButton btnName="latest Collection" type="primary" className="btnCollection" show={false} onClick={() => navigate(UNATHENTICATED_URL.WOMEN)} />
                     </div>
                 </div>
                 <div className='div2'>

@@ -1,36 +1,23 @@
-import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { db } from '../config/fireBase';
-import CustomSpinner from './customSpinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavoriteNoteById, deleteNoteById, getNoteThunkMethod } from '../redux/NoteThunk';
 
-function NotesListing({ notesData, getNote, setEditData }) {
+function NotesListing({ setEditData }) {
+    const { notes: notesData, loading: reduxLoader } = useSelector((state) => state.notes)
+    const dispatch = useDispatch()
     const [dropDownValue, setDropDownValue] = useState(null);
-    const [loader, setLoader] = useState(false);
     useEffect(() => {
-        getNote()
+        dispatch(getNoteThunkMethod())
     }, []);
 
     const favoriteBtnChanger = async (singleKey) => {
-        setLoader(true)
-        const RefrenceDocument = await doc(db, "notes", singleKey?.id);
-        await updateDoc(RefrenceDocument, {
-            ...singleKey,
-            favorite: !singleKey?.favorite
-        })
-
-        await getNote();
-        setLoader(false)
+        dispatch(addFavoriteNoteById(singleKey))
     }
 
 
     const DeleteNoteHanlder = async (singleKey) => {
-        setLoader(true)
-        const RefrenceDocument = await doc(db, "notes", singleKey?.id);
-        await deleteDoc(RefrenceDocument)
-
-        await getNote();
-        setLoader(false)
+        dispatch(deleteNoteById(singleKey))
     }
 
     const onChangeDropdown = (event) => {
@@ -53,7 +40,6 @@ function NotesListing({ notesData, getNote, setEditData }) {
                 <option value="true">Only Favorite Notes</option>
             </select>
             <div className="notesList">
-                <CustomSpinner loading={loader} />
                 {FilterData?.map((singleKey) => {
                     return (
                         <div className="note  white">

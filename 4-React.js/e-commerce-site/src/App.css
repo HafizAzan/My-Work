@@ -11,11 +11,14 @@ img{
 .nav{
     background-color: #e9dbdbfb;
     width: 100%;
-    height: 7rem;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    z-index: 99;
 }
+
 
 .nav img{
     width: 200px;
@@ -124,15 +127,16 @@ nav ul li:hover a{
 
 .form{
     width: 100%;
-    height: 529px;
-    /* background: linear-gradient(45deg , pink , rgb(209, 200, 202)); */
+    height: 607px;
     background-image: url("./accets/background.jpg");
     display: flex;
+    flex-direction: column;
+    gap: 30px;
     justify-content: center;
     align-items: center;
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .ant-form{
@@ -189,7 +193,7 @@ nav ul li:hover a{
 .mainContent{
     background: #fae9e9;
     width: 100%;
-    height: 31rem;
+    height: 45rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -219,7 +223,7 @@ nav ul li:hover a{
 
 .FomusClothes{
     width: 100%;
-    height: 39rem;
+    height: 69rem;
     background: #e7e3e3;
 }
 
@@ -248,8 +252,8 @@ nav ul li:hover a{
 }
 
 .underCard1{
-    padding-left: 25px;
-    width: 75%;
+    padding-left: 33px;
+    width: 100%;
     text-align: center;
     color: black;
     font-weight: 500;
@@ -265,6 +269,7 @@ nav ul li:hover a{
     width: 16%;
     transition: all ease 0.5s;
     cursor: pointer;
+    
 }
 
 
@@ -276,8 +281,6 @@ nav ul li:hover a{
 .card1:hover img{
     transition: all ease 0.5s;
     transform: scale(1.2);
-   /* box-shadow: 2px 2px 2px 2px black; */
-   /* backdrop-filter: blur(5px) drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5)); */
 }
 
 .card1:hover .underCard1{
@@ -309,9 +312,14 @@ nav ul li:hover a{
     height: 40px;
 }
 
-.div3 img{
+#div3 img{
     width: 200px;
 }
+
+#div03 img{
+    width: 180px;
+}
+
 
 .Shelter{
     width: 70%;
@@ -333,6 +341,13 @@ nav ul li:hover a{
     line-height: 50px;
 }
 
+.shelterOpt01 h1{
+    font-weight: 900;
+    font-size: 50px;
+    color: orange;
+}
+
+
 .shelterOpt h1{
     font-weight: 500;
     font-size: 50px;
@@ -351,6 +366,8 @@ nav ul li:hover a{
 
 .kidCard img{
     width: 300px;
+    transform: scale(1);
+    transition: all ease 0.5s;
 }
 
 .kidCard{
@@ -367,7 +384,13 @@ nav ul li:hover a{
 
 .kidCard:hover{
     transition: all ease 0.8s;
-    box-shadow: 2px 5px 18px 5px black,-1px 6px 35px -32px black;
+    box-shadow: 0px 1px 33px -3px grey;
+}
+
+.kidCard:hover img{
+    transform: scale(1.1);
+    transition: all ease 0.5s;
+
 }
 
 .underCard2{
@@ -375,7 +398,7 @@ nav ul li:hover a{
 }
 
 .underCard2 p{
-    color: seagreen;
+    color: black;
     font-size: 15px;
     padding-top: 10px;
 }
@@ -390,9 +413,14 @@ nav ul li:hover a{
     margin-top:10px ;
 }
 
-.FomusClothes1{
-    height: 130rem;
+.FomusClothes01{
+    height: 39rem;
 }
+
+.FomusClothes2{
+    height: 147rem;
+}
+
 
 .ul hr{
     border: none;
@@ -400,7 +428,7 @@ nav ul li:hover a{
     width: 100%;
     height: 3px;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .div4{
@@ -499,10 +527,10 @@ button,li{
 
 .content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
-    height: 570px;
-    background-color: cornsilk;
+    height: 33rem;
+    background-color: #f1f1dc;
 }
 
 .smallImages {
@@ -529,6 +557,23 @@ button,li{
     object-fit: cover;  
 }
 
+.big{
+    width: 20%;
+    margin-right: 60px;
+}
+
+.small img{
+    width: 130px;  
+}
+
+.small{
+    width: 13%;
+}
+
+.content1{
+    align-items: stretch;
+    height: 35rem;
+}
 
 .detailCloth img{
     width: 150px;
@@ -536,16 +581,274 @@ button,li{
 
 .hOne{
     text-align: center;
-    background-color: cornsilk;
+    background-color: #f1f1dc;
     margin-bottom: 0px;
     font-size: 40px;
     font-weight: 600;
+    padding-top: 130px;
 }
 
-&& .ant-drawer-right>.ant-drawer-content-wrapper{
-    width: 55%;
+#hOne{
+    text-align: center;
+    background-color: #f1f1dc;
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 130px;
 }
 
-&& .ant-drawer-content-wrapper{
-    width: 0px;
+.rightcontent{
+    width: 50%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rightcontent h2{
+    color: #e54646;
+}
+
+#image img{
+    width: 50px;
+}
+
+.seprete p{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    color: #8e44ad;
+}
+/* 
+.seprete1 p{
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    color: #8e44ad;
+} */
+
+.Shouldflex{
+    display: flex;
+    gap: 10px;
+}
+
+.Shouldflex p{
+    color: purple;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.slectSize h3{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.slectSize{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.AddBtn1{
+    width: 18%;
+}
+
+.seccontent{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.seccontent #h1{
+    padding-top: 105px;
+    color: #e54646;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.box img{
+    width: 170px;
+}
+
+.box input{
+    height: 20px;
+    width: 40px;
+    outline: none;
+}
+
+.flexHai{ 
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.btnRemove{
+    background: rgba(233, 9, 9, 0.945);
+    border-radius: 20px;
+    height: 40px;
+}
+
+.mar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.mar #span{
+    color: #8e44ad;
+    font-size: 19px;
+}
+
+.mar #h3{
+    color: purple;
+}
+
+#oneH{
+    display: flex;
+    margin-bottom: 110px;
+    justify-content: center;
+    align-items: end;
+    font-size: 26px;
+    gap: 18px;
+    flex-direction: column;
+    padding-right: 85px;
+    
+}
+
+.menCont{
+    height: auto;
+}
+
+.btnCheckout{
+    background: purple;
+    border-radius: 20px;
+    height: 40px;
+    width: 10%;
+}
+
+.responsiveImg2{
+    display: none;
+}
+
+@media (max-width:900px) {
+    .FomusClothes{
+        height: 195rem;
+    }
+
+    .flexDiv1{
+        flex-direction: row;
+    }
+}
+
+@media (max-width:850px) {
+    .nav{
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 20px;
+        position: unset;
+    }
+
+    .nav .ul{
+        flex-direction: column;
+    }
+
+    .nav .ul li{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img2{
+        display: none;
+    }
+
+    .img02{
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .responsiveImg2{
+        display: block;
+        width: 90%;
+    }
+
+    .img02{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+
+    .img02 .count{
+        width: 50px;
+        height: 48px;
+        border-radius: 60%;
+        background-color: purple;
+        text-align: center;
+        color: white;
+        font-size: 32px;
+    }
+    
+    .mainContent{
+        flex-direction: column;
+        padding-top: 31px;
+        font-size: 31px;
+        gap: 26px;
+        height: 50rem;
+    }
+
+    .div1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .div1 .btnCollection{
+        width: 97%;
+    }
+
+
+    .Shelter{
+        flex-direction: column-reverse;
+        width: 57%;
+        height: 90vh;
+    }
+
+    .ExulisiveCard{
+        height: 38rem;
+    }
+
+}
+
+
+@media (max-width:1115px) {
+    .FomusClothes01{
+        height: 98rem;
+    }
+
+    #flexDiv{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 25px;
+    }
+
+    .card1{
+        width: 27%;
+        padding-top: 18px;
+    }
 }

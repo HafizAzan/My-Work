@@ -5,21 +5,21 @@ import { Input } from 'antd'
 import { Link } from 'react-router-dom'
 import { UNATHENTICATED_URL } from '../Utils/Route.define'
 
-function ExclusiveCard({ Title, paragraph, show }) {
+function ExclusiveCard({ Title, paragraph, show, image, className, showbtnho, id, classs }) {
     return (
         <>
             {show == false ? (
                 <div className='ExulisiveCard'>
                     <div className='Shelter'>
-                        <div className='shelterOpt'>
+                        <div className={classs}>
                             <h1>{Title}</h1>
                             <p>{paragraph}</p>
                             <Link to={UNATHENTICATED_URL.WOMEN}>
-                                <CustomButton type="primary" className="btn4" btnName={<p> Check Now</p>} />
+                                {showbtnho === true ? <CustomButton type="primary" className={className || "btn4"} btnName="Check Now" /> : <></>}
                             </Link>
                         </div>
-                        <div className='div3'>
-                            <img src={ImageUrl.women_11} alt="" />
+                        <div id={id}>
+                            <img src={image} alt="" />
                         </div>
                     </div>
                 </div>

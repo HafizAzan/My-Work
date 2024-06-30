@@ -1,51 +1,60 @@
-import React, { useMemo, useState } from 'react'
-import MainContent from '../components/mainContent'
-import { Typography } from 'antd'
-import CustomCard from '../components/CustomCard'
-import ExclusiveCard from '../components/ExclusiveCard'
-import { useQuery } from 'react-query'
-import { AllProducts } from '../apiServices/Products.service'
-import ProductsData from '../Api.json'
-import { ImageUrl } from '../Utils/ImageUrl'
+import React, { useEffect, useMemo, useState } from 'react';
+import MainContent from '../components/mainContent';
+import { Typography } from 'antd';
+import CustomCard from '../components/CustomCard';
+import ExclusiveCard from '../components/ExclusiveCard';
+import ProductsData from '../Api.json';
+import { ImageUrl } from '../Utils/ImageUrl';
+import Loader from './Loader';
 function Home() {
-  const { data: productsData } = useQuery("Products", () => AllProducts.getAllProducts());
-  const lastFourProducts = useMemo(() => {
-    return productsData?.data.slice(-4);
-  }, [productsData]);
-
-
   const { data } = ProductsData;
 
+  const [loader, setLoader] = useState(false)
+  useEffect(() => {
+    setLoader(true)
+  }, [])
+  setTimeout(() => {
+    setLoader(false)
+  }, 6000);
+
+  const lastFourProducts = useMemo(() => {
+    return data.slice(-4)
+  }, [data])
+
+
   const KidData = useMemo(() => {
-    return data.slice(-10)
+    return data.slice(20, 26)
   }, [data])
 
   return (
     <>
+      {loader === true ? <Loader /> : null}
       <MainContent image={ImageUrl.women_7} />
 
-      <div className='FomusClothes'>
+      <div className='FomusClothes FomusClothes01'>
         <Typography.Title level={1}>Famous in Women</Typography.Title>
         <hr />
-        <div className='flexDiv'>
-          {lastFourProducts?.length > 0 && lastFourProducts.map((single) => {
-            return <CustomCard src={single.image} singleId={single?.id} Title={single.title} price={single.price} women={true} />
-          })}
+        <div className='flexDiv' id='flexDiv'>
+          <CustomCard lastFourProducts={lastFourProducts} women={true} />
         </div>
       </div>
 
       <ExclusiveCard show={false}
         Title={<h1>EXCLUSIVE <br /> OFFERS FOR YOU </h1>}
-        paragraph={<p>ONLY ON BEST SELLERS PRODUCTS</p>}>
+        paragraph={<p>ONLY ON BEST SELLERS PRODUCTS</p>}
+        image={ImageUrl.women_11}
+        className="btn4"
+        classs="shelterOpt"
+        showbtnho={true}
+        id="div3"
+      >
       </ExclusiveCard>
 
-      <div className='FomusClothes FomusClothes1'>
+      <div className='FomusClothes '>
         <Typography.Title level={1}>KIDs COLLECTION</Typography.Title>
         <hr />
         <div className='flexDiv flexDiv1'>
-          {KidData && KidData.map((single) => {
-            return <CustomCard src={single.image} singleId={single.id} Title={single.name} price={single.price} />
-          })}
+          <CustomCard Data={KidData} />
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomButton from './CustomButton';
 import { ImageUrl } from '../Utils/ImageUrl';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
@@ -6,27 +6,46 @@ import { UNATHENTICATED_URL } from '../Utils/Route.define';
 import { AuthApiService } from '../Utils/auth';
 import { message } from 'antd';
 import CustomModal from './CustomModal';
+import { useSelector } from 'react-redux';
+import Loader from '../Pages/Loader';
 
 function NavBar() {
   const navigate = useNavigate()
   const [messageApi, contextHolder] = message.useMessage()
   const [menuShow, setMenuShow] = useState("Shop")
 
-  const [loading, setLoading] = useState(true);
-  const [open, setOpen] = useState(false);
   const handlerModal = () => {
     console.log("click");
-    setOpen(true)
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    navigate(UNATHENTICATED_URL.PRODUCT_DETAIL)
   }
+
+  const count = useSelector((state) => state?.counter);
 
   return (
     <>
       <navbar className="nav">
         {contextHolder}
+        <div className='responsiveImg2'>
+          <div className='img02'>
+            {AuthApiService.IsLoggedIn() ? (
+              <CustomButton className="btn1" type="primary" btnName="Logout" onClick={() => {
+                AuthApiService.removetoken()
+                messageApi.open({
+                  type: "warning",
+                  content: "You Logout "
+                })
+                setTimeout(() => {
+                  window.location.href = UNATHENTICATED_URL.LOGIN
+                }, 2000);
+              }}>
+
+              </CustomButton>
+            ) : <></>}
+            <div onClick={handlerModal} style={{ cursor: "pointer" }}>
+              <p className='count'>{count?.length}</p>
+            </div>
+          </div>
+        </div>
         <div>
           <img src={ImageUrl.logo} alt="logo" onClick={() => navigate(UNATHENTICATED_URL.HOME)} />
         </div>
@@ -47,28 +66,20 @@ function NavBar() {
                 type: "warning",
                 content: "You Logout "
               })
-              // setTimeout(() => {
-              //   window.location.href = UNATHENTICATED_URL.HOME
-              // }, 2000);
+              setTimeout(() => {
+                window.location.href = UNATHENTICATED_URL.LOGIN
+              }, 2000);
             }}>
 
             </CustomButton>
-          ) : (
-            <CustomButton className="btn1" type="primary" btnName="Login" onClick={() => navigate(UNATHENTICATED_URL.LOGIN)}></CustomButton>
-          )}
-
-          <img src={ImageUrl.cart} alt="cart" onClick={handlerModal} />
-          <p className='count'>0</p>
+          ) : <></>}
+          <div onClick={handlerModal} style={{ cursor: "pointer" }}>
+            <img src={ImageUrl.cart} alt="cart" />
+            <p className='count'>{count?.length}</p>
+          </div>
         </div>
-
-        <CustomModal
-          setLoading={setLoading}
-          loading={loading}
-          open={open}
-          setOpen={setOpen}
-        />
-
       </navbar>
+
       <Outlet />
       <footer className='footer'>
         <div>

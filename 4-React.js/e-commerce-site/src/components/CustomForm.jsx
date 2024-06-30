@@ -8,17 +8,17 @@ import { AuthApiService } from '../Utils/auth'
 
 
 function CustomForm({ id, className, antForm, input, input1, antForm1 }) {
-    //message antd
+
     const [messageApi, contextHolder] = message.useMessage();
-    // state
+
     const [IsShow, setIsShow] = useState(true)
-    // btnHanlders
+
     const showBtn = () => {
         setIsShow(!IsShow)
     }
-    //Form
+
     const [form] = Form.useForm()
-    //loginRequestPost
+
     const { mutateAsync: LoginRequest, isLoading } = useMutation("login", (data) => UserService.LoginUserService(data))
 
     const onFinish = (values) => {
@@ -31,7 +31,7 @@ function CustomForm({ id, className, antForm, input, input1, antForm1 }) {
                 })
                 console.log(data);
                 form.resetFields()
-                const Token = data?.token;
+                const Token = data?.data?.token;
                 console.log(Token);
                 AuthApiService.saveToken(Token);
                 setTimeout(() => {
@@ -43,6 +43,7 @@ function CustomForm({ id, className, antForm, input, input1, antForm1 }) {
 
     return (
         <div className={className}>
+            <h1 style={{ color: "white", textTransform: "uppercase" }}>E Commerce WebSite</h1>
             {contextHolder}
             {IsShow ? (
                 <Form

@@ -2,10 +2,14 @@ import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { db } from '../config/fireBase';
 import CustomSpinner from './customSpinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { addNotesThunk, getNoteThunkMethod, updateNotesThunk } from '../redux/NoteThunk';
 
-function CreateNotes({ getNote = () => { }, EditData, setEditData }) {
+function CreateNotes({ EditData, setEditData }) {
     const [isvalue, setValue] = useState(null);
-    const [loader, setLoader] = useState(false);
+    const { loading: reduxLoader } = useSelector((state) => state.notes)
+    const dispatch = useDispatch()
+
     useEffect(() => {
         if (EditData) {
             setValue({
@@ -26,7 +30,6 @@ function CreateNotes({ getNote = () => { }, EditData, setEditData }) {
 
     const addNoteHandler = async (event) => {
         event.preventDefault();
-        setLoader(true)
         if (!isvalue.title || !isvalue.content) {
             alert("Plzz Enter Your Input.")
             return
@@ -38,34 +41,28 @@ function CreateNotes({ getNote = () => { }, EditData, setEditData }) {
         }
 
         if (EditData) {
-            const RefrenceDocument = await doc(db, "notes", EditData?.id);
-            console.log(RefrenceDocument, "ref");
-            await updateDoc(RefrenceDocument, {
+            const updatePayload = {
                 ...EditData,
                 ...isvalue,
-            })
+            }
 
+            dispatch(updateNotesThunk(updatePayload));
             setEditData(null)
         } else {
-            try {
-                await addDoc(collection(db, "notes"), payload)
-
-            } catch (error) {
-                console.error(error);
-            }
+            await dispatch(addNotesThunk(payload))
         }
-        await getNote();
+        await dispatch(getNoteThunkMethod())
         setValue({
             title: "",
             content: ""
         })
-        setLoader(false)
+
     }
 
     return (
         <div className="col s7">
             <div className="section form-container">
-                <CustomSpinner loading={loader} />
+                <CustomSpinner loading={reduxLoader} />
                 <form className="white" onSubmit={addNoteHandler}>
                     <h5 className="grey-text text-darken-3">{EditData ? "Update" : "Create"} Note</h5>
                     <div className="row">

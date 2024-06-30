@@ -1,0 +1,8 @@
+Internal component : jis me kuch props pass kia way hotay hain ;
+MEMO : for example 1 component hai jis me 5 state hain 
+aur koi 1 state update hori hai baar baar tw hoga ye ke jo Internal component 
+hotay hain ye bhi baar baar update hotay rahtay hain jabke inke khud ke
+states update na horay hon na hee inka apna prop update hotay hain but phir bhi
+ye update hotay hain tw inko rok ne ke liai memo use hota hai : jab 
+internal componet ke prop mai changing nhi ayegi tw ye component render nhi 
+hoga;

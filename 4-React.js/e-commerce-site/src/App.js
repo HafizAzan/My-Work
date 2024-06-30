@@ -13,19 +13,23 @@ import Women from './Pages/Women';
 import Kid from './Pages/Kid';
 import ClothesDetail from './Pages/ClothesDetail';
 import RealClothesDetail from './Pages/RealApiClotheDetail';
+import { AuthApiService } from './Utils/auth';
+import Productsdetail from './Pages/Productsdetail';
+import Loader from './Pages/Loader';
 
 const queryClient = new QueryClient()
 function App() {
   useEffect(() => {
     AOS.init();
   }, []);
-  // const userLogin = AuthApiService.IsLoggedIn()
-  const userLogin = true
+  const userLogin = AuthApiService.IsLoggedIn()
+  // const userLogin = true
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
+            <Route path={UNATHENTICATED_URL.LOGIN} element={<Login />} />
             <Route element={<Layout />}>
               {userLogin &&
                 <>
@@ -33,9 +37,9 @@ function App() {
                   <Route path={UNATHENTICATED_URL.MEN} element={<Men />} />
                   <Route path={UNATHENTICATED_URL.WOMEN} element={<Women />} />
                   <Route path={UNATHENTICATED_URL.KID} element={<Kid />} />
-                  <Route path={UNATHENTICATED_URL.LOGIN} element={<Login />} />
                   <Route path={UNATHENTICATED_URL.POST_DETAIL} element={<ClothesDetail />} />
                   <Route path={UNATHENTICATED_URL.WOMEN_DETAIL} element={<RealClothesDetail />} />
+                  <Route path={UNATHENTICATED_URL.PRODUCT_DETAIL} element={<Productsdetail />} />
                 </>
               }
             </Route>
