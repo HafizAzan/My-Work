@@ -32,7 +32,7 @@ function NavBar() {
                 AuthApiService.removetoken()
                 messageApi.open({
                   type: "warning",
-                  content: "You Logout "
+                  content: "You Logout"
                 })
                 setTimeout(() => {
                   window.location.href = UNATHENTICATED_URL.LOGIN

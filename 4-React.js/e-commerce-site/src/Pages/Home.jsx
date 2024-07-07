@@ -6,12 +6,13 @@ import ExclusiveCard from '../components/ExclusiveCard';
 import ProductsData from '../Api.json';
 import { ImageUrl } from '../Utils/ImageUrl';
 import Loader from './Loader';
+import CustomSkeletonLoader from '../components/CustomSkeleton';
 function Home() {
   const { data } = ProductsData;
 
   const [loader, setLoader] = useState(false)
   useEffect(() => {
-    setLoader(true)
+    setLoader(false)
   }, [])
   setTimeout(() => {
     setLoader(false)
@@ -30,7 +31,6 @@ function Home() {
     <>
       {loader === true ? <Loader /> : null}
       <MainContent image={ImageUrl.women_7} />
-
       <div className='FomusClothes FomusClothes01'>
         <Typography.Title level={1}>Famous in Women</Typography.Title>
         <hr />

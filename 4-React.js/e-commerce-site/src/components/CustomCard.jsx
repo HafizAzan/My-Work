@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
 import { UNATHENTICATED_URL } from '../Utils/Route.define'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../Redux/Store'
 import Swal from 'sweetalert2'
+import CustomSkeletonLoader from './CustomSkeleton'
 
 function CustomCard({ lastFourProducts, Data }) {
     const dispatch = useDispatch()
     const product = useSelector((state) => state?.counter);
+
+    const [loader, setLoader] = useState(false)
+    useEffect(() => {
+        setLoader(true)
+    }, [])
+    setTimeout(() => {
+        setLoader(false)
+    }, 6000);
+
+
     const incrementHandler = (singleId) => {
         const productId = singleId?.id;
         const findProduct = product.some((item) => item?.id === productId);
@@ -73,6 +84,8 @@ function CustomCard({ lastFourProducts, Data }) {
                     )
                 })}
             </>
+
+
         </>
     )
 }
