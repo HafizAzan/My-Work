@@ -1,73 +1,54 @@
-import React from 'react';
-import {StyleSheet,Text,View} from 'react-native';
-import { ProgressBar } from 'react-native-paper';
-import { Countdown } from '../Countdown/Countdown.jsx';
-import RoundedButton from '../RoundedButton/RoundedButton';
+import { TouchableOpacity, Text } from 'react-native';
+import { colors } from '../../src/utils/colors';
 
-const Timings = ({currentSubject="",minutes,setCurrentSubject}) => {
-  const [progressBar,setProgressBar] = React.useState(1);
-  const [isPaused,setIsPaused] = React.useState(false);
-  
+const RoundedButton = (props) => {
+  const { size = 35, title = '+', onPress = () => {} , } = props;
 
-  const startStopBtnHandler = () => {
-    setIsPaused(!isPaused);
-  }
-  return <View style={styles.mainContainer}>
-  
-  <View style={styles.container} >
-        <Countdown 
-        minutes={minutes} 
-        isPaused={isPaused} 
-        onProgress={(percentage) => {
-          setProgressBar(percentage);
-        }}
-        onEnd={()=>{
-          setCurrentSubject(null);
-        }}
-        />
-   <Text style={styles.text}>Focusing on: {currentSubject}</Text>
+  return (
+    <TouchableOpacity style={styles(size).radius} onPress={onPress}>
+      <Text style={styles(size).text}>{title}</Text>
+    </TouchableOpacity>
+  );
+};
 
+// const size = 35;
 
-  
-  </View>
-   <View style={styles.progressBar}>
-      <ProgressBar progress={progressBar}   />
-   </View>
+// const styles = StyleSheet.create({
+//   radius: {
+//     borderRadius: size / 2,
+//     width: size,
+//     height: size,
+//     borderColor: colors.white,
+//     borderWidth: 2,
+//     display:"flex",
+//     flexDirection: "row",
+//     alignItems: "center",
+//     justifyContent: "center"
+//   },
+//   text: {
+//      color: colors.white,
+//      fontSize: size / 2
+//   }
+// })
 
-   <View style={styles.startStopBtn}>
-       <RoundedButton title={isPaused ? "Start" : "Stop"} size={60} onPress={startStopBtnHandler} />
+const styles = (size) => {
+  return {
+    radius: {
+      borderRadius: size / 2,
+      width: size,
+      height: size,
+      borderColor: colors.white,
+      borderWidth: 2,
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    text: {
+      color: colors.white,
+      fontSize: size / 3,
+    },
+  };
+};
 
-
-        <RoundedButton title="Back" size={60} onPress={() => {
-          setCurrentSubject(null);
-        }} />
-   </View>
-  </View>;
-}
-
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    marginTop: 55
-  },
-  container: {
-    flex: 1,
-    justifyContent:"center",
-    alignItems: "center"
-  },
-  text: {
-    color: "white",
-    fontSize: "14px"
-  },
-  progressBar: {
-    marginTop: 20
-  },
-  startStopBtn:{
-    marginTop: 10,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-evenly"
-  }
-})
-
-export default Timings;
+export default RoundedButton;

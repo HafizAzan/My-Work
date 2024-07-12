@@ -4,21 +4,21 @@ import { Text, View, StyleSheet } from 'react-native';
 import { fontSizes, spacing } from '../../src/utils/sizes';
 import { colors } from '../../src/utils/colors';
 
-
 const minutesToMillis = (min) => min * 1000 * 60;
-
 
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
-
-export const Countdown = ({ minutes = 0.1, isPaused, onProgress, onEnd, }) => {
+export const Countdown = ({
+  minutes = 0.1,
+  isPaused,
+  onProgress,
+  onEnd
+}) => {
   const interval = React.useRef(null);
 
   const [millis, setMillis] = useState(null);
 
-
-  const reset = () =>  setMillis(minutesToMillis(minute));
-
+  const reset = () => setMillis(minutesToMillis(minute));
 
   const countDown = () => {
     setMillis((time) => {
