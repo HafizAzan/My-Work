@@ -6,17 +6,17 @@ import {
   Lato_400Regular,
   useFonts as useLatoFont,
 } from "@expo-google-fonts/lato";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AccountScreen from "./src/Screens/AccountScreen/AccountScreen";
 
 const CustomDafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight};
+  margintop: ${StatusBar.currentHeight};
 `;
 
-const Title = styled(Text)`
-  font-size: ${(props) => props.theme.sizes[3]};
-  font-weight: ${(props) => props.theme.fontWeights.regular};
-  font-family: ${(props) => props.theme.fonts.body};
-`;
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   const [loaded] = useFonts({
     Oswald_400Regular,
@@ -26,12 +26,20 @@ export default function App() {
     Lato_400Regular,
   });
 
-  if (!loaded || latoFontLoaded) return null;
+  if (!loaded || !latoFontLoaded) return null;
 
   return (
     <ThemeProvider theme={theme}>
       <CustomDafeArea>
-        <Title>Hello World</Title>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="Home" component={AccountScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </CustomDafeArea>
     </ThemeProvider>
   );
