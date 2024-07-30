@@ -1,19 +1,38 @@
-import { View, Text } from "react-native";
 import React from "react";
-import styled from "styled-components";
-import { AccountCover, AccountScreenStyle } from "./AccountScreen.style";
+import {
+  AccountContainer,
+  AccountCover,
+  AccountScreenStyle,
+  AuthBtn,
+  CenterAlignContainer,
+  Title,
+} from "./AllScreen.style";
+import { MobileScreen } from "../../../App";
 
-const Title = styled(Text)`
-  font-size: ${(props) => props.theme.sizes[3]};
-  font-weight: ${(props) => props.theme.fontWeights.regular};
-  font-family: ${(props) => props.theme.fonts.body};
-`;
-
-export default function AccountScreen() {
+export default function AccountScreen({ navigation }) {
   return (
     <AccountScreenStyle>
       <AccountCover />
-      <Title>Hello World</Title>
+      <CenterAlignContainer>
+        <AccountContainer>
+          <Title>Account Screen</Title>
+          <AuthBtn
+            icon="lock-open-outline"
+            mode="contained"
+            onPress={() => navigation.navigate(MobileScreen.LOGIN_SCREEN)}
+          >
+            Login
+          </AuthBtn>
+
+          <AuthBtn
+            icon="email"
+            mode="contained"
+            onPress={() => navigation.navigate(MobileScreen.REGITER_SCREEN)}
+          >
+            Register
+          </AuthBtn>
+        </AccountContainer>
+      </CenterAlignContainer>
     </AccountScreenStyle>
   );
 }

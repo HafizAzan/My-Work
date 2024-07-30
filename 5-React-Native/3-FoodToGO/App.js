@@ -9,13 +9,21 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AccountScreen from "./src/Screens/AccountScreen/AccountScreen";
+import LoginScreen from "./src/Screens/Login/LoginScreen";
+import RegisterScreen from "./src/Screens/Register/Register";
 
 const CustomDafeArea = styled(SafeAreaView)`
   flex: 1;
-  margintop: ${StatusBar.currentHeight};
+  margin-top: ${StatusBar.currentHeight};
 `;
 
 const Stack = createNativeStackNavigator();
+
+export const MobileScreen = {
+  ACCOUNT_SCREEN: "Home",
+  LOGIN_SCREEN: "Login",
+  REGITER_SCREEN: "Register",
+};
 
 export default function App() {
   const [loaded] = useFonts({
@@ -37,7 +45,18 @@ export default function App() {
               headerShown: false,
             }}
           >
-            <Stack.Screen name="Home" component={AccountScreen} />
+            <Stack.Screen
+              name={MobileScreen.ACCOUNT_SCREEN}
+              component={AccountScreen}
+            />
+            <Stack.Screen
+              name={MobileScreen.LOGIN_SCREEN}
+              component={LoginScreen}
+            />
+            <Stack.Screen
+              name={MobileScreen.REGITER_SCREEN}
+              component={RegisterScreen}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </CustomDafeArea>
