@@ -1,5 +1,5 @@
 import { StyleSheet, Text } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import {
   AccountContainer,
@@ -15,14 +15,15 @@ import {
 import { Button, TextInput } from "react-native-paper";
 import { MobileScreen } from "../../../App";
 import TextComponent from "../../components/TextComponent/TextComponent";
+import { AuthenticationContext } from "../../ContextAPIs/Authentication/Authentication.context";
 
 export default function RegisterScreen({ navigation }) {
+  const { loading, error, onRegiterForm } = useContext(AuthenticationContext);
   const [getValue, setValue] = useState({
     email: "",
     password: "",
+    ConfirmPassword: "",
   });
-
-  let isError = true;
 
   return (
     <AccountScreenStyle>
@@ -48,21 +49,22 @@ export default function RegisterScreen({ navigation }) {
           <AuthInput
             label="Confirm Password"
             {...CommonPasswordProps}
-            value={getValue.password}
-            onChangeText={(password) => setValue({ ...getValue, password })}
+            value={getValue.ConfirmPassword}
+            onChangeText={(ConfirmPassword) =>
+              setValue({ ...getValue, ConfirmPassword })
+            }
           />
-          {isError && (
+          {error && (
             <ErrorContainer>
-              <TextComponent variant="error">
-                Password is Not Matched
-              </TextComponent>
+              <TextComponent variant="error">{error}</TextComponent>
             </ErrorContainer>
           )}
 
           <AuthBtn
             icon="lock-open-outline"
             mode="contained"
-            onPress={() => console.log("clicked")}
+            onPress={() => onRegiterForm(getValue)}
+            loading={loading}
           >
             Register
           </AuthBtn>

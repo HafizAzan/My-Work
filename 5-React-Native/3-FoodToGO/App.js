@@ -11,6 +11,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AccountScreen from "./src/Screens/AccountScreen/AccountScreen";
 import LoginScreen from "./src/Screens/Login/LoginScreen";
 import RegisterScreen from "./src/Screens/Register/Register";
+import "./src/Config/ConfigFireBase";
+import AuthenticationContextComponent from "./src/ContextAPIs/Authentication/Authentication.context";
 
 const CustomDafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -38,28 +40,30 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CustomDafeArea>
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen
-              name={MobileScreen.ACCOUNT_SCREEN}
-              component={AccountScreen}
-            />
-            <Stack.Screen
-              name={MobileScreen.LOGIN_SCREEN}
-              component={LoginScreen}
-            />
-            <Stack.Screen
-              name={MobileScreen.REGITER_SCREEN}
-              component={RegisterScreen}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </CustomDafeArea>
+      <AuthenticationContextComponent>
+        <CustomDafeArea>
+          <NavigationContainer>
+            <Stack.Navigator
+              screenOptions={{
+                headerShown: false,
+              }}
+            >
+              <Stack.Screen
+                name={MobileScreen.ACCOUNT_SCREEN}
+                component={AccountScreen}
+              />
+              <Stack.Screen
+                name={MobileScreen.LOGIN_SCREEN}
+                component={LoginScreen}
+              />
+              <Stack.Screen
+                name={MobileScreen.REGITER_SCREEN}
+                component={RegisterScreen}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </CustomDafeArea>
+      </AuthenticationContextComponent>
     </ThemeProvider>
   );
 }
