@@ -11,9 +11,9 @@ import {
   ErrorContainer,
   Title,
 } from "../AccountScreen/AllScreen.style";
-import { MobileScreen } from "../../../App";
 import TextComponent from "../../components/TextComponent/TextComponent";
 import { AuthenticationContext } from "../../ContextAPIs/Authentication/Authentication.context";
+import { MobileScreen } from "../../RoutesScreen/RoutesScreen";
 
 export default function LoginScreen({ navigation }) {
   const { loading, error, onLoginForm } = useContext(AuthenticationContext);

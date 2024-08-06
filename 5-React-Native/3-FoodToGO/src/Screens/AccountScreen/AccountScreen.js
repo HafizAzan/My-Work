@@ -7,7 +7,7 @@ import {
   CenterAlignContainer,
   Title,
 } from "./AllScreen.style";
-import { MobileScreen } from "../../../App";
+import { MobileScreen } from "../../RoutesScreen/RoutesScreen";
 
 export default function AccountScreen({ navigation }) {
   return (

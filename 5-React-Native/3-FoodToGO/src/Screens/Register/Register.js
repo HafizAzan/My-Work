@@ -13,9 +13,9 @@ import {
   Title,
 } from "../AccountScreen/AllScreen.style";
 import { Button, TextInput } from "react-native-paper";
-import { MobileScreen } from "../../../App";
 import TextComponent from "../../components/TextComponent/TextComponent";
 import { AuthenticationContext } from "../../ContextAPIs/Authentication/Authentication.context";
+import { MobileScreen } from "../../RoutesScreen/RoutesScreen";
 
 export default function RegisterScreen({ navigation }) {
   const { loading, error, onRegiterForm } = useContext(AuthenticationContext);

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import {
   LoginFirebaseRequest,
   RegisterFirebaseRequest,
@@ -25,7 +25,6 @@ function AuthenticationContextComponent({ children }) {
       .catch((error) => setError(error?.message?.toString()));
 
     setLoading(false);
-    setUser(null);
   };
   const onLoginForm = async (params) => {
     const { email, password } = params;
@@ -58,3 +57,7 @@ function AuthenticationContextComponent({ children }) {
 }
 
 export default AuthenticationContextComponent;
+
+export const useAuthenticationContext = () => {
+  return useContext(AuthenticationContext);
+};
