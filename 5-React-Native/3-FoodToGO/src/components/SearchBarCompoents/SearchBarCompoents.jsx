@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Searchbar } from "react-native-paper";
+import { Searchbar, Text } from "react-native-paper";
 import styled from "styled-components";
 
 export const CustomSearchBarStyled = styled(Searchbar)`
   margin-left: ${(props) => props.theme.space[2]};
   margin-right: ${(props) => props.theme.space[2]};
+  margin-top: ${(props) => props.theme.space[3]};
+  margin-bottom: ${(props) => props.theme.space[3]};
 `;
 
 export default function SearchBarComponent({

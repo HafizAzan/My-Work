@@ -16,7 +16,7 @@ import NavigationHandlerComponent from "./src/components/NavigationHandlerCompon
 
 const CustomSafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight};
+  margin-top: ${StatusBar.currentHeight}px;
 `;
 
 export default function App() {
@@ -32,11 +32,11 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <AuthenticationContextComponent>
-        <CustomSafeArea>
+      <CustomSafeArea>
+        <AuthenticationContextComponent>
           <NavigationHandlerComponent />
-        </CustomSafeArea>
-      </AuthenticationContextComponent>
+        </AuthenticationContextComponent>
+      </CustomSafeArea>
     </ThemeProvider>
   );
 }
