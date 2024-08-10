@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { Card } from "react-native-paper";
 import CustomText from "../CustomTypography/CustomTypography";
 
-const ResturantCardBg = styled(ImageBackground)`
+const ResturantCard = styled(Card)`
   height: 200px;
   justify-content: center;
 `;
 
-const ResturantCard = styled(Card)`
+const ResturantCardBg = styled(Card.Cover)`
   margin-bottom: 10px;
   padding-left: ${(props) => props.theme.space[2]};
   padding-right: ${(props) => props.theme.space[2]};
