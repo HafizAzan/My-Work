@@ -16,6 +16,8 @@
 // // console.log(store);
 // // console.log(store);
 
+//  Primitive Type
+
 // store = "something";
 // store = 12345;
 // store = true;
@@ -40,37 +42,38 @@
 
 // // ====Easy Example of object =========
 
-// let HafizAzan_marks_obj = {marks: 100,};
-// let AzanAhmed_marks_obj = {...HafizAzan_marks_obj};
+let HafizAzan_marks_obj = { marks: 100 };
+let AzanAhmed_marks_obj = { ...HafizAzan_marks_obj };
 
-// AzanAhmed_marks_obj.marks = 90;
+AzanAhmed_marks_obj.marks = 90;
 
-// // console.log(HafizAzan_marks_obj.marks, "HafizAzan_marks_obj");
-// // console.log(AzanAhmed_marks_obj.marks, "AzanAhmed_marks_obj");
+console.log(HafizAzan_marks_obj.marks, "HafizAzan_marks_obj");
+console.log(AzanAhmed_marks_obj.marks, "AzanAhmed_marks_obj");
 
-// // const info = {
-// //     name : "HafizAzan",
-// //     Designation: "Software Engineer",
-// // };
+const info = {
+  name: "HafizAzan",
+  Designation: "Software Engineer",
+};
 
-// // // const info2 = info;
-// // const info2 = {...info};
+// const info2 = info;
+// spread opreator
+const info2 = { ...info };
 
-// // info2.name ="AzanAhmed";
-// // info.name ="azankhan";
+info2.name = "AzanAhmed";
+info.name = "azankhan";
 
-// // console.log (info.name);
-// // console.log(info2.name);
+console.log(info.name);
+console.log(info2.name);
 
 // // ====Easy Example of Array =========
 
-// const arrayone = [1,2,3];
-// const arraytwo = [...arrayone];
+const arrayone = [1, 2, 3];
+const arraytwo = [...arrayone];
 
-// arraytwo.push(4);
+arraytwo.push(4);
 
-// console.log(arrayone);
-// console.log(arraytwo);
+console.log(arrayone);
+console.log(arraytwo);
 
 // //====3 Types Variable===
 // // 1-let
@@ -113,7 +116,7 @@
 // }
 
 // // variable mein letter small or capital krne se java mai koi farq nhi parhta like : if we write the some1 and some2 so jo console kia hoga usme error nhi aayega for example:
-
+// Case Sensitive
 // let some = "azan";
 // let Some = "hafiz"
 
@@ -276,18 +279,21 @@ console.info(typeof val);
 const firstName = "Hafiz";
 const secondName = "Azan";
 const fullName = firstName + " " + secondName;
-console.log(fullName);
+console.log(fullName, " mere name");
 
 //======================
 
-let testing_Variable = 'hello! This is Javascript and "I will teach you."my Self Azan';
+let testing_Variable =
+  'hello! This is Javascript and "I will teach you."my Self Azan';
 
 console.log(testing_Variable);
 
-testing_Variable = "hello! This is Javascript and \n \n 'I will teach you.'my Self Azan";
+testing_Variable =
+  "hello! This is Javascript and \n \n 'I will teach you.'my Self Azan";
 console.log(testing_Variable);
 
-testing_Variable = "hello! My name is \n \n'" + fullName + " and my age is 16' years old";
+testing_Variable =
+  "hello! My name is \n \n'" + fullName + " and my age is 16' years old";
 
 console.log(testing_Variable);
 
@@ -301,12 +307,16 @@ testing_Variable = `hello! "My name is'${fullName}'
 and my age is" 16 years old `;
 console.log(testing_Variable);
 
-testing_Variable = testing_Variable.concat(" new things", " new things 1", " new things 2");
+testing_Variable = testing_Variable.concat(
+  " new things",
+  " new things 1",
+  " new things 2"
+);
 
-// testing_Variable = testing_Variable.replace("16","10");
+// testing_Variable = testing_Variable.replace("16", "10");
 // testing_Variable = testing_Variable.includes("Azan");
 
-// console.log(testing_Variable);
+console.log(testing_Variable);
 
 // COMPARISON
 // equaltoo (==) ise data type se faraq nhi parhta;
@@ -380,7 +390,7 @@ if (cell != "samsung") {
   console.log("othervise your  mobile is not from china");
 }
 
-//not equal !== / so it will check the both type
+//not equal != / so it will check the both type
 
 let mobile2 = 1;
 if (mobile2 !== "1") {
@@ -444,12 +454,19 @@ if (id === 100) {
   // console.log("id is not hundred")
 }
 
+if (id == 1000) console.log("sdfs");
+else console.log("edg");
+
 //ternary operator example
-const condition = id === 100 ? console.log("id is hundred") : console.log("id is not hundred");
+const condition =
+  id === 100 ? console.log("id is hundred") : console.log("id is not hundred");
 
-let idNAme = 250;
+let idName = 250;
 
-const condition2 = idNAme === 250 ? console.log("idName is 250") : console.log("idName is not 250");
+const condition2 =
+  idName === 250
+    ? console.log("idName is 250")
+    : console.log("idName is not 250");
 
 //multiple if else conditions
 
@@ -558,7 +575,9 @@ today.setMonth(0) + 1;
 today.setDate(26);
 today.setFullYear(2007);
 // timeGet = today.setDay();
-document.write(`${today.getMonth(0) + 1}-${today.getDate(26)}-${today.getFullYear(2007)}`);
+document.write(
+  `${today.getMonth(0) + 1}-${today.getDate(26)}-${today.getFullYear(2007)}`
+);
 
 let day;
 switch (new Date().getDay()) {
@@ -602,9 +621,10 @@ printMyName("Azan ahmed Khan");
 printMyName("Azan attrai");
 
 //with multiple parameter
-function printMyFullName(firstName = "", lastname = "") {
+function printMyFullName(firstName = "fgghh", lastname = "") {
   console.log(`MY NAME IS ${firstName} ${lastname}`);
 }
+printMyFullName();
 printMyFullName("AZAN", "NOMAN");
 
 //we can return things from functions
@@ -628,3 +648,26 @@ console.log(vari, "vari");
 let desig = `my name is ${fname}`;
 let replaceName = desig.replace(`${fname}`, "hafiz Azan");
 console.log(replaceName);
+
+function outerFunction() {
+  let count = 0;
+  return function inner() {
+    count += 1;
+    return count;
+  };
+}
+var clousers = outerFunction();
+
+console.log(clousers());
+
+/*
+Primitive :
+
+jab 1st varibale ko jo value assign krdi aur phir isi variable ko aagaye koi doosri value
+assign krdi tw ye pheli wali ko override krde ga
+
+Refrence :
+
+
+
+*/

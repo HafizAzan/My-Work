@@ -16,13 +16,13 @@ const error = (theme) => `
 color : ${theme.colors.text.error}`;
 
 const caption = (theme) => `
-font-weight : ${theme.fontWeights.bold}
+font-weight : ${theme.fontWeights.bold};
 font-size : ${theme.fontSizes.caption}`;
 
 const label = (theme) => `
-font-size : ${theme.fontSizes.body}
-font-weight : ${theme.fontWeights.medium}
-font-family : ${theme.fonts.heading}
+font-size : ${theme.fontSizes.body};
+font-weight : ${theme.fontWeights.medium};
+font-family : ${theme.fonts.heading};
 `;
 
 const variants = {
@@ -33,13 +33,17 @@ const variants = {
 };
 
 const StyledText = styled(Text)`
-  ${(props) => DefaultTextStyle(props.theme)}
-  ${(props) => variants[props.customVariant](props.theme)}
+  ${(props) => DefaultTextStyle(props.theme)};
+  ${(props) => variants[props.customVariant](props.theme)};
 `;
 
 function TextComponent(props) {
-  const { variant = "body", children } = props;
-  return <StyledText customVariant={variant}>{children}</StyledText>;
+  const { variant = "body", children, style } = props;
+  return (
+    <StyledText customVariant={variant} style={style}>
+      {children}
+    </StyledText>
+  );
 }
 
 export default memo(TextComponent);

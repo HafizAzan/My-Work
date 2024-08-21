@@ -1,13 +1,18 @@
-import { View, Text } from "react-native";
 import React from "react";
 import SearchBarComponent from "../../components/SearchBarCompoents/SearchBarCompoents";
-import ResturantInfo from "../../components/ResturantInfo/ResturantInfo";
+import ResturantInfo from "./ResturantInfo";
+import { RestuarantListing } from "../../components/CustomScrollView/CustomScrollViewFlat";
 
 export default function ResturantScreen() {
+  const restaurant = [1, 2, 3, 4, 5];
   return (
     <>
       <SearchBarComponent />
-      <ResturantInfo />
+      <RestuarantListing
+        key={restaurant}
+        data={restaurant}
+        renderItem={(SingleResturantInfo) => <ResturantInfo />}
+      />
     </>
   );
 }

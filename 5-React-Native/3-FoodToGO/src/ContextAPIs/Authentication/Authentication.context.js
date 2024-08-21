@@ -9,7 +9,7 @@ function AuthenticationContextComponent({ children }) {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const onRegiterForm = async (params) => {
     const { email, password, ConfirmPassword } = params;

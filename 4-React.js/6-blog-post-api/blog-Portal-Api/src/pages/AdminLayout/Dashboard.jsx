@@ -1,5 +1,5 @@
-import React from 'react'
-import { Bar } from 'react-chartjs-2'
+import React from "react";
+import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,9 +9,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { useQuery } from 'react-query';
-import { DashboardService } from '../../services/Dashboard.service';
-import { Spin } from 'antd';
+import { useQuery } from "react-query";
+import { DashboardService } from "../../services/Dashboard.service";
+import { Spin } from "antd";
 
 ChartJS.register(
   CategoryScale,
@@ -39,23 +39,24 @@ const labels = [
   "Comment Counts",
   "Users Count",
   "Category Count",
-]
+];
 
 function Dashboard() {
-  const { data: dashboardData, isLoading: loaderDashboard } = useQuery("dashboard", () => DashboardService.getDashBaord())
+  const { data: dashboardData, isLoading: loaderDashboard } = useQuery(
+    "dashboard",
+    () => DashboardService.getDashBaord()
+  );
   const {
     category_count = 0,
     comment_count = 0,
     post_count = 0,
-    user_count = 0
+    user_count = 0,
   } = dashboardData?.data?.results ?? {};
-
-  console.log(dashboardData?.data?.results);
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: "top",
       },
       title: {
         display: true,
@@ -66,12 +67,9 @@ function Dashboard() {
     labels,
     datasets: [
       {
-        label: '',
-        data: [post_count,
-          comment_count,
-          user_count,
-          category_count],
-        backgroundColor: 'purple',
+        label: "",
+        data: [post_count, comment_count, user_count, category_count],
+        backgroundColor: "purple",
       },
     ],
   };
@@ -81,7 +79,7 @@ function Dashboard() {
       <h1>DashBoard</h1>
       <Bar options={options} data={data} />
     </Spin>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
