@@ -5,6 +5,7 @@ import ResturantScreen from "../Screens/ResturantScreen/ResturantScreen";
 import SettingScreen from "../Screens/SettingScreen/SettingScreen";
 import CustomIcon from "../CustomIcon/CustomIcon";
 import MapScreen from "../Screens/MapScreen/MapScreen";
+import RestaurantNavigator from "./RestaurantNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,8 +34,8 @@ function CustomBottomNavigation() {
       screenOptions={createScreenOptions}
     >
       <Tab.Screen
-        name={MobileScreen.RESTURANT_SCREEN}
-        component={ResturantScreen}
+        name={MobileScreen.RESTURANT}
+        component={RestaurantNavigator}
       />
       <Tab.Screen name={MobileScreen.MAP} component={MapScreen} />
       <Tab.Screen name={MobileScreen.SETTING} component={SettingScreen} />

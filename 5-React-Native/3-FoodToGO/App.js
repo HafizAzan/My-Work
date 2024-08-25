@@ -1,3 +1,4 @@
+import React from "react";
 import { SafeAreaView, StatusBar } from "react-native";
 import styled, { ThemeProvider } from "styled-components";
 import theme from "./src/utils/theme";
@@ -6,13 +7,10 @@ import {
   Lato_400Regular,
   useFonts as useLatoFont,
 } from "@expo-google-fonts/lato";
-import { NavigationContainer } from "@react-navigation/native";
-import AccountScreen from "./src/Screens/AccountScreen/AccountScreen";
-import LoginScreen from "./src/Screens/Login/LoginScreen";
-import RegisterScreen from "./src/Screens/Register/Register";
 import "./src/Config/ConfigFireBase";
 import AuthenticationContextComponent from "./src/ContextAPIs/Authentication/Authentication.context";
 import NavigationHandlerComponent from "./src/components/NavigationHandlerComponent/NavigationHandlerComponent";
+import LocationContextComponent from "./src/services/locations/location.context";
 
 const CustomSafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -34,7 +32,9 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CustomSafeArea>
         <AuthenticationContextComponent>
-          <NavigationHandlerComponent />
+          <LocationContextComponent>
+            <NavigationHandlerComponent />
+          </LocationContextComponent>
         </AuthenticationContextComponent>
       </CustomSafeArea>
     </ThemeProvider>

@@ -6,16 +6,17 @@ export const restaurantRequest = (search = "37.7749295,-122.4194155") => {
     const restaurantMockData = restaurant[search];
 
     if (!restaurantMockData) {
-      reject("not found");
+      reject("OOPs No Restaurant Found!");
     }
 
-    const transformLocationData = restaurantTransformData(restaurant[search]);
+    const transformLocationData = restaurantTransformData(restaurantMockData);
     resolve(transformLocationData);
   });
 };
 
 const restaurantTransformData = (restaurantData) => {
   const { results } = restaurantData;
+
   const formattedResponse = camelize(results);
 
   const mappedResults = formattedResponse?.map((singleRestaurant) => {

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Searchbar, Text } from "react-native-paper";
 import styled from "styled-components";
+import { useLocationContext } from "../../services/locations/location.context";
 
 export const CustomSearchBarStyled = styled(Searchbar)`
   margin-left: ${(props) => props.theme.space[2]};
@@ -12,8 +13,11 @@ export const CustomSearchBarStyled = styled(Searchbar)`
 export default function SearchBarComponent({
   isFavouriteToggle = false,
   onFavouriteHanlder = () => {},
+  search,
+  setSearchText,
+  SearchText,
+  ...props
 }) {
-  const [SearchText, setSearchText] = useState("");
   return (
     <>
       <CustomSearchBarStyled
@@ -21,8 +25,9 @@ export default function SearchBarComponent({
         onIconPress={onFavouriteHanlder}
         icon={isFavouriteToggle ? "heart" : "heart-outline"}
         value={SearchText}
-        onChangeText={(text) => setSearchText(text)}
-        onSubmitEditing={() => console.log(SearchText, "SearchText...")}
+        onChangeText={setSearchText}
+        onSubmitEditing={() => search(SearchText)}
+        {...props}
       />
     </>
   );

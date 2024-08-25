@@ -15,27 +15,27 @@ import star from "../../../assets/star";
 import open from "../../../assets/open";
 
 export default function ResturantInfo(props) {
-  const { resturant = {} } = props;
+  const { SingleResturantInfo = {} } = props;
   const {
-    photo = "https://picsum.photos/700",
+    photos = "https://picsum.photos/700",
     name = "some Resturant",
     rating = 5,
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     isOpenNow = true,
-  } = resturant;
+  } = SingleResturantInfo;
 
-  const RatingArray = Array.from(new Array(rating));
+  const ratingArray = Array.from(new Array(Math.round(rating)));
 
   return (
     <>
       <ResturantCard>
-        <ResturantCardBg source={{ uri: photo }} />
+        <ResturantCardBg source={{ uri: photos }} />
         <CardSection>
           <TextComponent variant="label">{name}</TextComponent>
           <CardInnerSection>
-            {RatingArray?.length > 0 && (
+            {ratingArray?.length > 0 && (
               <RatingContainer>
-                {RatingArray?.map(() => (
+                {ratingArray?.map(() => (
                   <SvgXml xml={star} width={20} height={20} />
                 ))}
               </RatingContainer>
