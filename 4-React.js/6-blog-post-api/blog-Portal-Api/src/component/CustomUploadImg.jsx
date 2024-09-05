@@ -6,6 +6,8 @@ function CustomUploadImg(props) {
   const { customRequestCallBack = () => {} } = props;
   const [fileName, setFileName] = useState(null);
   const customRequest = async (info) => {
+    console.log(info);
+    
     customRequestCallBack(info?.file);
     const basesixtyFourFile = await toBase64(info.file);
     setFileName({
