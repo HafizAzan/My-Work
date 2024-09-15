@@ -1,28 +1,24 @@
-import { View, Text, SafeAreaView, ActivityIndicator } from "react-native";
+import { SafeAreaView, ActivityIndicator } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import SearchBarComponent from "../../components/SearchBarCompoents/SearchBarCompoents";
 import { useLocationContext } from "../../services/locations/location.context";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Callout, Marker } from "react-native-maps";
+import MapSearch from "./MapSearch";
+import { MobileScreen } from "../../RoutesScreen/RoutesScreen";
+import MapCallOutComponent from "./MapCallOutComponent";
 
-export const SearchContainer = styled(View)`
-  padding: ${(props) => props.theme.space[2]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-export default function MapScreen() {
+export default function MapScreen({ navigation }) {
   const [SearchText, setSearchText] = useState("");
   const { loading, location = {}, search, restaurant } = useLocationContext();
+  const mapRef = useRef();
   const latDelta =
     location?.viewport?.northeast?.lat - location?.viewport?.southwest?.lat;
 
-  const mapRef = useRef(null);
   useEffect(() => {
     if (location?.lat && location?.lng && latDelta && mapRef.current) {
       mapRef.current.animateToRegion({
         latitude: location.lat,
         longitude: location.lng,
-        longitudeDelta: latDelta ?? 0.0922,
+        latitudeDelta: latDelta ?? 0.0922,
         longitudeDelta: 0.02,
       });
     }
@@ -30,14 +26,11 @@ export default function MapScreen() {
 
   return (
     <SafeAreaView>
-      <SearchContainer>
-        <SearchBarComponent
-          SearchText={SearchText}
-          setSearchText={setSearchText}
-          search={search}
-          icon="map"
-        />
-      </SearchContainer>
+      <MapSearch
+        SearchText={SearchText}
+        setSearchText={setSearchText}
+        search={search}
+      />
       {loading && (
         <ActivityIndicator size={50} animating={true} color="#0000ff" />
       )}
@@ -50,25 +43,34 @@ export default function MapScreen() {
             width: "100%",
           }}
           initialRegion={{
-            latitude: location?.lat ?? 37.78825,
-            longitude: location?.lng ?? -122.4324,
+            latitude: location.lat ?? 37.78825,
+            longitude: location.lng ?? -122.4324,
             latitudeDelta: latDelta ?? 0.0922,
             longitudeDelta: 0.02,
-            // latitude: 37.78825,
-            // longitude: -122.4324,
-            // latitudeDelta: 0.0922,
           }}
         >
-          {restaurant?.map((single, index) => {
+          {restaurant?.map((SingleResturantInfo, index) => {
             return (
               <Marker
-                title={single?.name}
+                title={SingleResturantInfo?.name}
                 key={index}
                 coordinate={{
-                  latitude: single?.geometry?.location?.lat,
-                  longitude: single?.geometry?.location?.lng,
+                  latitude: SingleResturantInfo?.geometry?.location?.lat,
+                  longitude: SingleResturantInfo?.geometry?.location?.lng,
                 }}
-              ></Marker>
+              >
+                <Callout
+                  onPress={() =>
+                    navigation.navigate(MobileScreen.RESTURANT_DETAIL, {
+                      SingleResturantInfo: SingleResturantInfo,
+                    })
+                  }
+                >
+                  <MapCallOutComponent
+                    SingleResturantInfo={SingleResturantInfo}
+                  />
+                </Callout>
+              </Marker>
             );
           })}
         </MapView>
