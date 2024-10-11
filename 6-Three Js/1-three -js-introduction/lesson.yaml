@@ -1,0 +1,16 @@
+Three js ek popular library hai 3d graphics ke liye.
+is me scene camera aur light jese elements hotay hain.
+
+Scene:
+Scene 1 container hai jisme 3d objects aur light aur cameras add kar sakte hain.
+
+Camera:
+Camera 1 object hai jisme scene ko view karne ke liye use hota hai.
+
+Light:
+Light 1 object hai jisme scene mai roshni karne ke liye use hota hai.
+
+Renderer:
+Renderer 1 object hai jo scene aur camera ko actual pixel main convert krta hai.
+
+math.pi = 180 degree

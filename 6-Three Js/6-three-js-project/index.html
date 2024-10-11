@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three js Project</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    />
+  </head>
+  <body>
+    <div class="app h-screen w-full bg-zinc-900 flex text-white">
+      <div class="canvas w-1/2 h-screen relative">
+        <a class="text-2xl opacity-60 font-base fixed top-10 right-10" href="">
+          Close Menu <i class="ri-close-large-fill"></i>
+        </a>
+        <div
+          class="images w-[25vw] h-[32vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <img
+            class="absolute w-full h-full object-cover"
+            src="./public/assets/third.jpg"
+            alt=""
+          />
+          <img
+            class="absolute w-full h-full object-cover"
+            src="./public/assets/second.jpg"
+            alt=""
+          />
+          <img
+            class="absolute w-full h-full object-cover"
+            src="./public/assets/first.jpg"
+            alt=""
+          />
+          <img
+            class="absolute w-full h-full object-cover"
+            src="./public/assets/fourth.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-1/2 h-screen flex items-center justify-center">
+        <div class="Links flex flex-col gap-10">
+          <a
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            href=""
+          >
+            <small class="text-xl tracking-normal">01.</small>
+            Bello Spettacolo
+          </a>
+          <a
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            href=""
+          >
+            <small class="text-xl tracking-normal">02.</small>
+            Lorem ipsum sit.
+          </a>
+          <a
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            href=""
+          >
+            <small class="text-xl tracking-normal">03.</small>
+            Lorem ipsum
+          </a>
+          <a
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            href=""
+          >
+            <small class="text-xl tracking-normal">04.</small>
+            Magnifico
+          </a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

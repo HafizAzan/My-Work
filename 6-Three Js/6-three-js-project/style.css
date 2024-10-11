@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+img {
+  opacity: 0;
+}
+
+.app canvas {
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+}
