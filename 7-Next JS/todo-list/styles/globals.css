@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #efefef;
+  --blue: #1167f0;
+  --yellow: #feaa00;
+  --light-red: #f93251;
+  --light-green: #02b64a;
+  --light-grey: #5e5e5e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  list-style: none;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  cursor: auto;
+  transition: all 400ms ease;
+  user-select: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
