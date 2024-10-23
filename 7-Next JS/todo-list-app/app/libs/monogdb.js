@@ -1,15 +1,14 @@
 import mongoose from "mongoose";
 
-const connectToDatabase = async () => {
+const connectDatabase = async () => {
   try {
     await mongoose.connect(process.env.MONGO_DB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Connect");
   } catch (error) {
-    console.error("err", error);
+    throw new Error(error, "APIs not working");
   }
 };
 
-export default connectToDatabase;
+export default connectDatabase;
