@@ -72,3 +72,24 @@ export async function PATCH(request, { params }) {
 
   return NextResponse.json({ todo, message: "Todo Updated" }, { status: 200 });
 }
+
+export async function STATUS(request, { params }) {
+  await connectDatabase();
+  const { id } = params;
+  const todo = await Todo.findById(id);
+
+  if (!todo) {
+    return NextResponse.json(
+      { message: "Todo Status not found" },
+      { status: 404 }
+    );
+  }
+
+  todo.status == "approve" ? "unapprove" : "approve";
+  await todo.save();
+
+  return NextResponse.json(
+    { todo, message: "Todo Status Updated" },
+    { status: 200 }
+  );
+}

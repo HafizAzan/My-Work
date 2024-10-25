@@ -1,10 +1,14 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
+
 import {
+  approve,
   deleteAllTodos,
   deleteTodos,
   getTodosData,
   getTodosDatabyId,
+  statusUpdate,
   storeTodoData,
+  unapprove,
   updateTodoData,
 } from "app/utils/Todo.Service";
 import React from "react";
@@ -37,7 +41,14 @@ const useTodos = () => {
 
   const { mutateAsync: editTodoData } = useMutation({
     mutationKey: ["EditTodo"],
-    mutationFn: (id, payload) => updateTodoData(id, payload),
+    mutationFn: ({ id, payload }) => updateTodoData(id, payload),
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
+  });
+
+  const { mutateAsync: statusChangeReq } = useMutation({
+    mutationKey: ["updateStatus"],
+    mutationFn: (id) => statusUpdate(id),
     refetchOnWindowFocus: true,
     refetchOnReconnect: true,
   });
@@ -57,6 +68,20 @@ const useTodos = () => {
     refetchOnReconnect: true,
   });
 
+  const { mutateAsync: approveData } = useMutation({
+    mutationKey: ["approveData"],
+    mutationFn: (id) => approve(id),
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+  });
+
+  const { mutateAsync: UnApproveData } = useMutation({
+    mutationKey: ["UnapproveData"],
+    mutationFn: (id) => unapprove(id),
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+  });
+
   return {
     TodoData,
     refetchTodoData,
@@ -68,6 +93,9 @@ const useTodos = () => {
     TodoDataById,
     showDataById,
     editTodoData,
+    statusChangeReq,
+    approveData,
+    UnApproveData,
   };
 };
 

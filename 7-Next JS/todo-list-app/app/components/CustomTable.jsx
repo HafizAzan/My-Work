@@ -7,6 +7,7 @@ const CustomTable = ({
   TodoData,
   deleteTodo = () => {},
   getTodoUsingId = () => {},
+  updateStatusFn = () => {},
   deleteTodosLoader,
 }) => {
   return (
@@ -30,6 +31,7 @@ const CustomTable = ({
               <th className="font-medium text-zinc-900">{index + 1}</th>
               <th className="font-medium text-zinc-900">{single?.item}</th>
               <th
+                onClick={() => updateStatusFn(single)}
                 className={`font-medium  text-white p-3 rounded-lg ${
                   single?.status === "approve" ? "bg-green" : "bg-accent"
                 }`}

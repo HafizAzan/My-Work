@@ -13,16 +13,17 @@ export default function Home() {
     deleteAllTodoData,
     loaderTodo,
     deleteTodosLoader,
-    TodoDataById,
+    statusChangeReq,
     editTodoData,
-    showDataById,
+    approveData,
+    UnApproveData,
   } = useTodos();
-  const [valueInput, setValueInput] = useState({
-    input: "",
-    option: "",
-  });
 
-  const [data, setData] = useState(null);
+  const [valueInput, setValueInput] = useState({
+    item: "",
+    status: "",
+    id: null,
+  });
 
   const InputsHandler = (e) => {
     const { name, value } = e.target;
@@ -32,30 +33,33 @@ export default function Home() {
     }));
   };
 
-  const formSubmitHandler = (e) => {
+  const formSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log("Current valueInput:", valueInput);
     const payload = {
-      item: valueInput.input,
-      status: valueInput.option,
+      item: valueInput.item,
+      status: valueInput.status,
     };
 
-    const { _id, item, status } = data;
-
-    if (_id) {
-      editTodoData(_id, data, {
-        onSuccess: () => {
-          setValueInput({ input: "", option: "" });
-          refetchTodoData();
-          console.log("Todo updated successfully");
-        },
-      });
+    if (valueInput.id) {
+      try {
+        await editTodoData(
+          { id: valueInput.id, payload },
+          {
+            onSuccess: () => {
+              setValueInput({ item: "", status: "", id: null });
+              refetchTodoData();
+            },
+          }
+        );
+      } catch (error) {
+        console.error("Edit Error:", error);
+        throw new Error(error);
+      }
     } else {
       saveTodoData(payload, {
         onSuccess: () => {
-          setValueInput({ input: "", option: "" });
+          setValueInput({ item: "", status: "", id: null });
           refetchTodoData();
-          console.log("Todo created successfully");
         },
       });
     }
@@ -85,10 +89,28 @@ export default function Home() {
 
   const getTodoUsingId = (single) => {
     setValueInput({
-      input: single.item,
-      option: single.status,
+      item: single.item,
+      status: single.status,
+      id: single._id,
     });
-    setData(single);
+  };
+
+  const updateStatusFn = (single) => {
+    if (single?.status === "approve") {
+      UnApproveData(single?._id, {
+        onSuccess: () => {
+          console.log("sucess");
+          refetchTodoData();
+        },
+      });
+    } else {
+      approveData(single?._id, {
+        onSuccess: () => {
+          console.log("sucess approve");
+          refetchTodoData();
+        },
+      });
+    }
   };
 
   return (
@@ -101,18 +123,18 @@ export default function Home() {
           <div className="flex items-center justify-center w-full my-14 gap-x-3">
             <form className="flex space-x-3" onSubmit={formSubmitHandler}>
               <input
-                name="input"
+                name="item"
                 type="text"
                 className="rounded-md border-solid border-grey border-[1px] py-2 pl-2 placeholder:text-accent outline-none"
                 placeholder="Enter a task here"
                 onChange={InputsHandler}
-                value={valueInput.input}
+                value={valueInput.item || ""}
               />
               <select
-                name="option"
+                name="status"
                 className="rounded-md border-solid border-grey border-[1px] py-2 pl-2 placeholder:text-accent outline-none"
                 onChange={InputsHandler}
-                value={valueInput.option}
+                value={valueInput.status || ""}
               >
                 <option value="" disabled>
                   Select Status
@@ -145,6 +167,7 @@ export default function Home() {
                 deleteTodo={deleteTodo}
                 deleteTodosLoader={deleteTodosLoader}
                 getTodoUsingId={getTodoUsingId}
+                updateStatusFn={updateStatusFn}
               />
             </div>
           )}

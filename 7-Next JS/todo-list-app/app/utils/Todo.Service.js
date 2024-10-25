@@ -14,7 +14,7 @@ const storeTodoData = (data = {}) => {
 };
 
 const updateTodoData = async (id, payload = {}) => {
-  return MainApiService.patch(`${END_POINTS_URL.TODOS}/${id}`, payload);
+  return await MainApiService.patch(`${END_POINTS_URL.TODOS}/${id}`, payload);
 };
 
 const deleteTodos = (id) => {
@@ -25,6 +25,17 @@ const deleteAllTodos = () => {
   return MainApiService.delete(END_POINTS_URL.TODOS);
 };
 
+const statusUpdate = async (id) => {
+  return MainApiService.patch(`${END_POINTS_URL.TODOS}/${id}`);
+};
+
+const approve = async (id) => {
+  return await MainApiService.get(`${END_POINTS_URL.TODOS}/${id}/approve`);
+};
+const unapprove = async (id) => {
+  return await MainApiService.get(`${END_POINTS_URL.TODOS}/${id}/status`);
+};
+
 export {
   getTodosData,
   storeTodoData,
@@ -32,4 +43,7 @@ export {
   deleteAllTodos,
   getTodosDatabyId,
   updateTodoData,
+  statusUpdate,
+  approve,
+  unapprove,
 };

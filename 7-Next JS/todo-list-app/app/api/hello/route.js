@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   await connectDatabase();
-  const todos = await Todo.find();
+  const todos = await Todo.find().sort({ updatedAt: -1 });
   return NextResponse.json(
     { todos },
     { message: "Todo Created", status: "200" }
